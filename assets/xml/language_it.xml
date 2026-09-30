@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <!--Italian -->
+    <general>
+        <session_balance>Saldo Sessione</session_balance>
+        <totalbet>Puntata Totale</totalbet>
+        <balance>Saldo</balance>
+        <bet>Puntata</bet>
+        <coin>VALORE DELLE MONETE</coin>
+        <win>Vincita</win>
+        <networdmsg>ERRORE DI RETE</networdmsg>
+        <freegamesfeature>FUNZIONE GIRI GRATIS</freegamesfeature>
+        <gamerule>REGOLE DEL GIOCO</gamerule>
+        <jackportfeatrue>FUNZIONE JACKPOT</jackportfeatrue>
+        <winline>LINEA DI VINCITA</winline>
+        <networkstate>Connessione di rete scarsa!</networkstate>
+    </general>
+
+    <info>
+        <minbet>Puntata Minima</minbet>
+        <maxbet>Puntata Massima</maxbet>
+        <rtp>L’RTP teorico totale è calcolato al {rtp}% ed è stato verificato su oltre 1 miliardo di round di gioco.</rtp>
+    </info>
+
+    <optionwin>
+        <setting>IMPOSTAZIONI</setting>
+        <bet>PUNTATA</bet>
+        <totalbet>PUNTATA TOTALE</totalbet>
+        <coinvalue>MOLTIPLICATORE DI PUNTATA</coinvalue>
+        <options>OPZIONI</options>
+        <quickspin>GIRO VELOCE</quickspin>
+        <spacebar>SPAZIO PER GIRARE</spacebar>
+    </optionwin>
+
+    <button>
+        <bet>PUNTATA</bet>
+        <continue>CONTINUA</continue>
+        <coins>MONETE</coins>
+        <value>VALORE</value>
+        <autospin>AUTO</autospin>
+        <refresh>AGGIORNA</refresh>
+    </button>
+
+    <intro>
+        <intro1>VINCI PIÙ JACKPOT CON UN SOLO GIRO</intro1>
+        <intro2>DURANTE I GIRI GRATIS, I RULLI 4 E 5 DIVENTANO WILD! RENDENDO PIÙ FACILE VINCERE JACKPOT MINI E MINOR!</intro2>
+    </intro>
+
+    <history>
+        <roundid>ID ROUND</roundid>
+        <coinvalue>VALORE DELLE MONETE</coinvalue>
+        <totalbet>PUNTATA TOTALE</totalbet>
+        <totalwin>VINCITA TOTALE</totalwin>
+        <reelview>VISTA RULLI</reelview>
+    </history>
+
+    <information>
+        <infospin1>Buona fortuna</infospin1>
+        <infospin2>Ti auguro buona fortuna!</infospin2>
+        <infospin3>Oggi è il tuo giorno fortunato</infospin3>
+        <infofreespin>Premi il tasto per iniziare</infofreespin>
+        <infomaxbet>Puntata Massima Raggiunta</infomaxbet>
+        <infonocoin>Credito Insufficiente</infonocoin>
+        <infonowin1>Nessuna vincita in questo giro</infonowin1>
+        <infonowin2>Giro completato</infonowin2>
+        <infonowin3>Terminato</infonowin3>
+        <jackpotwin>#WINVALUE vinti da #JACKPOTNAME!</jackpotwin>
+        <infowin1>Bel giro</infowin1>
+        <infowin2>Che giro!</infowin2>
+        <infowin3>Gran Giro!</infowin3>
+        <infowin4>Ben fatto!</infowin4>
+        <infowin5>Jackpot!</infowin5>
+        <infoidle1>Ottimizzato per Chrome e Safari</infoidle1>
+        <infoidle2>Durante i giri gratis, tutti i simboli sui rulli 4 e 5 diventano #WILD</infoidle2>
+        <infoidle3>Buona fortuna!</infoidle3>
+        <infoidle4>Usa il WiFi quando possibile per la migliore esperienza.</infoidle4>
+        <infoidle5>3, 4 o 5 #SCATTER attivano la funzione Giri Gratis</infoidle5>
+        <infoidle6>3, 4, o 5 #SCATTER assegnano rispettivamente 10, 15 o 25 giri gratis.</infoidle6>
+        <infoidle7>5 dello stesso tipo #A, #K, #Q, #JAC, #10, o #9 con #WILD su una linea illuminata con #SPECIALFRAME assegnano jackpot #MINI</infoidle7>
+        <infoidle8>5 dello stesso tipo #GIRL, #HORSE, #GUN, #HANDWATCH o #JEWEL con #WILD su una linea illuminata con #SPECIALFRAME assegnano jackpot #MINOR.</infoidle8>
+        <infoidle9>5 dello stesso tipo #A, #K, #Q, #JAC, #10 o #9 senza #WILD su una linea illuminata con #SPECIALFRAME assegnano jackpot #MAJOR.</infoidle9>
+        <infoidle10>5 dello stesso tipo #GIRL, #HORSE, #GUN, #HANDWATCH o #JEWEL senza #WILD su una linea illuminata con #SPECIALFRAME assegnano jackpot #GRAND.</infoidle10>
+    </information>
+
+    <winplan>
+        <page id="1">
+            <line1>#LISTITEM sostituisce tutti i simboli tranne #SCATTER</line1>
+            <line2>#LISTITEM appare solo sui rulli 3, 4, 5.</line2>
+            <line3>#LISTITEM Qualsiasi 3, 4 o 5 #SCATTER assegnano 10, 15 o 25</line3>
+            <line4>giri gratis rispettivamente.</line4>
+			<line5>#LISTITEM Nessuna vincita con simboli misti.</line5>
+        </page>
+
+        <page id="2">
+            <line1>#LISTITEM Può attivare casualmente 10, 15 o 25 giri gratis</line1>
+            <line2>solo nei giochi acquistati</line2>
+            <line3></line3>
+        </page>
+
+        <page id="3">
+            <line1>#LISTITEM 5 dello stesso tipo #GIRL, #HORSE, #GUN, #HANDWATCH o #JEWEL senza #WILD su una linea illuminata con #SPECIALFRAME assegnano jackpot GRAND.</line1>
+            <line2>#LISTITEM 5 dello stesso tipo #A, #K, #Q, #JAC, #10 o #9 senza #WILD su una linea illuminata con #SPECIALFRAME assegnano jackpot MAJOR.</line2>
+            <line3>#LISTITEM 5 dello stesso tipo #GIRL, #HORSE, #GUN, #HANDWATCH o #JEWEL con #WILD su una linea illuminata con #SPECIALFRAME assegnano jackpot MINOR.</line3>
+            <line4>#LISTITEM 5 dello stesso tipo #A, #K, #Q, #JAC, #10 o #9 con #WILD su una linea illuminata con #SPECIALFRAME assegnano jackpot MINI.</line4>
+            <line5>#LISTITEM GRAND e MAJOR non possono essere vinti durante la funzione giri gratis.</line5>
+        </page>
+
+        <page id="4">
+            <line1>#LISTITEM Qualsiasi 3, 4 o 5 #SCATTER assegnano rispettivamente 10, 15 o 25 giri gratis.</line1>
+            <line2>#LISTITEM Durante i giri gratis, tutti i simboli sui rulli 4 e 5 diventano #WILD.</line2>
+            <line3>#LISTITEM Qualsiasi 3 #SCATTER assegnano ulteriori 5 giri gratis.</line3>
+            <line4>#LISTITEM La puntata in credito e le linee giocate sono le stesse del gioco che ha attivato la funzione.</line4>
+        </page>
+
+        <page id="5">
+            <line1>#LISTITEM Tutte le vincite iniziano dal rullo più a sinistra e sono valide solo da sinistra a destra, ad eccezione dello scatter che paga in qualsiasi posizione e deve apparire su rulli adiacenti.</line1>
+            <line2>#LISTITEM Tutte le vincite sono sulle linee illuminate tranne gli scatter.</line2>
+            <line3>#LISTITEM Solo la vincita più alta per linea viene pagata.</line3>
+            <line4>#LISTITEM Le vincite di linea sono moltiplicate per la puntata per linea.</line4>
+            <line5>#LISTITEM Le vincite scatter sono moltiplicate per il totale dei crediti puntati.</line5>
+            <line6>#LISTITEM Le vincite su linee diverse vengono sommate.</line6>
+            <line7>#LISTITEM Le vincite scatter vengono aggiunte alle vincite di linea.</line7>
+        </page>
+
+        <page id="6">
+            <line1>#LISTITEM I risultati del gioco sono determinati all'inizio di ogni partita;</line1>
+            <line2>se esci dal gioco animato o ti disconnetti, l'esito è già determinato,</line2>
+            <line3>il round di gioco è chiuso e l'importo della vincita è registrato.</line3>
+            <line4>#LISTITEM Aumentare la 'Puntata' aumenta le probabilità che le icone del quinto rullo abbiano #SPECIALFRAME , ma non il pagamento totale del jackpot.</line4>
+            <line5>#LISTITEM Aumentare il moltiplicatore di puntata aumenta il jackpot potenziale, ma non le probabilità che le icone del quinto rullo ottengano #SPECIALFRAME .</line5>
+            <line6>#LISTITEM Malfunzionamenti annullano tutte le vincite e il gioco.</line6>
+        </page>
+    </winplan>
+
+    <banner>
+        <bannerfreegameswon>GIRI GRATIS VINTO</bannerfreegameswon>
+    </banner>
+
+    <bottom>
+        <bottombetmultiplier>MOLTIPLICATORE DI PUNTATA</bottombetmultiplier>
+        <bottombet>PUNTATA</bottombet>
+        <bottomtotalwin>VINCITA TOTALE</bottomtotalwin>
+        <bottomfreespins>GIRI GRATIS</bottomfreespins>
+    </bottom>
+
+    <freespins>
+        <freespins0>GIRI GRATIS</freespins0>
+        <freespins1>Hai ricevuto #XX Giri Gratis ciascuno del valore di #YY</freespins1>
+        <freespins2>La tua offerta di Giri Gratis scade il #ZZ</freespins2>
+        <freespins3>La tua offerta di Giri Gratis è terminata</freespins3>
+        <freespins4>CONGRATULAZIONI</freespins4>
+        <freespins5>Hai vinto</freespins5>
+        <freespins6>Con il gioco dei Giri Gratis</freespins6>
+        <freespins7>Hai completato #XX Giri Gratis e le tue vincite sono state aggiunte al saldo</freespins7>
+        <freespins8>Giri Gratis Rimasti</freespins8>
+    </freespins>
+
+    <notif>
+        <notif_refresh>AGGIORNA</notif_refresh>
+        <notif_retry>RIPROVA</notif_retry>
+        <notif_close>CHIUDI</notif_close>
+        <notif_replay_only>RIVEDI</notif_replay_only>
+        <notif_replay_again>RIVEDI ANCORA</notif_replay_again>
+        <notif_replay_start>Il round è stato giocato il</notif_replay_start>
+        <notif_replay_end>La riproduzione è terminata</notif_replay_end>
+        <notif_session_timeout>SESSIONE SCADUTA</notif_session_timeout>
+        <notif_no_internet>NESSUNA CONNESSIONE INTERNET</notif_no_internet>
+        <notif_error_code>CODICE ERRORE: 404</notif_error_code>
+    </notif>
+</data>

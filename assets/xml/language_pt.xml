@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<general>
+		<session_balance>Saldo da Sessão</session_balance>
+		<totalbet>Aposta Total</totalbet>
+		<balance>Saldo</balance>
+		<bet>Aposta</bet>
+		<coin>VALOR DAS MOEDAS</coin>
+		<win>Ganho</win>
+		<networdmsg>ERRO DE REDE</networdmsg>
+		<freegamesfeature>JOGOS GRÁTIS</freegamesfeature>
+		<gamerule>REGRAS DO JOGO</gamerule>
+		<jackportfeatrue>FUNCIONALIDADE DO JACKPOT</jackportfeatrue>
+		<winline>LINHA DE PAGAMENTO</winline>
+		<networkstate>Conexão de rede fraca!</networkstate>
+	</general>
+
+	<info>
+		<minbet>Aposta Mínima</minbet>
+		<maxbet>Aposta Máxima</maxbet>
+		<rtp>O RTP teórico total é calculado em {rtp}% e verificado em mais de 1 bilhão de rodadas de jogo.</rtp>
+	</info>
+
+	<optionwin>
+		<setting>CONFIGURAÇÕES</setting>
+		<bet>APOSTA</bet>
+		<totalbet>APOSTA TOTAL</totalbet>
+		<coinvalue>MULTIPLICADOR DE APOSTA</coinvalue>
+		<options>OPÇÕES</options>
+		<quickspin>GIRO RÁPIDO</quickspin>
+		<spacebar>BARRA DE ESPAÇO PARA GIRAR</spacebar>
+	</optionwin>
+
+	<button>
+		<bet>APOSTA</bet>
+		<continue>CONTINUAR</continue>
+		<coins>MOEDAS</coins>
+		<value>VALOR</value>
+		<autospin>AUTO</autospin>
+		<refresh>ATUALIZAR</refresh>
+	</button>
+
+	<intro>
+		<intro1>GANHE MÚLTIPLOS JACKPOTS COM UM ÚNICO GIRO</intro1>
+		<intro2>DURANTE OS JOGOS GRÁTIS, OS ROLOS 4 E 5 SE TORNAM WILDS! FACILITANDO GANHAR OS JACKPOTS MINI E MINOR!</intro2>
+	</intro>
+
+	<history>
+		<roundid>ID DA RODADA</roundid>
+		<coinvalue>VALOR DAS MOEDAS</coinvalue>
+		<totalbet>APOSTA TOTAL</totalbet>
+		<totalwin>GANHO TOTAL</totalwin>
+		<reelview>VISUALIZAÇÃO DOS ROLOS</reelview>
+	</history>
+
+	<information>
+		<infospin1>Boa sorte</infospin1>
+		<infospin2>Desejo boa sorte!</infospin2>
+		<infospin3>Hoje é o seu dia de sorte</infospin3>
+		<infofreespin>Pressione o botão girar para começar</infofreespin>
+		<infomaxbet>Aposta Máxima Atingida</infomaxbet>
+		<infonocoin>Crédito Insuficiente</infonocoin>
+		<infonowin1>Nenhum ganho nesta rodada</infonowin1>
+		<infonowin2>Giro concluído</infonowin2>
+		<infonowin3>Concluído</infonowin3>
+		<jackpotwin>#WINVALUE ganho do #JACKPOTNAME!</jackpotwin>
+		<infowin1>Belo giro</infowin1>
+		<infowin2>Que giro!</infowin2>
+		<infowin3>Ótimo giro!</infowin3>
+		<infowin4>Bem feito!</infowin4>
+		<infowin5>Jackpots!</infowin5>
+		<infoidle1>Otimizado para Chrome e Safari</infoidle1>
+		<infoidle2>Durante jogos grátis, todos os símbolos nos rolos 4 e 5 se tornam #WILD</infoidle2>
+		<infoidle3>Boa sorte!</infoidle3>
+		<infoidle4>Use WiFi sempre que possível para melhor experiência.</infoidle4>
+		<infoidle5>3, 4 ou 5 #SCATTER ativam Jogos Grátis</infoidle5>
+		<infoidle6>3, 4 ou 5 #SCATTER concedem 10, 15 ou 25 jogos grátis, respectivamente.</infoidle6>
+		<infoidle7>5 iguais #A, #K, #Q, #JAC, #10 ou #9 com #WILD em linha iluminada com #SPECIALFRAME concedem jackpots #MINI</infoidle7>
+		<infoidle8>5 iguais #GIRL, #HORSE, #GUN, #HANDWATCH ou #JEWEL com #WILD em linha iluminada com #SPECIALFRAME concedem jackpots #MINOR</infoidle8>
+		<infoidle9>5 iguais #A, #K, #Q, #JAC, #10 ou #9 sem #WILD em linha iluminada com #SPECIALFRAME concedem jackpots #MAJOR</infoidle9>
+		<infoidle10>5 iguais #GIRL, #HORSE, #GUN, #HANDWATCH ou #JEWEL sem #WILD em linha iluminada com #SPECIALFRAME concedem jackpots #GRAND</infoidle10>
+	</information>
+
+	<winplan>
+		<page id="1">
+			<line1>#LISTITEM substitui todos os símbolos exceto #SCATTER</line1>
+			<line2>#LISTITEM aparece apenas nos rolos 3, 4 e 5.</line2>
+			<line3>#LISTITEM Qualquer 3, 4 ou 5 #SCATTER concedem 10, 15 ou 25</line3>
+			<line4>jogos grátis, respectivamente.</line4>
+			<line5>#LISTITEM Não há ganhos com símbolos mistos.</line5>
+		</page>
+
+		<page id="2">
+			<line1>#LISTITEM Pode ativar aleatoriamente 10, 15 ou 25 jogos grátis</line1>
+			<line2>somente em jogos comprados</line2>
+			<line3></line3>
+		</page>
+
+		<page id="3">
+			<line1>#LISTITEM 5 iguais #GIRL, #HORSE, #GUN, #HANDWATCH ou #JEWEL sem #WILD em linha iluminada com #SPECIALFRAME concedem JACKPOT GRAND.</line1>
+			<line2>#LISTITEM 5 iguais #A, #K, #Q, #JAC, #10 ou #9 sem #WILD em linha iluminada com #SPECIALFRAME concedem JACKPOT MAJOR.</line2>
+			<line3>#LISTITEM 5 iguais #GIRL, #HORSE, #GUN, #HANDWATCH ou #JEWEL com #WILD em linha iluminada com #SPECIALFRAME concedem JACKPOT MINOR.</line3>
+			<line4>#LISTITEM 5 iguais #A, #K, #Q, #JAC, #10 ou #9 com #WILD em linha iluminada com #SPECIALFRAME concedem JACKPOT MINI.</line4>
+			<line5>#LISTITEM GRAND e MAJOR não podem ser ganhos durante os jogos grátis.</line5>
+		</page>
+
+		<page id="4">
+			<line1>#LISTITEM Qualquer 3, 4 ou 5 #SCATTER concedem 10, 15 ou 25 jogos grátis, respectivamente.</line1>
+			<line2>#LISTITEM Durante os jogos grátis, todos os símbolos nos rolos 4 e 5 se tornam #WILD.</line2>
+			<line3>#LISTITEM Qualquer 3 #SCATTER concedem 5 jogos grátis adicionais.</line3>
+			<line4>#LISTITEM A aposta e as linhas jogadas são as mesmas da rodada que ativou o recurso.</line4>
+		</page>
+
+		<page id="5">
+			<line1>#LISTITEM Todos os ganhos começam no rolo mais à esquerda e contam apenas da esquerda para a direita, exceto o scatter, que paga em qualquer posição e deve aparecer em rolos adjacentes.</line1>
+			<line2>#LISTITEM Todos os ganhos são em linhas iluminadas, exceto scatter.</line2>
+			<line3>#LISTITEM Apenas o maior ganho por linha é considerado.</line3>
+			<line4>#LISTITEM Ganhos de linha são multiplicados pela aposta por linha.</line4>
+			<line5>#LISTITEM Ganhos de scatter são multiplicados pelo total apostado.</line5>
+			<line6>#LISTITEM Ganhos em diferentes linhas são somados.</line6>
+			<line7>#LISTITEM Ganhos de scatter são adicionados aos ganhos de linha.</line7>
+		</page>
+
+		<page id="6">
+			<line1>#LISTITEM Os resultados do jogo são determinados no início de cada rodada;</line1>
+			<line2>se você sair do jogo ou perder a conexão, o resultado já estará definido,</line2>
+			<line3>a rodada será encerrada e o ganho registrado.</line3>
+			<line4>#LISTITEM Aumentar a 'Aposta' aumenta as chances de os ícones do quinto rolo terem #SPECIALFRAME , mas não o pagamento total do jackpot.</line4>
+			<line5>#LISTITEM Aumentar o multiplicador de aposta aumenta o jackpot potencial, mas não as chances de os ícones do quinto rolo obterem #SPECIALFRAME .</line5>
+			<line6>#LISTITEM Falhas anulam todos os pagamentos e jogadas.</line6>
+		</page>
+	</winplan>
+
+	<banner>
+		<bannerfreegameswon>JOGOS GRÁTIS GANHOS</bannerfreegameswon>
+	</banner>
+
+	<bottom>
+		<bottombetmultiplier>MULTIPLICADOR DE APOSTA</bottombetmultiplier>
+		<bottombet>APOSTA</bottombet>
+		<bottomtotalwin>GANHO TOTAL</bottomtotalwin>
+		<bottomfreespins>GIROS GRÁTIS</bottomfreespins>
+	</bottom>
+
+	<freespins>
+		<freespins0>GIROS GRÁTIS</freespins0>
+		<freespins1>Você recebeu #XX Giros Grátis, cada um no valor de #YY</freespins1>
+		<freespins2>Sua oferta de Giros Grátis expira em #ZZ</freespins2>
+		<freespins3>Sua oferta de Giros Grátis terminou</freespins3>
+		<freespins4>PARABÉNS</freespins4>
+		<freespins5>Você ganhou</freespins5>
+		<freespins6>Com Giros Grátis</freespins6>
+		<freespins7>Você completou #XX Giros Grátis e seus ganhos foram adicionados ao seu saldo</freespins7>
+		<freespins8>Giros Grátis Restantes</freespins8>
+	</freespins>
+
+	<notif>
+		<notif_refresh>ATUALIZAR</notif_refresh>
+		<notif_retry>TENTAR NOVAMENTE</notif_retry>
+		<notif_close>FECHAR</notif_close>
+		<notif_replay_only>REPLAY</notif_replay_only>
+		<notif_replay_again>REPETIR</notif_replay_again>
+		<notif_replay_start>A rodada foi jogada em</notif_replay_start>
+		<notif_replay_end>O replay terminou</notif_replay_end>
+		<notif_session_timeout>TEMPO DE SESSÃO ESGOTADO</notif_session_timeout>
+		<notif_no_internet>SEM CONEXÃO COM A INTERNET</notif_no_internet>
+		<notif_error_code>CÓDIGO DE ERRO: 404</notif_error_code>
+	</notif>
+</data>

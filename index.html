@@ -1,0 +1,578 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Slot Game">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
+
+	<title>Wild Wild West 2120 Deluxe</title>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="engine/libs/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="engine/libs/pixi.min.js"></script>
+	<script type="text/javascript">
+        window.PIXI = PIXI;
+        window.PIXI["default"] = PIXI;
+    </script>
+	<script type="text/javascript" src="engine/libs/pixi-sound.js"></script>
+	<script type="text/javascript" src="engine/libs/NoSleep.min.js"></script>
+	<script type="text/javascript" src="engine/libs/rlxfeim.min.js"></script>
+	<script type='text/javascript' src="engine/libs/iDevice.js"></script>
+	<script type="text/javascript" src="src/GlobalClass.js"></script>
+	<script type="text/javascript" src="engine/utils/jsloader.js"></script>
+	<script type="text/javascript">
+		(function loadEarlyScripts(version) {
+			var files = [
+				"src/pdxm/PDXMClient.js",
+				"src/AppConstants.js"
+			];
+
+			for (var i = 0; i < files.length; i++) {
+				document.write('<script type="text/javascript" src="' + files[i] + '?' + version + '"><\/script>');
+			}
+		})(encodeURIComponent(GlobalClass.GAME_VERSION));
+
+		async function initPDXMOnce() {
+			if (AppConstants.PDXM_READY_PROMISE) {
+				return AppConstants.PDXM_READY_PROMISE;
+			}
+
+			AppConstants.PDXM_READY_PROMISE = (async function () {
+				try {
+					if (!AppConstants.PDXM) {
+						AppConstants.PDXM = new PDXMClient();
+					}
+
+					await AppConstants.PDXM.connect();
+					console.warn("PDXM Connected");
+				} catch (e) {
+					console.error("PDXM connect failed", e);
+				}
+			})();
+
+			return AppConstants.PDXM_READY_PROMISE;
+		}
+	</script>
+
+	<script type="text/javascript" src="src/AppConstants.js"></script>
+	<script type="text/javascript" src="src/pdxm/PDXMClient.js"></script>
+	<script type="text/javascript">
+		window.pdxmConnectPromise = Promise.resolve();
+		if (AppConstants.SERVER_PDX) {
+			AppConstants.PDXM = new PDXMClient();
+			window.pdxmConnectPromise = AppConstants.PDXM.connect()
+				.then(function () {
+					console.warn("PDXM Connected");
+				})
+				.catch(function (error) {
+					console.error("PDXM early connect failed", error);
+				});
+		}
+	</script>
+	
+	<!-- <script src="//cdn.jsdelivr.net/npm/eruda"></script> -->
+
+	<script type="text/javascript">
+        function bestOperator () {
+            // Get value from querystring param
+            var getQueryParamValue = function (queryString, parameter) {
+                if (queryString && parameter) {
+                    var queryVars;
+                    if (/\?/.test(queryString)) {
+                        queryVars = queryString.split("?")[1];
+                    }
+                    var pairs = queryVars.split("&");
+                    for (var i = 0; i < pairs.length; i++) {
+                        if (pairs[i].substring(0, pairs[i].indexOf("=")) == parameter) {
+                                return pairs[i].substring((pairs[i].indexOf("=") + 1));
+                        }
+                    }
+                }
+                return "";
+            };
+            // Define which api to use (Version 4)
+            var apiFile = "leandergmapi/4/LeanderApiLoader.php";
+            // Get LeanderGMApi scripts Path
+            var queryString = document.location.search || document.location.hash;
+            var apiPath = decodeURIComponent(getQueryParamValue(queryString, "apiAddress"));
+            // Check if URL is a valid LeanderGMApi Path
+            if (apiPath) {
+                // Remove special chars that are not valid for URL's
+                var regExp = new RegExp("/[\"'<>=?\[\]\{\}]/gi");
+                if (regExp.test(apiPath)) {
+                    // URL not valid. Try relative path
+                    apiPath = "../../";
+                }
+            } else {
+                // URL not valid. Try relative path
+                apiPath = "../../";
+            }
+            
+            // Add LeanderGMApi script
+            loadScript(apiPath + apiFile)
+            .then(function() {
+                // setTimeout(startGame, 3000);
+				setTimeout(initGame, 1000);
+            })
+            .catch(function(error) {
+                AppConstants.BEST_OPERATOR = false;
+                startGame();
+            });
+
+            
+            // var apiScript = document.createElement("script");
+            // apiScript.type = "text/javascript";
+            // apiScript.src = apiPath + apiFile;
+            // document.head.appendChild(apiScript);
+
+            // apiScript.onload = function() {
+            //     setTimeout(startGame, 3000);
+            // };
+
+            // apiScript.onerror = function() {
+            //     AppConstants.BEST_OPERATOR = false;
+            // };
+
+            /*
+            * To stop Tapping on info pages ios10 and pre-loader zooming issues fixed
+            * */
+            //  var lastTouchEnd = 0;
+            //  document.addEventListener('touchmove', function ( e ) {
+            //       e.preventDefault();
+            //       //console.warn("gesture disabled");
+            //  });
+            //  document.addEventListener('gesturestart', function ( e ) {
+            //       e.preventDefault();
+            //       //console.warn("gesture disabled");
+            //  });
+        };
+
+		function initGame() {
+			if ((typeof(leanderGMApi) != "undefined")){
+				if (leanderGMApi && leanderGMApi.initialized){
+					startGame();
+				}else{
+					setTimeout(function(){ initGame(); }, 1000);
+				}
+
+			}
+		}
+
+        function loadScript(src) {
+            return new Promise(function(resolve, reject) {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = src;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+   </script>
+	<!-- <script type="text/javascript" src="src/LeanderApiLoader.js"></script> -->
+
+	<style>
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+
+<body>
+	<div id="logo">
+		<div class="boot-stage">
+			<div class="boot-version"></div>
+			<div class="boot-preloader-logo"></div>
+			<div class="boot-bar"><div class="boot-bar-fill"></div></div>
+		</div>
+	</div>
+
+	<div id="app" class="app"></div>
+
+	<script>
+		var gameLastClikeTime = 0;
+		var element = document.documentElement;
+
+		function fullscreen(){
+			if(element.requestFullscreen) {
+				element.requestFullscreen();
+			} else if(element.mozRequestFullScreen) {
+				element.mozRequestFullScreen();
+			} else if(element.webkitRequestFullscreen) {
+				element.webkitRequestFullscreen();
+			} else if(element.msRequestFullscreen) {
+				element.msRequestFullscreen();
+			}
+		 }
+	</script>
+
+	<script type="text/javascript">
+		function closeWin(){
+			$("#window").addClass("hide");
+		}
+
+		let GameObject;
+		function updateBootProgress(progress) {
+			var safeProgress = Math.max(0, Math.min(100, progress));
+			var fill = document.querySelector('.boot-bar-fill');
+			if (fill) fill.style.width = safeProgress + '%';
+			if (AppConstants.PDXM && typeof AppConstants.PDXM.loadProgress === 'function') {
+				AppConstants.PDXM.loadProgress(safeProgress);
+			}
+		}
+
+		function scaleBootStage() {
+			var stage = document.querySelector('.boot-stage');
+			if (stage) {
+				var mobileDevice = /Android|iPhone|iPad|iPod|IEMobile|BlackBerry|Opera Mini/i.test(navigator.userAgent);
+				var portrait = mobileDevice && window.innerHeight > window.innerWidth;
+				var stageWidth = portrait ? 720 : 1280;
+				var stageHeight = portrait ? 1280 : 720;
+				var scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+				stage.classList.toggle('boot-portrait', portrait);
+				stage.style.width = stageWidth + 'px';
+				stage.style.height = stageHeight + 'px';
+				stage.style.left = ((window.innerWidth - (stageWidth * scale)) / 2) + 'px';
+				stage.style.top = ((window.innerHeight - (stageHeight * scale)) / 2) + 'px';
+				stage.style.transform = 'scale(' + scale + ')';
+			}
+		}
+
+		$(function () {
+			scaleBootStage();
+			window.addEventListener('resize', scaleBootStage);
+			var bootVersion = document.querySelector('.boot-version');
+			if (bootVersion) bootVersion.textContent = 'ver ' + String(GlobalClass.GAME_VERSION);
+			updateBootProgress(0);
+			//eruda.init();
+			if (!PIXI.utils.isWebGLSupported()) {
+				$("body").eq(0).css("background", "#fff");
+				$("#logo").hide();
+				$("#app").html('Your browser does not seem to support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" rel="external nofollow" rel="external nofollow" style="color:#000">WebGL</a>.<br/>',
+					'Find out how to get it <a href="http://get.webgl.org/" rel="external nofollow" rel="external nofollow" style="color:#000">here</a>.');
+				$("#app").css("padding", "20px");
+				$("#testMode").remove();
+				$("#gameLogWin").remove();
+				return;
+			}
+
+			initPDXMOnce();
+
+			var jsLoader = new JsLoader('engine/', [], function () {
+				var list = [];
+				// if (GlobalClass.GAME_DEBUG) {
+					list = [
+						"engine/core/state.js",
+						"engine/core/scale.js",
+						"engine/core/loadTexture.js",
+						"engine/core/button.js",
+						"engine/core/sprite.js",
+						"engine/core/animation.js",
+						"engine/core/jSilder.js",
+						"engine/core/jSwitch.js",
+						"engine/core/silderBtn.js",
+						//"engine/libs/fullscreen.js",
+						"src/http/HttpConnection.js",
+						"src/control/GameCommand.js",
+						"src/control/PrepControllerCommand.js",
+						"src/control/PrepModelCommand.js",
+						"src/control/PrepViewCommand.js",
+						"src/control/StartupCommand.js",
+
+
+						// "src/pdxm/PDXMClient.js",
+						"src/pdxm/PDXMErrorBridge.js",
+
+
+						"src/model/GameProxy.js",
+						"src/model/PlayerProxy.js",
+						"src/model/SystemConfigProxy.js",
+						
+
+						"src/view/mediator/BootMediator.js",
+						"src/view/mediator/GameplayMediator.js",
+						"src/view/mediator/InitMediator.js",
+
+
+
+						"src/view/phaserview/state/Boot.js",
+						"src/view/phaserview/state/Preloader.js",
+						"src/view/phaserview/state/Intro.js",
+						"src/view/phaserview/state/Gameplay.js",
+
+						"src/view/phaserview/class/NetworkWinClass.js",
+                        
+
+						"src/AppFacade.js",
+						// "src/AppConstants.js",
+						"src/SlotsEvents.js",
+						"src/GlobalClass.js"
+
+					];
+				// } else {
+				// 	list = [
+				// 		"engine/core/state.js",
+				// 		"engine/core/scale.js",
+				// 		"engine/core/loadTexture.js",
+				// 		"engine/core/button.js",
+				// 		"engine/core/sprite.js",
+				// 		"engine/core/animation.js",
+				// 		"engine/core/jSilder.js",
+				// 		"engine/core/jSwitch.js",
+				// 		"engine/core/silderBtn.js",
+				// 		//"engine/libs/fullscreen.js",
+				// 		"src/merge/Core.js",
+				// 		"src/merge/Game.js",
+				// 		"src/merge/App.js"
+				// 	];
+				// }
+
+				var loadInner = new JsLoader('', list, function () {
+					if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) ||
+						/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) {
+						AppConstants.MOBILE_GAME = true;
+
+						var noSleep = new NoSleep();
+						document.addEventListener('pointerup', function enableNoSleep() {
+							document.removeEventListener('pointerup', enableNoSleep, false);
+							noSleep.enable();
+						}, false);
+					} else {
+						AppConstants.MOBILE_GAME = false;
+					}
+
+					if (getQueryString('device_platform')) {
+						if (getQueryString('device_platform').toLowerCase() == 'desktop') {
+							AppConstants.MOBILE_GAME = false;
+						}
+						if (getQueryString('device_platform').toLowerCase() == 'mobile') {
+							AppConstants.MOBILE_GAME = true;
+						}
+					}
+
+					AppConstants.newJoin = 'yes';
+					// initialize the facade by retrieving an instance and calling startup
+					// AppFacade.getInstance(AppFacade.NAME).startup();
+
+					/*
+					if (getQueryString('engine_base_url')) {
+						AppConstants.SERVER_BASE_URL = getQueryString('engine_base_url');
+						let lastChar = AppConstants.SERVER_BASE_URL.charAt(AppConstants.SERVER_BASE_URL.length - 1);
+						if (lastChar == "/") {
+							AppConstants.SERVER_BASE_URL = AppConstants.SERVER_BASE_URL.slice(0, -1);
+						}
+					}
+
+					if (getQueryString('session_id')) {
+						GlobalClass.SESSIONID = getQueryString('session_id');
+					}
+
+					if (getQueryString('refreshURL')) {
+						AppConstants.JSP_URL = getQueryString('refreshURL');
+					}
+
+					if (getQueryString('config_id')) {
+						GlobalClass.GAME_CONFIG_ID = getQueryString('config_id');
+					}
+                   
+					if (getQueryString('lobby_url')) {
+					 	AppConstants.GAME_LOBBY_URL = getQueryString('lobby_url');
+					}
+					
+					if (getQueryString('auth_token')) {
+						GlobalClass.GAME_AUTH_TOKEN = getQueryString('auth_token');
+					}
+
+					if (getQueryString('lang')) {
+						var lang = getQueryString('lang');
+						if(lang=='zh-Hans' || lang == 'zh-Hant' || lang == 'zh'){
+							GlobalClass.GAME_LANG = "zh";
+						}
+						else{
+							GlobalClass.GAME_LANG = lang;
+						}
+
+						if(GlobalClass.GAME_LANGS.indexOf(GlobalClass.GAME_LANG)==-1){
+							GlobalClass.GAME_LANG = 'en';
+						}
+					}
+					else{
+						GlobalClass.GAME_LANG = "en";
+					}
+					
+					//GlobalClass.GAME_LANG = "id";
+					*/
+
+					// URL yang diberikan
+					let url = window.location.href;
+
+					// Parsing URL dengan elemen <a> untuk mengambil URL lengkap
+					let parser = document.createElement('a');
+					parser.href = url;
+
+					// Mengambil URL website beserta http atau https
+					// let protocol = parser.protocol;
+					let hostname = parser.hostname;
+
+					if (getQueryString('api_url')) {
+						AppConstants.PDX_BASE_URL = getQueryString('api_url');
+					// } else if (hostname == "127.0.0.1") {
+					//     console.log("here")
+					} else {
+						// let completeURL = protocol + '//' + hostname;
+						let completeURL = hostname;
+						AppConstants.PDX_BASE_URL = completeURL;
+					}
+
+					if (getQueryString("rgs_round_id")) {
+						AppConstants.PDX_ROUND_ID = getQueryString("rgs_round_id");
+						AppConstants.BEST_OPERATOR = false;
+					}
+
+					if (getQueryString("siteId")) {
+						let casinos = ['bestbetcasino','foxplaycasino','luckynorth','fantasysprings','lakeofthetorches','mysticslots','ruby7','aplaycasino','choctawslots','uplaycasino','parairebandslots','luckyeagleplay'];
+
+						if (!casinos.includes(getQueryString("siteId"))) {
+							AppConstants.BEST_OPERATOR = false;
+						}
+					} else {
+						AppConstants.BEST_OPERATOR = false;
+					}
+
+					// if (getQueryString("operator_id")) {
+					// 	AppConstants.PDX_OPERATOR_ID = getQueryString("operator_id");
+					// }
+					
+					// if (getQueryString("gamemode")) {
+					// 	if (getQueryString("gamemode") == "FUN" || getQueryString("gamemode") == "fun") {
+					// 		AppConstants.PDX_OPERATOR_ID = "DEMO";
+					// 	}
+					// }
+
+					if (getQueryString("currency")) {
+						AppConstants.PDX_CURRENCY_IDR = getQueryString("currency");
+					}
+
+					AppConstants.PDX_URL_PARAMETER = parseURLParameters();
+
+					if (AppConstants.BEST_OPERATOR) {
+						bestOperator();
+					} else {
+						startGame();
+					}
+
+				}, function (progress) {
+					updateBootProgress(10 + (progress * 0.1));
+				});
+				loadInner.startLoad();
+
+
+			}, function (progress) {
+				updateBootProgress(progress * 0.1);
+			});
+
+			jsLoader.startLoad();
+		});
+
+		function startGame() {
+			AppFacadeInstance = AppFacade.getInstance(AppConstants.CORE_NAME);
+			AppFacadeInstance.startup();
+		}
+
+		function parseURLParameters() {
+            // Get the URL query string
+            const queryString = window.location.search;
+            
+            // Check if there are no parameters
+            if (!queryString) {
+                return {};
+            }
+        
+            // Remove the leading '?' character
+            const cleanedQueryString = queryString.slice(1);
+        
+            // Split the query string into an array of key-value pairs
+            const keyValuePairs = cleanedQueryString.split('&');
+            
+            // Initialize an empty object to store the parameters
+            const parameters = {};
+        
+            // Iterate through the key-value pairs
+            for (const pair of keyValuePairs) {
+            const [key, value] = pair.split('=');
+            
+            // Decode the URI component and assign it to the object
+            parameters[key] = decodeURIComponent(value);
+            }
+        
+            return parameters;
+        }
+
+		function myBrowser(){
+			var userAgent = navigator.userAgent.toLowerCase(); //取得浏览器的userAgent字符串
+			var isOpera = userAgent.indexOf("opr") > -1;
+			if (isOpera) {
+				return "opera"
+			}; //判断是否Opera浏览器
+			if (userAgent.indexOf("firefox") > -1) {
+				return "ff";
+			} //判断是否Firefox浏览器
+			if (userAgent.indexOf("chrome") > -1){
+				return "chrome";
+			}
+			if (userAgent.indexOf("safari") > -1) {
+				return "safari";
+			} //判断是否Safari浏览器
+			if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("msie") > -1 && !isOpera) {
+				return "ie";
+			}; //判断是否IE浏览器
+		}
+
+		function getQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) return unescape(r[2]);
+			return null;
+		}
+
+		function activeGame() {
+			if (typeof (gameplayState) != "undefined") {
+				gameplayState.myMouseDown();
+			}
+		}
+
+		function switchLang (lang) {
+			var url = window.location+"";
+			var oldLang = getQueryString('lang');
+			if(!oldLang){
+				if(oldLang==''){
+					var reg = new RegExp("(^|&)lang=([^&]*)(&|$)", "i");
+					url = url.replace(reg,"&lang="+lang+"&");
+				}
+				else{
+					url = url+"&lang="+lang;
+				}
+			}
+			else{
+				var reg = new RegExp("(^|&)lang=([^&]*)(&|$)", "i");
+				url = url.replace(reg,"&lang="+lang+"&");
+			}
+
+			window.location.href = url;
+		}
+	</script>
+
+</body>
+
+</html>
