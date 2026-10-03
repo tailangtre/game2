@@ -1,0 +1,61 @@
+name: Sync to PDX-Slots-Games
+
+on:
+  push:
+    branches:
+      - main  #studio branch to sync from
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      #checkout the Studio repo
+      - name: Checkout Studio Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      #configure Git user for commits
+      - name: Configure Git
+        run: |
+            git config user.name "Studio Sync Bot"
+            git config user.email "studio-bot@pdxslots.com"
+
+      #generate a GitHub App installation token
+      - name: Generate GitHub App Token
+        id: token
+        uses: tibdex/github-app-token@v1
+        with:
+            app_id: ${{ vars.GIT_APP_ID }}                       
+            private_key: ${{ secrets.GIT_APP_KEY }}
+            installation_id: ${{ secrets.GIT_APP_INSTALLATION_ID }}
+
+      #add remote using the App tokennn
+      - name: Add PDX-Slots-Games Remote
+        run: |
+            git remote add pdx https://x-access-token:${{ steps.token.outputs.token }}@github.com/PDX-Slots-Games/game2.git
+            git remote -v
+
+      #remove workflow files before push (prevents workflow permission issues)s
+      - name: Remove workflow files before push
+        run: |
+            git rm -rf --cached .github/workflows
+            git commit -m "Temp remove workflows for dev sync" || echo "No changes to commit"
+
+      #push to dev branch in PDX-Slots-Gamess
+      - name: Push to PDX-Slots-Games dev branch
+        run: |
+            echo "Fetching existing dev branch (if any)..."
+            git fetch pdx dev || echo "No dev branch found."
+
+            echo "Merging histories if needed..."
+            # Try to merge, preferring the studio's version in case of conflict
+            git merge --allow-unrelated-histories pdx/dev -m "Sync from Studio" -X theirs || true
+
+            echo "Committing merge if necessary..."
+            git commit -am "Auto-resolve merge conflicts (prefer studio content)" || echo "No merge to commit."
+
+            echo "Pushing to dev..."
+            git push pdx HEAD:refs/heads/dev
+
