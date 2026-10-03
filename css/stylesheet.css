@@ -1,0 +1,143 @@
+body {
+	margin: 0px 0px 0px 0px;
+	/* the extra 1px allows the iOS inner/outer check to work */
+	background: #000;
+	overflow: hidden;
+    /* background: url(../assets/images/Background-Base.jpg) no-repeat center center fixed; */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 720px;
+}
+
+#orientation {
+	margin: 0 auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../assets/orientation.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgb(0, 0, 0);
+	z-index: 999;
+	display: none;
+}
+
+.app {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.app canvas {
+	width: 100%;
+	height: 100%;
+}
+
+.testMode {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999
+}
+
+.close {
+	position: absolute;
+	right: 16px;
+	top: 16px;
+	width: 32px;
+	height: 32px;
+	opacity: 0.8;
+  }
+.close:hover {
+opacity: 1;
+}
+.close:before, .close:after {
+position: absolute;
+left: 15px;
+content: ' ';
+height: 33px;
+width: 5px;
+background-color: #5e462a;
+}
+.close:before {
+transform: rotate(45deg);
+}
+.close:after {
+transform: rotate(-45deg);
+}
+
+#logo {
+	position: fixed;
+	inset: 0;
+	z-index: 10000;
+	overflow: hidden;
+	background: #000;
+}
+
+.boot-stage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1280px;
+	height: 720px;
+	transform-origin: left top;
+}
+
+.boot-version {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	z-index: 1;
+	color: #fff;
+	font: 24px Arial, sans-serif;
+	line-height: normal;
+	text-align: center;
+	-webkit-text-stroke: 2px #000;
+	paint-order: stroke fill;
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+.boot-preloader-logo {
+	position: absolute;
+	left: 475px;
+	top: 180px;
+	width: 330px;
+	height: 360px;
+	background: url('../assets/images/loadingScreen/loadingPdx/loadingscreenpdx.png') -3px -3px no-repeat;
+}
+
+.boot-bar {
+	position: absolute;
+	left: 240px;
+	top: 495px;
+	width: 800px;
+	height: 90px;
+	overflow: hidden;
+}
+
+.boot-bar-fill {
+	width: 0;
+	height: 90px;
+	background: url('../assets/images/loadingScreen/loadingPdx/loadingscreenpdx.png') -3px -367px no-repeat;
+}
+
+.boot-stage.boot-portrait .boot-preloader-logo {
+	left: 195px;
+	top: 460px;
+}
+
+.boot-stage.boot-portrait .boot-bar {
+	left: 75px;
+	top: 775px;
+	width: 662.4px;
+	transform: scaleX(0.828);
+	transform-origin: left center;
+}

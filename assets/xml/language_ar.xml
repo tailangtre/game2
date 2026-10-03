@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<general>
+		<session_balance>رصيد الجلسة</session_balance>
+		<totalbet>إجمالي الرهان</totalbet>
+		<balance>الرصيد</balance>
+		<bet>الرهان</bet>
+		<coin>قيمة العملات</coin>
+		<win>فوز</win>
+		<networdmsg>خطأ في الشبكة</networdmsg>
+		<freegamesfeature>ميزة اللفات المجانية</freegamesfeature>
+		<gamerule>قواعد اللعبة</gamerule>
+		<jackportfeatrue>ميزة الجائزة الكبرى</jackportfeatrue>
+		<winline>خط الفوز</winline>
+		<networkstate>اتصال شبكة ضعيف!</networkstate>
+	</general>
+
+	<info>
+		<minbet>أدنى رهان</minbet>
+		<maxbet>أقصى رهان</maxbet>
+		<rtp>يتم احتساب إجمالي العائد النظري للاعب (RTP) عند {rtp}%، وتم التحقق منه عبر أكثر من مليار جولة لعب.</rtp>
+	</info>
+
+	<optionwin>
+		<setting>الإعدادات</setting>
+		<bet>الرهان</bet>
+		<totalbet>إجمالي الرهان</totalbet>
+		<coinvalue>مضاعف الرهان</coinvalue>
+		<options>الخيارات</options>
+		<quickspin>دوران سريع</quickspin>
+		<spacebar>اضغط المسطرة للدوران</spacebar>
+	</optionwin>
+
+	<button>
+		<bet>الرهان</bet>
+		<continue>متابعة</continue>
+		<coins>عملات</coins>
+		<value>القيمة</value>
+		<autospin>تلقائي</autospin>
+		<refresh>تحديث</refresh>
+	</button>
+
+	<intro>
+		<intro1>اربح عدة جوائز كبرى بدورة واحدة</intro1>
+		<intro2>أثناء اللفات المجانية، تصبح البكرتان 4 و5 رموز WILD! مما يجعل من السهل الفوز بجوائز MINI وMINOR!</intro2>
+	</intro>
+
+	<history>
+		<roundid>معرّف الجولة</roundid>
+		<coinvalue>قيمة العملات</coinvalue>
+		<totalbet>إجمالي الرهان</totalbet>
+		<totalwin>إجمالي الفوز</totalwin>
+		<reelview>عرض البكرات</reelview>
+	</history>
+
+	<information>
+		<infospin1>حظاً موفقاً</infospin1>
+		<infospin2>نتمنى لك الحظ!</infospin2>
+		<infospin3>اليوم هو يوم حظك</infospin3>
+		<infofreespin>اضغط زر الدوران للبدء</infofreespin>
+		<infomaxbet>تم الوصول إلى أقصى رهان</infomaxbet>
+		<infonocoin>رصيد غير كافٍ</infonocoin>
+		<infonowin1>لا يوجد ربح في هذه الجولة</infonowin1>
+		<infonowin2>اكتمل الدوران</infonowin2>
+		<infonowin3>انتهى</infonowin3>
+		<jackpotwin>#WINVALUE فاز من #JACKPOTNAME !</jackpotwin>
+		<infowin1>دوران رائع</infowin1>
+		<infowin2>يا له من دوران!</infowin2>
+		<infowin3>دوران ممتاز!</infowin3>
+		<infowin4>عمل رائع!</infowin4>
+		<infowin5>جوائز كبرى!</infowin5>
+		<infoidle1>محسن لجوجل كروم وسفاري</infoidle1>
+		<infoidle2>أثناء اللفات المجانية، تصبح كل الرموز على البكرتين 4 و5 #WILD</infoidle2>
+		<infoidle3>حظاً موفقاً!</infoidle3>
+		<infoidle4>استخدم WiFi كلما أمكن للحصول على أفضل تجربة.</infoidle4>
+		<infoidle5>3 أو 4 أو 5 من #SCATTER تُفعل ميزة اللفات المجانية</infoidle5>
+		<infoidle6>أي 3 أو 4 أو 5 من #SCATTER تمنح 10 أو 15 أو 25 لفة مجانية على التوالي.</infoidle6>
+		<infoidle7>خمسة من نوع #A أو #K أو #Q أو #JAC أو #10 أو #9 مع #WILD على خط مضاء مع #SPECIALFRAME تمنح جوائز #MINI</infoidle7>
+		<infoidle8>خمسة من نوع #GIRL أو #HORSE أو #GUN أو #HANDWATCH أو #JEWEL مع #WILD على خط مضاء مع #SPECIALFRAME تمنح جوائز #MINOR.</infoidle8>
+		<infoidle9>خمسة من نوع #A أو #K أو #Q أو #JAC أو #10 أو #9 بدون #WILD على خط مضاء مع #SPECIALFRAME تمنح جوائز #MAJOR.</infoidle9>
+		<infoidle10>خمسة من نوع #GIRL أو #HORSE أو #GUN أو #HANDWATCH أو #JEWEL بدون #WILD على خط مضاء مع #SPECIALFRAME تمنح جوائز #GRAND.</infoidle10>
+	</information>
+
+	<winplan>
+		<page id="1">
+			<line1>#LISTITEM يستبدل كل الرموز ما عدا #SCATTER</line1>
+			<line2>#LISTITEM يظهر فقط على البكرات 3 و4 و5.</line2>
+			<line3>#LISTITEM أي 3 أو 4 أو 5 من #SCATTER تمنح 10 أو 15 أو 25</line3>
+			<line4>لفة مجانية على التوالي.</line4>
+			<line5>#LISTITEM لا توجد أرباح من رموز مختلطة.</line5>
+		</page>
+
+		<page id="2">
+			<line1>#LISTITEM قد يُطلق عشوائياً 10 أو 15 أو 25 لفة مجانية</line1>
+			<line2>في الألعاب المشتراة فقط</line2>
+			<line3></line3>
+		</page>
+
+		<page id="3">
+			<line1>#LISTITEM خمسة من نوع #GIRL أو #HORSE أو #GUN أو #HANDWATCH أو #JEWEL بدون #WILD على خط مضاء مع #SPECIALFRAME تمنح جوائز GRAND.</line1>
+			<line2>#LISTITEM خمسة من نوع #A أو #K أو #Q أو #JAC أو #10 أو #9 بدون #WILD على خط مضاء مع #SPECIALFRAME تمنح جوائز MAJOR.</line2>
+			<line3>#LISTITEM خمسة من نوع #GIRL أو #HORSE أو #GUN أو #HANDWATCH أو #JEWEL مع #WILD على خط مضاء مع #SPECIALFRAME تمنح جوائز MINOR.</line3>
+			<line4>#LISTITEM خمسة من نوع #A أو #K أو #Q أو #JAC أو #10 أو #9 مع #WILD على خط مضاء مع #SPECIALFRAME تمنح جوائز MINI.</line4>
+			<line5>#LISTITEM لا يمكن الفوز بـ GRAND أو MAJOR أثناء ميزة اللفات المجانية.</line5>
+		</page>
+
+		<page id="4">
+			<line1>#LISTITEM أي 3 أو 4 أو 5 من #SCATTER تمنح 10 أو 15 أو 25 لفة مجانية.</line1>
+			<line2>#LISTITEM أثناء اللفات المجانية، تصبح كل الرموز على البكرتين 4 و5 #WILD.</line2>
+			<line3>#LISTITEM أي 3 من #SCATTER تمنح 5 لفات مجانية إضافية.</line3>
+			<line4>#LISTITEM رهان الائتمان والخطوط نفسها كما في اللعبة التي فعلت الميزة.</line4>
+		</page>
+
+		<page id="5">
+			<line1>#LISTITEM جميع المكاسب تبدأ من البكرة اليسرى فقط وتكون من اليسار إلى اليمين، باستثناء رمز الـScatter الذي يدفع في أي موضع، ويجب أن يظهر على بكرات متجاورة.</line1>
+			<line2>#LISTITEM كل الانتصارات على الخطوط المضاءة فقط ما عدا scatter.</line2>
+			<line3>#LISTITEM أعلى فوز فقط لكل خط.</line3>
+			<line4>#LISTITEM انتصارات الخطوط تُضاعف حسب رهان الائتمان لكل خط.</line4>
+			<line5>#LISTITEM انتصارات scatter تُضاعف حسب إجمالي الائتمان المرهون.</line5>
+			<line6>#LISTITEM تُضاف الانتصارات على الخطوط المختلفة.</line6>
+			<line7>#LISTITEM تُضاف انتصارات scatter إلى انتصارات الخطوط.</line7>
+		</page>
+
+		<page id="6">
+			<line1>#LISTITEM يتم تحديد نتائج اللعبة في بداية كل جولة;</line1>
+			<line2>إذا خرجت من اللعب المتحرك أو انقطع الاتصال، فإن النتيجة تكون محددة مسبقاً،</line2>
+			<line3>وتُغلق الجولة ويُسجل مبلغ الفوز.</line3>
+			<line4>#LISTITEM زيادة 'الرهان' تزيد من فرص حصول الرموز على البكرة الخامسة على #SPECIALFRAME ، لكنها لا تزيد إجمالي دفع الجاكبوت.</line4>
+			<line5>#LISTITEM زيادة مضاعف الرهان تزيد الجاكبوت المحتمل، لكنها لا تزيد فرص حصول الرموز على البكرة الخامسة على #SPECIALFRAME .</line5>
+			<line6>#LISTITEM يؤدي حدوث خلل إلى إلغاء كل الأرباح واللعب.</line6>
+		</page>
+	</winplan>
+
+	<banner>
+		<bannerfreegameswon>اللفات المجانية المحققة</bannerfreegameswon>
+	</banner>
+
+	<bottom>
+		<bottombetmultiplier>مضاعف الرهان</bottombetmultiplier>
+		<bottombet>الرهان</bottombet>
+		<bottomtotalwin>إجمالي الفوز</bottomtotalwin>
+		<bottomfreespins>لفة مجانية</bottomfreespins>
+	</bottom>
+
+	<freespins>
+		<freespins0>لفات مجانية</freespins0>
+		<freespins1>لقد حصلت على #XX لفة مجانية، كل واحدة بقيمة #YY</freespins1>
+		<freespins2>عرض اللفات المجانية الخاص بك ينتهي في #ZZ</freespins2>
+		<freespins3>تم إنهاء عرض اللفات المجانية الخاص بك</freespins3>
+		<freespins4>تهانينا</freespins4>
+		<freespins5>لقد ربحت</freespins5>
+		<freespins6>مع لعب اللفات المجانية</freespins6>
+		<freespins7>لقد أكملت #XX لفة مجانية وتم إضافة أرباحك إلى رصيدك</freespins7>
+		<freespins8>لفات مجانية متبقية</freespins8>
+	</freespins>
+
+	<notif>
+		<notif_refresh>تحديث</notif_refresh>
+		<notif_retry>إعادة المحاولة</notif_retry>
+		<notif_close>إغلاق</notif_close>
+		<notif_replay_only>إعادة التشغيل</notif_replay_only>
+		<notif_replay_again>إعادة التشغيل مجدداً</notif_replay_again>
+		<notif_replay_start>تم لعب الجولة في</notif_replay_start>
+		<notif_replay_end>انتهت إعادة التشغيل</notif_replay_end>
+		<notif_session_timeout>انتهت الجلسة</notif_session_timeout>
+		<notif_no_internet>لا يوجد اتصال بالإنترنت</notif_no_internet>
+		<notif_error_code>رمز الخطأ: 404</notif_error_code>
+	</notif>
+</data>

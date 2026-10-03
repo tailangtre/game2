@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<!--French-->
+	<general>
+		<session_balance>Solde de session</session_balance>
+		<totalbet>Mise totale</totalbet>
+		<balance>Solde</balance>
+		<bet>Paris</bet>
+		<coin>VALEUR DES PIÈCES</coin>
+		<win>Gagner</win>
+		<networdmsg>ERREUR DE RÉSEAU</networdmsg>
+		<freegamesfeature>FONCTION DE JEUX GRATUITS</freegamesfeature>
+		<gamerule>RÈGLES DU JEU</gamerule>
+		<jackportfeatrue>FONCTION DE JACKPOT</jackportfeatrue>
+		<winline>LIGNE DE GAGNE</winline>
+	</general>
+	<info>
+		<minbet>Mise minimale</minbet>
+		<maxbet>Mise maximale</maxbet>
+		<rtp>Le RTP théorique total est calculé à {rtp} % et vérifié sur plus d’un milliard de parties.</rtp>
+	</info>
+	<optionwin>
+		<setting>PARAMÈTRES</setting>
+		<bet>MISE</bet>
+		<coinvalue>MULTIPLICATEUR&#xA;DE MISE</coinvalue>
+		<options>OPTIONS</options>
+		<quickspin>TOUR RAPIDE</quickspin>
+		<spacebar>BARRE D'ESPACE POUR TOURNER</spacebar>
+	</optionwin>
+	<button>
+		<bet>PARIS</bet>
+		<continue>CONTINUER</continue>
+		<coins>PIÈCES</coins>
+		<value>Valeur</value>
+		<autospin>AUTO</autospin>
+		<refresh>RAFRAÎCHIR</refresh>
+	</button>
+
+	<intro>
+		<intro1>GAGNEZ PLUSIEURS JACKPOTS EN UN SEUL TOUR</intro1>
+		<intro2>PENDANT LES JEUX GRATUITS, LES ROULEAUX 4 ET 5 DEVIELENT DES WILDS, FACILITANT AINSI LA GAGNE DE MINI ET MINOR JACKPOTS !</intro2>
+	</intro>
+
+	<history>
+		<roundid>ID DE TOUR</roundid>
+		<coinvalue>VALEUR DES PIÈCES</coinvalue>
+		<totalbet>MISE TOTALE</totalbet>
+		<totalwin>GAIN TOTAL</totalwin>
+		<reelview>VUE DES ROULEAUX</reelview>
+	</history>
+
+	<information>
+		<infospin1>Bonne chance</infospin1>
+		<infospin2>Je te souhaite de la chance !</infospin2>
+		<infospin3>Aujourd'hui est ton jour de chance</infospin3>
+		<infofreespin>Appuyez sur le bouton de rotation pour commencer</infofreespin>
+		<infomaxbet>Mise maximale atteinte</infomaxbet>
+		<infonocoin>Crédit insuffisant</infonocoin>
+		<infonowin1>Aucun gain lors de ce tour</infonowin1>
+		<infonowin2>Tour terminé</infonowin2>
+		<infonowin3>Terminé</infonowin3>
+		<jackpotwin>#WINVALUE remportée du JACKPOT #JACKPOTNAME !</jackpotwin>
+		<infowin1>Beau tour</infowin1>
+		<infowin2>Quel tour !</infowin2>
+		<infowin3>Super tour !</infowin3>
+		<infowin4>Bien joué !</infowin4>
+		<infowin5>Jackpots !</infowin5>
+		<infoidle1>Optimisé pour Chrome et Safari</infoidle1>
+		<infoidle2>Pendant les jeux gratuits, tous les symboles des rouleaux 4 et 5 deviennent des #WILD</infoidle2>
+		<infoidle3>Bonne chance !</infoidle3>
+		<infoidle4>Utilisez le WiFi chaque fois que possible pour avoir la meilleure expérience.</infoidle4>
+		<infoidle5>3, 4 ou 5 #SCATTER déclenchent la fonction de jeux gratuits</infoidle5>
+		<infoidle6>Toute combinaison de 3, 4 ou 5 #SCATTER attribue respectivement 10, 15 ou 25 jeux gratuits.</infoidle6>
+		<infoidle7>5 de chaque sorte #A, #K, #Q, #JAC, #10 ou #9 avec #WILD sur une ligne éclairée avec #SPECIALFRAME attribuent des jackpots #MINI</infoidle7>
+		<infoidle8>5 de chaque sorte #GIRL, #HORSE, #GUN, #HANDWATCH, ou #JEWEL avec #WILD sur une ligne éclairée avec #SPECIALFRAME attribuent des jackpots #MINOR . </infoidle8>
+		<infoidle9>5 de chaque sorte #A, #K, #Q, #JAC, #10 ou #9 sans #WILD sur une ligne éclairée avec #SPECIALFRAME attribuent des jackpots #MAJOR . </infoidle9>
+		<infoidle10>5 de chaque sorte #GIRL, #HORSE, #GUN, #HANDWATCH, ou #JEWEL sans #WILD sur une ligne éclairée avec #SPECIALFRAME attribuent des jackpots #GRAND . </infoidle10>
+	</information>
+
+	<winplan>
+		<page id="1">
+			<line1>#LISTITEM substitut de tous les symboles sauf #SCATTER</line1>
+			<line2>#LISTITEM n'apparaît que sur les rouleaux 3, 4, 5.</line2>
+			<line3>#LISTITEM Toute combinaison de 3, 4 ou 5 #SCATTER</line3>
+			<line4>attribue 10, 15 ou 25 jeux gratuits respectivement.</line4>
+			<line5>#LISTITEM Aucun gain avec des symboles mélangés.</line5>
+		</page>
+		<page id="2">
+			<line1>#LISTITEM Peut déclencher aléatoirement</line1>
+			<line2>10, 15 ou 25 jeux gratuits</line2>
+			<line3>dans les jeux achetés uniquement</line3>
+		</page>
+		<page id="3">
+			<line1>#LISTITEM 5 de chaque sorte #GIRL, #HORSE, #GUN, #HANDWATCH ou #JEWEL sans #WILD sur une ligne éclairée avec #SPECIALFRAME attribuent des jackpots GRAND.</line1>
+			<line2>#LISTITEM 5 de chaque sorte #A, #K, #Q, #JAC, #10 ou #9 sans #WILD sur une ligne éclairée avec #SPECIALFRAME attribuent des jackpots #AJOR.</line2>
+			<line3>#LISTITEM 5 de chaque sorte #GIRL, #HORSE, #GUN, #HANDWATCH ou #JEWEL avec #WILD sur une ligne éclairée avec #SPECIALFRAME attribuent des jackpots MINOR.</line3>
+			<line4>#LISTITEM 5 de chaque sorte #A, #K, #Q, #JAC, #10 ou #9 avec #WILD sur une ligne éclairée avec #SPECIALFRAME attribuent des jackpots MINI.</line4>
+			<line5>#LISTITEM GRAND et MAJOR ne peuvent pas être gagnés pendant la fonction de jeux gratuits.</line5>
+		</page>
+		<page id="4">
+			<line1>#LISTITEM Toute combinaison de 3, 4 ou 5   #SCATTER attribue 10, 15 ou 25 jeux gratuits respectivement.</line1>
+			<line2>#LISTITEM Pendant les jeux gratuits, tous les symboles des rouleaux 4 et 5 deviennent des   #WILD.</line2>
+			<line3>#LISTITEM Toute combinaison de 3   #SCATTER attribue 5 jeux gratuits supplémentaires.</line3>
+			<line4>#LISTITEM La mise et les lignes jouées sont les mêmes que pour le jeu qui a déclenché la fonction.</line4>
+		</page>
+		<page id="5">
+			<line1>#LISTITEM Tous les gains commencent sur le rouleau le plus à gauche et se comptent uniquement de gauche à droite, à l’exception du scatter qui paie dans n’importe quelle position et doit apparaître sur des rouleaux adjacents.</line1>
+			<line2>#LISTITEM Toutes les victoires sont sur les lignes éclairées sauf pour la dispersion.</line2>
+			<line3>#LISTITEM La plus grande victoire uniquement sur chaque ligne.</line3>
+			<line4>#LISTITEM Les gains de ligne sont multipliés par la mise par ligne.</line4>
+			<line5>#LISTITEM Les gains de dispersion sont multipliés par le total des crédits misés.</line5>
+			<line6>#LISTITEM Les gains sur différentes lignes sont ajoutés.</line6>
+			<line7>#LISTITEM Les gains de dispersion sont ajoutés aux gains de ligne.</line7>
+		</page>
+		<page id="6">
+			<line1>#LISTITEM Les résultats du jeu sont déterminés au début de chaque partie;</line1>
+			<line2>    si vous quittez pendant le déroulement animé du jeu, le résultat est prédéterminé,</line2>
+			<line3>    la partie est terminée et le montant du gain est enregistré.</line3>
+			<line4>#LISTITEM Augmenter la 'Mise' augmente les chances que les icônes du cinquième rouleau aient #SPECIALFRAME , mais pas le paiement total du jackpot.</line4>
+			<line5>#LISTITEM Augmenter le multiplicateur de mise augmente le jackpot potentiel, mais pas les chances que les icônes du cinquième rouleau obtiennent #SPECIALFRAME .</line5>
+			<line6>#LISTITEM Tout dysfonctionnement annule tous les paiements et le jeu.</line6>
+		</page>
+	</winplan>
+
+
+	<banner>
+		<bannerfreegameswon>JEUX GRATUITS GAGNÉS</bannerfreegameswon>
+	</banner>
+	<bottom>
+		<bottombetmultiplier>MULTIPLICATEUR DE MISE</bottombetmultiplier>
+		<bottombet>MISE</bottombet>
+		<bottomtotalwin>GAIN TOTAL</bottomtotalwin>
+		<bottomfreespins>TOURS GRATUITS</bottomfreespins>
+	</bottom>
+	<freespins>
+		<freespins0>TOURS GRATUITS</freespins0>
+		<freespins1>Vous avez reçu #XX tours gratuits, chacun d'une valeur de #YY</freespins1>
+		<freespins2>Votre offre de tours gratuits expire le #ZZ</freespins2>
+		<freespins3>Votre offre de tours gratuits est terminée</freespins3>
+		<freespins4>FÉLICITATIONS</freespins4>
+		<freespins5>Vous avez gagné</freespins5>
+		<freespins6>Avec les tours gratuits</freespins6>
+		<freespins7>Vous avez terminé #XX tours gratuits et vos gains ont été ajoutés à votre solde</freespins7>
+		<freespins8>Tours Gratuits Restants</freespins8>
+	</freespins>
+
+	<notif>
+        <notif_refresh>RAFRAÎCHIR</notif_refresh>
+        <notif_retry>RÉESSAYER</notif_retry>
+        <notif_close>FERMER</notif_close>
+        <notif_replay_only>REJOUER</notif_replay_only>
+        <notif_replay_again>REJOUER À NOUVEAU</notif_replay_again>
+        <notif_replay_start>La partie a été jouée le</notif_replay_start>
+        <notif_replay_end>La rediffusion est terminée</notif_replay_end>
+        <notif_session_timeout>SESSION EXPIRÉE</notif_session_timeout>
+        <notif_no_internet>PAS DE CONNEXION INTERNET</notif_no_internet>
+        <notif_error_code>CODE D'ERREUR : 404</notif_error_code>
+	</notif>
+</data>

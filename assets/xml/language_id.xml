@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<!--Indonesian -->
+	<general>
+		<session_balance>Saldo Sesi</session_balance>
+		<totalbet>Total Taruhan</totalbet>
+		<balance>Saldo</balance>
+		<bet>Taruhan</bet>
+		<coin>NILAI KOIN</coin>
+		<win>Menang</win>
+		<networdmsg>KESALAHAN JARINGAN</networdmsg>
+		<freegamesfeature>FITUR FREE GAMES</freegamesfeature>
+		<gamerule>ATURAN PERMAINAN</gamerule>
+		<jackportfeatrue>FITUR JACKPOT</jackportfeatrue>
+		<winline>GARIS MENANG</winline>
+		<networkstate>Koneksi jaringan buruk!</networkstate>
+	</general>
+
+	<info>
+		<minbet>Taruhan Minimum</minbet>
+		<maxbet>Taruhan Maksimum</maxbet>
+		<rtp>Total RTP teoretis dihitung sebesar {rtp}% dan telah diverifikasi melalui lebih dari 1 miliar putaran permainan.</rtp>
+	</info>
+
+	<optionwin>
+		<setting>PENGATURAN</setting>
+		<bet>TARUHAN</bet>
+		<totalbet>TOTAL TARUHAN</totalbet>
+		<coinvalue>MULTIPLIER TARUHAN</coinvalue>
+		<options>OPSI</options>
+		<quickspin>PUTAR CEPAT</quickspin>
+		<spacebar>SPASI UNTUK MEMUTAR</spacebar>
+	</optionwin>
+
+	<button>
+		<bet>TARUHAN</bet>
+		<continue>LANJUT</continue>
+		<coins>KOIN</coins>
+		<value>NILAI</value>
+		<autospin>AUTO</autospin>
+		<refresh>MUAT ULANG</refresh>
+	</button>
+
+	<intro>
+		<intro1>MENANGKAN BANYAK JACKPOT DENGAN SATU PUTARAN</intro1>
+		<intro2>SELAMA FREE GAMES, REEL 4 DAN 5 MENJADI WILD! MEMPERMUDAH UNTUK MENANGKAN JACKPOT MINI DAN MINOR!</intro2>
+	</intro>
+
+	<history>
+		<roundid>ID RONDE</roundid>
+		<coinvalue>NILAI KOIN</coinvalue>
+		<totalbet>TOTAL TARUHAN</totalbet>
+		<totalwin>TOTAL MENANG</totalwin>
+		<reelview>TAMPILAN REEL</reelview>
+	</history>
+
+	<information>
+		<infospin1>Semoga Beruntung</infospin1>
+		<infospin2>Semoga Anda Beruntung!</infospin2>
+		<infospin3>Hari ini hari keberuntungan Anda</infospin3>
+		<infofreespin>Tekan tombol spin untuk memulai</infofreespin>
+		<infomaxbet>Taruhan Maksimum Tercapai</infomaxbet>
+		<infonocoin>Kredit Tidak Cukup</infonocoin>
+		<infonowin1>Tidak ada kemenangan pada putaran ini</infonowin1>
+		<infonowin2>Putaran selesai</infonowin2>
+		<infonowin3>Selesai</infonowin3>
+		<jackpotwin>#WINVALUE dimenangkan dari #JACKPOTNAME !</jackpotwin>
+		<infowin1>Putaran yang bagus</infowin1>
+		<infowin2>Putaran yang luar biasa!</infowin2>
+		<infowin3>Putaran Hebat!</infowin3>
+		<infowin4>Kerja yang bagus!</infowin4>
+		<infowin5>Jackpot!</infowin5>
+		<infoidle1>Dioptimalkan untuk Chrome dan Safari</infoidle1>
+		<infoidle2>Selama free games, semua simbol pada reel 4 dan 5 menjadi #WILD</infoidle2>
+		<infoidle3>Semoga Beruntung!</infoidle3>
+		<infoidle4>Gunakan WiFi bila memungkinkan untuk pengalaman terbaik.</infoidle4>
+		<infoidle5>3, 4 atau 5 #SCATTER memicu fitur Free Games</infoidle5>
+		<infoidle6>3, 4, atau 5 #SCATTER memberikan 10, 15, atau 25 free games.</infoidle6>
+		<infoidle7>5 of a kind #A, #K, #Q, #JAC, #10 atau #9 dengan #WILD pada garis aktif dengan #SPECIALFRAME memberikan jackpot MINI</infoidle7>
+		<infoidle8>5 of a kind #GIRL, #HORSE, #GUN, #HANDWATCH, atau #JEWEL dengan #WILD pada garis aktif dengan #SPECIALFRAME memberikan jackpot MINOR.</infoidle8>
+		<infoidle9>5 of a kind #A, #K, #Q, #JAC, #10, atau #9 tanpa #WILD pada garis aktif dengan #SPECIALFRAME memberikan jackpot MAJOR.</infoidle9>
+		<infoidle10>5 of a kind #GIRL, #HORSE, #GUN, #HANDWATCH, atau #JEWEL tanpa #WILD pada garis aktif dengan #SPECIALFRAME memberikan jackpot GRAND.</infoidle10>
+	</information>
+
+	<winplan>
+		<page id="1">
+			<line1>#LISTITEM menggantikan semua simbol kecuali #SCATTER</line1>
+			<line2>#LISTITEM hanya muncul pada reel 3, 4, dan 5.</line2>
+			<line3>#LISTITEM 3, 4, atau 5 #SCATTER memberikan 10, 15, atau 25</line3>
+			<line4>free games masing-masing.</line4>
+			<line5>#LISTITEM Tidak ada kemenangan dari simbol campuran.</line5>
+		</page>
+		<page id="2">
+			<line1>#LISTITEM ada kemungkinan memberikan</line1>
+			<line2> 10, 15 atau 25 free games secara random</line2>
+			<line3> </line3>
+		</page>
+		<page id="3">
+			<line1>#LISTITEM 5 of a kind #GIRL, #HORSE, #GUN, #HANDWATCH atau #JEWEL tanpa #WILD pada garis aktif dengan #SPECIALFRAME memberikan jackpot GRAND.</line1>
+			<line2>#LISTITEM 5 of a kind #A, #K, #Q, #JAC, #10 atau #9 tanpa #WILD pada garis aktif dengan #SPECIALFRAME memberikan jackpot MAJOR.</line2>
+			<line3>#LISTITEM 5 of a kind #GIRL, #HORSE, #GUN, #HANDWATCH atau #JEWEL dengan #WILD pada garis aktif dengan #SPECIALFRAME memberikan jackpot MINOR.</line3>
+			<line4>#LISTITEM 5 of a kind #A, #K, #Q, #JAC, #10 atau #9 dengan #WILD pada garis aktif dengan #SPECIALFRAME memberikan jackpot MINI.</line4>
+			<line5>#LISTITEM GRAND dan MAJOR tidak dapat dimenangkan selama fitur free games.</line5>
+		</page>
+		<page id="4">
+			<line1>#LISTITEM 3, 4, atau 5 #SCATTER memberikan 10, 15, atau 25 free games.</line1>
+			<line2>#LISTITEM Selama free games, semua simbol pada reel 4 dan 5 menjadi #WILD.</line2>
+			<line3>#LISTITEM 3 #SCATTER memberikan tambahan 5 free games.</line3>
+			<line4>#LISTITEM Taruhan kredit dan jumlah garis sama seperti permainan yang memicu fitur.</line4>
+		</page>
+		<page id="5">
+			<line1>#LISTITEM Semua kemenangan dimulai dari reel paling kiri dan hanya dihitung dari kiri ke kanan, kecuali scatter yang membayar di posisi mana pun dan harus muncul pada reel yang bersebelahan.</line1>
+			<line2>#LISTITEM Semua kemenangan pada garis aktif kecuali scatter.</line2>
+			<line3>#LISTITEM Hanya kemenangan tertinggi per garis yang dihitung.</line3>
+			<line4>#LISTITEM Kemenangan garis dikalikan dengan taruhan kredit per garis.</line4>
+			<line5>#LISTITEM Kemenangan scatter dikalikan dengan total kredit yang dipertaruhkan.</line5>
+			<line6>#LISTITEM Kemenangan pada garis berbeda dijumlahkan.</line6>
+			<line7>#LISTITEM Kemenangan scatter ditambahkan ke kemenangan garis.</line7>
+		</page>
+		<page id="6">
+			<line1>#LISTITEM Hasil permainan ditentukan di awal setiap permainan;</line1>
+			<line2>    jika Anda keluar atau terputus, hasilnya sudah ditentukan,</line2>
+			<line3>    ronde permainan ditutup, dan jumlah kemenangan telah dicatat.</line3>
+			<line4>#LISTITEM Menaikkan 'Bet' akan meningkatkan peluang ikon pada gulungan ke-5 memiliki #SPECIALFRAME , tetapi tidak menambah total pembayaran jackpot.</line4>
+			<line5>#LISTITEM Menaikkan pengali taruhan meningkatkan potensi jackpot, tetapi tidak menambah peluang ikon pada gulungan ke-5 mendapatkan #SPECIALFRAME .</line5>
+			<line6>#LISTITEM Kesalahan membatalkan semua pembayaran dan permainan.</line6>
+		</page>
+	</winplan>
+
+	<banner>
+		<bannerfreegameswon>FREE GAMES DIMENANGKAN</bannerfreegameswon>
+	</banner>
+
+	<bottom>
+		<bottombetmultiplier>MULTIPLIER TARUHAN</bottombetmultiplier>
+		<bottombet>TARUHAN</bottombet>
+		<bottomtotalwin>TOTAL MENANG</bottomtotalwin>
+		<bottomfreespins>FREE SPIN</bottomfreespins>
+	</bottom>
+
+	<freespins>
+		<freespins0>FREE SPINS</freespins0>
+		<freespins1>Anda telah diberikan #XX Free Spins masing-masing bernilai #YY</freespins1>
+		<freespins2>Penawaran Free Spins Anda berakhir pada #ZZ</freespins2>
+		<freespins3>Penawaran Free Spins Anda telah selesai</freespins3>
+		<freespins4>SELAMAT</freespins4>
+		<freespins5>Anda telah menang</freespins5>
+		<freespins6>Dengan bermain Free Spins</freespins6>
+		<freespins7>Anda telah menyelesaikan #XX Free Spins dan kemenangan Anda telah ditambahkan ke saldo</freespins7>
+		<freespins8>Sisa Free Spins</freespins8>
+	</freespins>
+
+	<notif>
+		<notif_refresh>REFRESH</notif_refresh>
+		<notif_retry>COBA LAGI</notif_retry>
+		<notif_close>TUTUP</notif_close>
+		<notif_replay_only>PUTAR ULANG</notif_replay_only>
+		<notif_replay_again>PUTAR LAGI</notif_replay_again>
+		<notif_replay_start>Putaran dimainkan pada</notif_replay_start>
+		<notif_replay_end>Replay selesai</notif_replay_end>
+		<notif_session_timeout>SESI BERAKHIR</notif_session_timeout>
+		<notif_no_internet>TIDAK ADA KONEKSI INTERNET</notif_no_internet>
+		<notif_error_code>KODE ERROR: 404</notif_error_code>
+	</notif>
+</data>

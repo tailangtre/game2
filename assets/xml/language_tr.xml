@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<!-- Turkish -->
+	<general>
+		<session_balance>Oturum Bakiyesi</session_balance>
+		<totalbet>Toplam Bahis</totalbet>
+		<balance>Bakiye</balance>
+		<bet>Bahis</bet>
+		<coin>JETON DEĞERİ</coin>
+		<win>Kazanç</win>
+		<networdmsg>AĞ HATASI</networdmsg>
+		<freegamesfeature>ÜCRETSİZ OYUN ÖZELLİĞİ</freegamesfeature>
+		<gamerule>OYUN KURALLARI</gamerule>
+		<jackportfeatrue>JACKPOT ÖZELLİĞİ</jackportfeatrue>
+		<winline>KAZANÇ ÇİZGİSİ</winline>
+		<networkstate>Zayıf ağ bağlantısı!</networkstate>
+	</general>
+
+	<info>
+		<minbet>Min Bahis</minbet>
+		<maxbet>Maks Bahis</maxbet>
+		<rtp>Toplam teorik RTP {rtp}% olarak hesaplanmıştır ve 1 milyardan fazla oyun turunda doğrulanmıştır.</rtp>
+	</info>
+
+	<optionwin>
+		<setting>AYARLAR</setting>
+		<bet>BAHİS</bet>
+		<totalbet>TOPLAM BAHİS</totalbet>
+		<coinvalue>BAHİS ÇARPANI</coinvalue>
+		<options>SEÇENEKLER</options>
+		<quickspin>HIZLI DÖNÜŞ</quickspin>
+		<spacebar>BOŞLUK TUŞUYLA ÇEVİR</spacebar>
+	</optionwin>
+
+	<button>
+		<bet>BAHİS</bet>
+		<continue>DEVAM</continue>
+		<coins>JETONLAR</coins>
+		<value>DEĞER</value>
+		<autospin>AUTO</autospin>
+		<refresh>YENİLE</refresh>
+	</button>
+
+	<intro>
+		<intro1>TEK BİR SPİNLE BİRÇOK JACKPOT KAZAN</intro1>
+		<intro2>Ücretsiz oyunlar sırasında 4. ve 5. makaralar WILD olur! MINI ve MINOR jackpotları kazanmak daha kolay!</intro2>
+	</intro>
+
+	<history>
+		<roundid>TUR ID</roundid>
+		<coinvalue>JETON DEĞERİ</coinvalue>
+		<totalbet>TOPLAM BAHİS</totalbet>
+		<totalwin>TOPLAM KAZANÇ</totalwin>
+		<reelview>MAKARA GÖRÜNÜMÜ</reelview>
+	</history>
+
+	<information>
+		<infospin1>Bol Şans</infospin1>
+		<infospin2>Şans Seninle Olsun!</infospin2>
+		<infospin3>Bugün senin şans günün</infospin3>
+		<infofreespin>Başlamak için SPIN’e bas</infofreespin>
+		<infomaxbet>Maksimum Bahis Ulaşıldı</infomaxbet>
+		<infonocoin>Yetersiz Kredi</infonocoin>
+		<infonowin1>Bu turda kazanç yok</infonowin1>
+		<infonowin2>Dönüş tamamlandı</infonowin2>
+		<infonowin3>Tamamlandı</infonowin3>
+		<jackpotwin>#WINVALUE, #JACKPOTNAME kazandı!</jackpotwin>
+		<infowin1>Güzel spin</infowin1>
+		<infowin2>Ne spin ama!</infowin2>
+		<infowin3>Harika Spin!</infowin3>
+		<infowin4>Aferin!</infowin4>
+		<infowin5>Jackpotlar!</infowin5>
+		<infoidle1>Chrome ve Safari için optimize edilmiştir</infoidle1>
+		<infoidle2>Ücretsiz oyunlarda 4. ve 5. makaralardaki tüm semboller #WILD olur</infoidle2>
+		<infoidle3>Bol Şans!</infoidle3>
+		<infoidle4>En iyi deneyim için mümkün olduğunda WiFi kullanın.</infoidle4>
+		<infoidle5>3, 4 veya 5 #SCATTER Ücretsiz Oyun özelliğini tetikler</infoidle5>
+		<infoidle6>Her 3, 4 veya 5 #SCATTER sırasıyla 10, 15 veya 25 ücretsiz oyun verir.</infoidle6>
+		<infoidle7>#A, #K, #Q, #JAC, #10 veya #9 sembollerinden 5 tanesi #WILD ile birlikte #SPECIALFRAME üzerinde yanıyorsa MINI jackpot verir</infoidle7>
+		<infoidle8>#GIRL, #HORSE, #GUN, #HANDWATCH veya #JEWEL sembollerinden 5 tanesi #WILD ile birlikte #SPECIALFRAME üzerinde yanıyorsa MINOR jackpot verir.</infoidle8>
+		<infoidle9>#A, #K, #Q, #JAC, #10 veya #9 sembollerinden 5 tanesi #WILD olmadan #SPECIALFRAME üzerinde yanıyorsa MAJOR jackpot verir.</infoidle9>
+		<infoidle10>#GIRL, #HORSE, #GUN, #HANDWATCH veya #JEWEL sembollerinden 5 tanesi #WILD olmadan #SPECIALFRAME üzerinde yanıyorsa GRAND jackpot verir.</infoidle10>
+	</information>
+
+	<winplan>
+		<page id="1">
+			<line1>#LISTITEM, #SCATTER hariç tüm sembollerin yerine geçer</line1>
+			<line2>#LISTITEM yalnızca 3 , 4 , 5. makaralarda görünür.</line2>
+			<line3>#LISTITEM Her 3 , 4 veya 5 #SCATTER sırasıyla 10 , 15 veya 25 verir</line3>
+			<line4>ücretsiz oyun.</line4>
+			<line5>#LISTITEM Karışık sembollerle kazanç yoktur.</line5>
+		</page>
+
+		<page id="2">
+			<line1>#LISTITEM Satın alınmış oyunlarda rastgele 10 , 15 veya 25 ücretsiz oyun tetikleyebilir</line1>
+			<line2>sadece satın alınan oyunlarda</line2>
+			<line3></line3>
+		</page>
+
+		<page id="3">
+			<line1>#LISTITEM #GIRL, #HORSE, #GUN, #HANDWATCH veya #JEWEL 5 tanesi #WILD olmadan #SPECIALFRAME üzerinde yanıyorsa GRAND jackpot verir.</line1>
+			<line2>#LISTITEM #A, #K, #Q, #JAC, #10 veya #9 5 tanesi #WILD olmadan #SPECIALFRAME üzerinde yanıyorsa MAJOR jackpot verir.</line2>
+			<line3>#LISTITEM #GIRL, #HORSE, #GUN, #HANDWATCH veya #JEWEL 5 tanesi #WILD ile #SPECIALFRAME üzerinde yanıyorsa MINOR jackpot verir.</line3>
+			<line4>#LISTITEM #A, #K, #Q, #JAC, #10 veya #9 5 tanesi #WILD ile #SPECIALFRAME üzerinde yanıyorsa MINI jackpot verir.</line4>
+			<line5>#LISTITEM GRAND ve MAJOR, ücretsiz oyun özelliği sırasında kazanılamaz.</line5>
+		</page>
+
+		<page id="4">
+			<line1>#LISTITEM Her 3 , 4 veya 5 #SCATTER sırasıyla 10 , 15 veya 25 ücretsiz oyun verir.</line1>
+			<line2>#LISTITEM Ücretsiz oyunlarda 4. ve 5. makaralardaki tüm semboller #WILD olur.</line2>
+			<line3>#LISTITEM Her 3 #SCATTER ek 5 ücretsiz oyun verir.</line3>
+			<line4>#LISTITEM Kredi bahsi ve oynanan çizgiler özelliği tetikleyen oyunla aynıdır.</line4>
+		</page>
+
+		<page id="5">
+			<line1>#LISTITEM Tüm kazançlar en soldaki makaradan başlar ve yalnızca soldan sağa doğru geçerlidir; scatter ise istisnadır, her konumda ödeme yapar ve bitişik makaralarda görünmelidir.</line1>
+			<line2>#LISTITEM Scatter hariç tüm kazançlar yalnızca yanmakta olan çizgilerde geçerlidir.</line2>
+			<line3>#LISTITEM Her çizgide yalnızca en yüksek kazanç geçerlidir.</line3>
+			<line4>#LISTITEM Çizgi kazançları, çizgi başına kredi bahsi ile çarpılır.</line4>
+			<line5>#LISTITEM Scatter kazançları toplam bahis kredisi ile çarpılır.</line5>
+			<line6>#LISTITEM Farklı çizgilerdeki kazançlar toplanır.</line6>
+			<line7>#LISTITEM Scatter kazançları çizgi kazançlarına eklenir.</line7>
+		</page>
+
+		<page id="6">
+			<line1>#LISTITEM Oyun sonuçları her oyunun başında belirlenir;</line1>
+			<line2>    animasyonlu oynanışı kapatırsanız veya bağlantı kesilirse sonuç önceden belirlenmiştir,</line2>
+			<line3>    oyun turu kapanır ve kazanç kaydedilir.</line3>
+			<line4>#LISTITEM 'Bahis' miktarını artırmak 5. makaradaki simgelerin #SPECIALFRAME alma şansını artırır, ancak jackpot'un toplam ödemesini artırmaz.</line4>
+			<line5>#LISTITEM Bahis çarpanını artırmak potansiyel jackpot'u artırır, ancak 5. makaradaki simgelerin #SPECIALFRAME alma şansını artırmaz.</line5>
+			<line6>#LISTITEM Arıza tüm ödemeleri ve oyunu geçersiz kılar.</line6>
+		</page>
+	</winplan>
+
+	<banner>
+		<bannerfreegameswon>ÜCRETSİZ OYUN KAZANILDI</bannerfreegameswon>
+	</banner>
+
+	<bottom>
+		<bottombetmultiplier>BAHİS ÇARPANI</bottombetmultiplier>
+		<bottombet>BAHİS</bottombet>
+		<bottomtotalwin>TOPLAM KAZANÇ</bottomtotalwin>
+		<bottomfreespins>ÜCRETSİZ SPİN</bottomfreespins>
+	</bottom>
+
+	<freespins>
+		<freespins0>ÜCRETSİZ SPİNLER</freespins0>
+		<freespins1>#XX Ücretsiz Spin verildi, her biri #YY değerinde</freespins1>
+		<freespins2>Ücretsiz Spin teklifiniz #ZZ tarihinde sona eriyor</freespins2>
+		<freespins3>Ücretsiz Spin teklifiniz sona erdi</freespins3>
+		<freespins4>TEBRİKLER</freespins4>
+		<freespins5>Kazandınız</freespins5>
+		<freespins6>Ücretsiz Spin oyunuyla</freespins6>
+		<freespins7>#XX Ücretsiz Spin tamamladınız ve kazançlarınız bakiyenize eklendi</freespins7>
+		<freespins8>Kalan Ücretsiz Spin</freespins8>
+	</freespins>
+
+	<notif>
+		<notif_refresh>YENİLE</notif_refresh>
+		<notif_retry>TEKRAR DENE</notif_retry>
+		<notif_close>KAPAT</notif_close>
+		<notif_replay_only>TEKRAR OYNAT</notif_replay_only>
+		<notif_replay_again>YENİDEN OYNAT</notif_replay_again>
+		<notif_replay_start>Tur oynandı</notif_replay_start>
+		<notif_replay_end>Tekrar oynatma bitti</notif_replay_end>
+		<notif_session_timeout>OTURUM ZAMANI DOLDU</notif_session_timeout>
+		<notif_no_internet>İNTERNET BAĞLANTISI YOK</notif_no_internet>
+		<notif_error_code>HATA KODU: 404</notif_error_code>
+	</notif>
+</data>
