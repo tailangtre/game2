@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<!--English -->
+	<general>
+		<session_balance>Session Balance</session_balance>
+		<totalbet>Total Bet</totalbet>
+		<balance>Balance</balance>
+		<bet>Bet</bet>
+		<coin>COINS VALUE</coin>
+		<win>Win</win>
+		<networdmsg>NETWORK ERROR</networdmsg>
+		<freegamesfeature>FREE GAMES FEATURE</freegamesfeature>
+		<gamerule>GAME RULES</gamerule>
+		<jackportfeatrue>JACKPOT FEATURE</jackportfeatrue>
+		<winline>WIN LINE</winline>
+		<networkstate>Poor network connection!</networkstate>
+	</general>
+	<info>
+		<minbet>Min Bet</minbet>
+		<maxbet>Max Bet</maxbet>
+		<rtp>Total theoretical RTP is calculated at {rtp}%, and verified over 1 billion game rounds.</rtp>
+	</info>
+	<optionwin>
+		<setting>SETTINGS</setting>
+		<bet>BET</bet>
+		<totalbet>TOTAL BET</totalbet>
+		<coinvalue>BET MULTIPLIER</coinvalue>
+		<options>OPTIONS</options>
+		<quickspin>QUICK SPIN</quickspin>
+		<spacebar>SPACEBAR TO SPIN</spacebar>
+	</optionwin>
+	<button>
+		<bet>BET</bet>
+		<continue>CONTINUE</continue>
+		<coins>COINS</coins>
+		<value>VALUE</value>
+		<autospin>AUTO</autospin>
+		<refresh>REFRESH</refresh>
+	</button>
+
+	<intro>
+		<intro1>WIN MULTIPLE JACKPOTS WITH ONE SPIN</intro1>
+		<intro2>DURING FREE GAMES, REELS 4 AND 5 BECOME WILDS! MAKING IT EASIER TO WIN MINI AND MINOR JACKPOTS!</intro2>
+	</intro>
+
+	<history>
+		<roundid>ROUND ID</roundid>
+		<coinvalue>COINS VALUE</coinvalue>
+		<totalbet>TOTAL BET</totalbet>
+		<totalwin>TOTAL WIN</totalwin>
+		<reelview>REEL VIEW</reelview>
+	</history>
+
+	<information>
+		<infospin1>Good Luck</infospin1>
+		<infospin2>Wish You Luck!</infospin2>
+		<infospin3>Today is your lucky day</infospin3>
+		<infofreespin>Press spin button to start</infofreespin>
+		<infomaxbet>Max Bet Reached</infomaxbet>
+		<infonocoin>Not Enough Credit</infonocoin>
+		<infonowin1>No win this round</infonowin1> 
+		<infonowin2>Spin complete</infonowin2>
+		<infonowin3>Finished</infonowin3>
+		<jackpotwin>#WINVALUE won from #JACKPOTNAME !</jackpotwin>
+		<infowin1>Nice spin</infowin1>
+		<infowin2>What a spin!</infowin2>
+		<infowin3>Great Spin!</infowin3>
+		<infowin4>Well Done!</infowin4>
+		<infowin5>Jackpots!</infowin5>
+		<infoidle1>Optimized for Chrome and Safari</infoidle1>
+		<infoidle2>During free games, all symbols on reels 4 and 5 become #WILD</infoidle2>
+		<infoidle3>Good Luck!</infoidle3>
+		<infoidle4>Use WiFi whenever possible to have the best experience.</infoidle4>
+		<infoidle5>3, 4 or 5 #SCATTER triggers Free-Games feature</infoidle5>
+		<infoidle6>Any 3, 4, or 5  #SCATTER  award 10, 15, or 25 free games respectively.</infoidle6>
+		<infoidle7>5 of a kinds #A, #K, #Q, #JAC, #10, or #9  with  #WILD on a lit line with #SPECIALFRAME award #MINI jackpots</infoidle7>
+		<infoidle8>5 of a kinds #GIRL,#HORSE,#GUN,#HANDWATCH,  or #JEWEL  with #WILD on a lit line with #SPECIALFRAME award #MINOR jackpots. </infoidle8>
+		<infoidle9>5 of a kinds #A, #K, #Q, #JAC, #10, or #9  without  #WILD on a lit line with #SPECIALFRAME award #MAJOR jackpots. </infoidle9>
+		<infoidle10>5 of a kinds #GIRL,#HORSE,#GUN,#HANDWATCH,  or #JEWEL  without  #WILD on a lit line with #SPECIALFRAME award #GRAND jackpots. </infoidle10>
+	</information>
+
+	<winplan>
+		<page id="1">
+			<line1>#LISTITEM substitute for all symbols except  #SCATTER</line1>
+			<line2>#LISTITEM only appears on reels 3 , 4 , 5.</line2>
+			<line3>#LISTITEM Any 3 , 4 or 5  #SCATTER  award 10 , 15 , or 25</line3>
+			<line4>free games respectively.</line4>
+			<line5>#LISTITEM No mixed-symbol wins.</line5>
+		</page>
+		<page id="2">
+			<line1>#LISTITEM May randomly trigger 10 , 15 , or 25 free games</line1>
+			<line2>in bought games only</line2>
+			<line3> </line3>
+		</page>
+		<page id="3">
+			<line1>#LISTITEM 5 of a kinds #GIRL , #HORSE , #GUN ,#HANDWATCH or #JEWEL without #WILD on a lit line with #SPECIALFRAME award GRAND jackpots.</line1>
+			<line2>#LISTITEM 5 of a kinds #A , #K , #Q , #JAC , #10 or #9 without #WILD on a lit line with #SPECIALFRAME award MAJOR jackpots.</line2>
+			<line3>#LISTITEM 5 of a kinds #GIRL , #HORSE , #GUN ,#HANDWATCH or #JEWEL with #WILD on a lit line with #SPECIALFRAME award MINOR jackpots.</line3>
+			<line4>#LISTITEM 5 of a kinds #A , #K , #Q , #JAC , #10 or #9 with #WILD on a lit line with #SPECIALFRAME award MINI jackpots.</line4>
+			<line5>#LISTITEM GRAND and MAJOR can not be won during the free games feature.</line5>
+		</page>
+		<page id="4">
+			<line1>#LISTITEM Any 3 , 4 , or 5   #SCATTER award 10 , 15 , or 25 free games respectively.</line1>
+			<line2>#LISTITEM During free games, all symbols on reels 4 and 5 become   #WILD.</line2>
+			<line3>#LISTITEM Any 3   #SCATTER award additional 5 free games.</line3>
+			<line4>#LISTITEM Credit bet and lines played are the same as the game that triggered the feature.</line4>
+		</page>
+		<page id="5">
+			<line1>#LISTITEM All wins start on the leftmost reel and are left to right only except for scatter which pays any, and must occur on adjacent reels.</line1>
+			<line2>#LISTITEM All wins are on lit lines only except for scatter.</line2>
+			<line3>#LISTITEM Highest win only on each line.</line3>
+			<line4>#LISTITEM Line wins are multiplied by credit bet per line.</line4>
+			<line5>#LISTITEM Scatter wins are multiplied by the total credits bet.</line5>
+			<line6>#LISTITEM Wins on different lines are added.</line6>
+			<line7>#LISTITEM Scatter wins are added to line wins.</line7>
+		</page>
+		<page id="6">
+			<line1>#LISTITEM Game results are determined at the start of each game;</line1>
+			<line2>    if you exit the animated gameplay or disconnect, the outcome is predetermined,</line2>
+			<line3>    the game round is closed, and the win amount has logged.</line3>
+			<line4>#LISTITEM Increasing the 'Bet' will increase the chances of icons on the 5th reel having #SPECIALFRAME , but not the overall payout of the jackpot.</line4>
+			<line5>#LISTITEM Increasing the bet multiplier increases the potential jackpot, but not the chances of icons on the 5th reel getting a #SPECIALFRAME .</line5>
+			<line6>#LISTITEM Malfunction voids all pays and play.</line6>
+		</page>
+	</winplan>
+
+
+	<banner>
+		<bannerfreegameswon>FREE GAMES WON</bannerfreegameswon>
+	</banner>
+	<bottom>
+		<bottombetmultiplier>BET MULTIPLIER</bottombetmultiplier>
+		<bottombet>BET</bottombet>
+		<bottomtotalwin>TOTAL WIN</bottomtotalwin>
+		<bottomfreespins>FREE SPIN</bottomfreespins>
+	</bottom>
+	<freespins>
+		<freespins0>FREE SPINS</freespins0>
+		<freespins1>You have been awarded #XX Free Spins each valued at #YY</freespins1>
+		<freespins2>Your Free Spins offer expires on #ZZ</freespins2>
+		<freespins3>Your Free Spins offer have been finished</freespins3>
+		<freespins4>CONGRATULATIONS</freespins4>
+		<freespins5>You have won</freespins5>
+		<freespins6>With Free Spins play</freespins6>
+		<freespins7>You have completed #XX Free spins and your winning have been added to your balance</freespins7>
+		<freespins8>Free Spins Left</freespins8>
+	</freespins>
+
+	<notif>
+		<notif_refresh>REFRESH</notif_refresh>
+		<notif_retry>RETRY</notif_retry>
+		<notif_close>CLOSE</notif_close>
+		<notif_replay_only>REPLAY</notif_replay_only>
+		<notif_replay_again>REPLAY AGAIN</notif_replay_again>
+		<notif_replay_start>The round was played on</notif_replay_start>
+		<notif_replay_end>Replay is over</notif_replay_end>
+		<notif_session_timeout>SESSION TIMEOUT</notif_session_timeout>
+		<notif_no_internet>NO INTERNET CONNECTION</notif_no_internet>
+		<notif_error_code>ERROR CODE: 404</notif_error_code>
+	</notif>
+</data>
