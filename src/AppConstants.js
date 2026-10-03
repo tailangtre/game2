@@ -1,0 +1,61 @@
+var AppConstants = {
+    CurrScene:null,
+    CORE_NAME:'Www2120Deluxe',
+    SERVER_BASE_URL:'',
+    SERVER_WSS_URL:null,
+    //SERVER_BASE_URL:'http://beatslotsjavatest.bigwavegaming.com/',
+    APP_VERSION:1.0,
+    PLATFORM:"Web",
+    NOW:0,
+    USER:null,
+    SESSIONID:"de70bafad3dc94a6ae97da1fbd0420d3",
+    ISNETWORKOK:false,
+    GAME_LOBBY_URL:'',
+    SHOW_CLOCK:true,
+    SHOW_CONNECTION:false,
+    RESPONSIBLE_GAMBLING:false,
+    ROUND_DURATION:0,
+    AUTOPLAY:true,
+    TURBO:true,
+    CONTINUOUS_KEYBOARD:true,
+    SPACE_BAR_STATUS:1,
+    ACTIVE_RELAXFEIM:false,
+    ACTIVE_OTFETM:false,
+    GAME_DEFINITION_ID:'default',
+    disableLobby:false,
+    disableLangMenu:false,
+    showRtp:true,
+    conf:null,
+    LANDSCAPE:true,
+    MOBILE_GAME:false,
+
+
+    SERVER_PDX: true,
+    PDX_URL_PARAMETER: '',
+    PDX_CURRENCY_IDR: '',
+    PDX_BASE_URL: 'https://dev.pdxslots.us',
+    
+    PDX_GAME_DATA: '',
+    PDX_GAME_ID: 'WILDWILDWESTDELUXE21200N2',
+    PDX_OPERATOR_ID: 'PDX',
+    PDX_SESSION_ID: '123456',
+    PDX_USER_ID: '',//'bigwave',
+    // PDX_VENDOR_ID: '23',
+    PDX_GAME_LUID: '',
+    PDX_GAME_MSN: '',
+    PDX_TOKEN: '',
+    PDX_LAUNCH_TOKEN: '',
+    PDX_ROUND_ID: '',
+
+    PDXM: null,
+    PDXM_READY_PROMISE: null,
+    PDXM_BONUS_ACTIVE: false,
+    PDXM_SPIN : false,
+
+    BEST_OPERATOR: true,
+    LOADING_PDX: true,
+};
+
+var AppFacadeInstance = null;
+
+// http://127.0.0.1:5506/?operator_id=PDX&game_id=wildwildwestdeluxe2120&session_id=12345&user_id=PDXTEST&api_url=dev.pdxslots.us
