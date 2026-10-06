@@ -154,7 +154,7 @@
         '\n#bhp-ui .close::after{display:none!important}' +
         '\n#bhp-ui .close::before{transform:none!important}' +
         // WIN capsule: smaller and under the game messages line (tom 2026-10-04)
-        '\n#bhp-ui .winmid{--ws:.66;bottom:0;transform-origin:50% 100%}';
+        '\n#bhp-ui .winmid{--ws:.5;bottom:0;transform-origin:50% 100%}';
     },
 
     buildPopovers: function () {
