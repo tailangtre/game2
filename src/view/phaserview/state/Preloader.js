@@ -401,7 +401,8 @@ var preloaderState = {
 		this.load.atlasJSONArray('symbols2', 'assets/images/image/symbols2.png','assets/images/image/symbols2.json');
 		this.load.atlasJSONArray('plusmin', 'assets/images/image/plusmin.png','assets/images/image/plusmin.json');
 		// this.load.atlasJSONArray('uiPanel', 'assets/images/image/uiPanel.png','assets/images/image/uiPanel.json');
-		this.load.atlasJSONArray('introScreen', 'assets/images/introScreen/gameIntro.png','assets/images/introScreen/gameIntro.json');
+		this.load.atlasJSONArray('introScreen', 'assets/images/introScreen/gameIntro.png','assets/images/introScreen/gameIntro.json')
+		for (var ii = 1; ii <= 3; ii++) this.load.image('intro-hd-' + ii, 'assets/images/introScreen/intro-' + ii + '@2x.jpg');   // 2x intro shots (tom 2026-10-06);
 		
 		this.load.atlasJSONArray('curency', 'assets/images/image/curency.png','assets/images/image/curency.json');
 		this.load.atlasJSONArray('crackFX1', 'assets/images/image/Crack1FX/crack1.png','assets/images/image/Crack1FX/crack1.json');

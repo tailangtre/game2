@@ -354,8 +354,9 @@ var introState = {
 
         // if (this.scale.isLandscape) {
         if (AppConstants.LANDSCAPE) {
-            this._sprInterface = this.game.add.sprite(0, 0, 'introScreen', imgName, this._grpInterface);
-            this._sprInterface.scale.set(1, 1)
+            // the 2x render drawn at half size - sharp on hi-dpi screens (tom 2026-10-06)
+            this._sprInterface = this.game.add.sprite(0, 0, 'intro-hd-' + Math.min(3, Math.max(1, this._logoIndex)), '', this._grpInterface);
+            this._sprInterface.scale.set(0.5, 0.5)
             if (this._logoIndex <= 2) {
                 var text = GlobalClass.getXMLByKey(this.game, "intro" + this._logoIndex);
                 this._textSpr = this.game.add.text(this.game.world.centerX, this.game.world.centerY + 330, text, {   // below the Continue button (tom 2026-10-03)
@@ -379,6 +380,8 @@ var introState = {
                 });
                 this._textSpr.anchor.set(0.5, 0.5);
                 this._sprInterface.addChild(this._textSpr);
+                this._textSpr.position.set(this._textSpr.x * 2, this._textSpr.y * 2);   // the shot is drawn at 0.5: keep the caption's
+                this._textSpr.scale.set(2, 2);                                          // stage size and place (tom 2026-10-06)
             }
         } else {
             this._sprInterface = this.game.add.sprite(this.game.world.centerY, this.game.world.centerX, 'introScreen', imgName, this._grpInterface);
