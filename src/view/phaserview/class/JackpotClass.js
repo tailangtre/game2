@@ -145,7 +145,7 @@ var jackpotClass = function(game, group) {
     // window centre offset (stage px, relative to the plaque centre at its normal size) and inner width,
     // measured on the plaque art (tom 2026-10-04: numbers centred inside the frame)
     var JP_SMALL = 0.4;   // MAJOR/MINOR/MINI plaque scale (GRAND stays 0.5, the biggest)
-    this.JP_WINDOW = { grand: [0, 18.4, 104], major: [0, 16.4, 107], minor: [0, 19.2, 110], mini: [0, 16.5, 103] };   // measured on the Phantom Tide plaques
+    this.JP_WINDOW = { grand: [0, 9.3, 110], major: [0, 9.2, 116], minor: [0, 9.2, 116], mini: [0, 5.7, 115] };   // measured on the Phantom Tide plaques
     this.writeValueText = function(y, txt, type, group) {
         GlobalClass.deleteChildren(group);
         var t = new PIXI.Text(String(txt).trim(), this.JP_VALUE_STYLE);
@@ -311,13 +311,13 @@ var jackpotClass = function(game, group) {
         if(AppConstants.LANDSCAPE) {
             this._grpGrandText.scale.set(1);
             if(GlobalClass.GAME_MODE == GlobalClass.GAME_MODE_NORMAL){
-                this._sprGrandBoard = game.add.sprite(128, 72, this._langName, 'GrandFrame'+lang+'.png', this._grpPoolPanel);
+                this._sprGrandBoard = game.add.sprite(128, 82, this._langName, 'GrandFrame'+lang+'.png', this._grpPoolPanel);
                 this._sprGrandBoard.anchor.set(0.5, 0.5);
                 if (AppConstants.LANDSCAPE) this._sprGrandBoard.scale.set(0.5);   // plaque art is 2x (sharper)
 
                 this.writeImgText(this._sprGrandBoard.x - 5, this._sprGrandBoard.y + 22, 0, GlobalClass.getFormatCurrency(0, false),"grand",this._grpGrandText);
 
-                this._sprMajorBoard = game.add.sprite(this._sprGrandBoard.x, this._sprGrandBoard.y + 132, this._langName, 'MajorFrame'+lang+'.png', this._grpPoolPanel);
+                this._sprMajorBoard = game.add.sprite(this._sprGrandBoard.x, this._sprGrandBoard.y + 154, this._langName, 'MajorFrame'+lang+'.png', this._grpPoolPanel);
                 this._sprMajorBoard.anchor.set(0.5, 0.5);
                 if (AppConstants.LANDSCAPE) this._sprMajorBoard.scale.set(JP_SMALL);   // smaller than GRAND (tom 2026-10-06)
                 var txs = this._sprGrandBoard.animations.generateFrameNames("GrandIconAnim"+lang+"_", 0, 37, '.png', 3);
@@ -325,13 +325,13 @@ var jackpotClass = function(game, group) {
                 
                 this.writeImgText(this._sprGrandBoard.x - 5, this._sprMajorBoard.y + 19, 0, GlobalClass.getFormatCurrency(0, false),"major",this._grpMajorText);
 
-                this._sprMinorBoard = game.add.sprite(this._sprGrandBoard.x, this._sprMajorBoard.y + 120, this._langName, 'MinorFrame'+lang+'.png', this._grpPoolPanel);
+                this._sprMinorBoard = game.add.sprite(this._sprGrandBoard.x, this._sprMajorBoard.y + 140, this._langName, 'MinorFrame'+lang+'.png', this._grpPoolPanel);
                 this._sprMinorBoard.anchor.set(0.5, 0.5);
                 if (AppConstants.LANDSCAPE) this._sprMinorBoard.scale.set(JP_SMALL);   // smaller than GRAND (tom 2026-10-06)
                 this.writeImgText(this._sprGrandBoard.x - 5, this._sprMinorBoard.y + 20, 0, GlobalClass.getFormatCurrency(0, false),"minor",this._grpMinorText);
 
 
-                this._sprMiniBoard = game.add.sprite(this._sprGrandBoard.x, this._sprMinorBoard.y + 120, this._langName, 'MiniFrame'+lang+'.png', this._grpPoolPanel);
+                this._sprMiniBoard = game.add.sprite(this._sprGrandBoard.x, this._sprMinorBoard.y + 140, this._langName, 'MiniFrame'+lang+'.png', this._grpPoolPanel);
                 this._sprMiniBoard.anchor.set(0.5, 0.5);
                 if (AppConstants.LANDSCAPE) this._sprMiniBoard.scale.set(JP_SMALL);   // smaller than GRAND (tom 2026-10-06)
                 this.writeImgText(this._sprGrandBoard.x - 5, this._sprMiniBoard.y + 14, 0, GlobalClass.getFormatCurrency(0, false),"mini",this._grpMiniText);
@@ -343,7 +343,7 @@ var jackpotClass = function(game, group) {
                 this.writeImgText(this._sprMinorBoard.x - 5, this._sprMinorBoard.y+20, 0, GlobalClass.getFormatCurrency(0, false),"minor",this._grpMinorText);
 
 
-                this._sprMiniBoard = game.add.sprite(this._sprMinorBoard.x, this._sprMinorBoard.y + 120, this._langName, 'MiniFrame'+lang+'.png', this._grpPoolPanel);
+                this._sprMiniBoard = game.add.sprite(this._sprMinorBoard.x, this._sprMinorBoard.y + 140, this._langName, 'MiniFrame'+lang+'.png', this._grpPoolPanel);
                 this._sprMiniBoard.anchor.set(0.5, 0.5);
                 if (AppConstants.LANDSCAPE) this._sprMiniBoard.scale.set(JP_SMALL);   // smaller than GRAND (tom 2026-10-06)
                 this.writeImgText(this._sprMiniBoard.x - 5, this._sprMiniBoard.y + 14, 0, GlobalClass.getFormatCurrency(0, false),"mini",this._grpMiniText);
