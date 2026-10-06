@@ -1,6 +1,6 @@
 var winvalueClass = function(game, group) {
-  this._posLandscapeX = 454;
-  this._posLandscapeY = 320;
+  this._posLandscapeX = 640;   // centre of the board (was 454)
+  this._posLandscapeY = 360;
   this._posPortraitX = 360;
   this._posPortraitY = 600;
   this._grpPosition = null;
@@ -28,11 +28,10 @@ var winvalueClass = function(game, group) {
 
   this.create = function(value, multi,showTime,showAniPos) {
     this._style={
-      font: "72px Arial",
-      fill: "#FFDE01",
+      font: "72px " + "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      fill: "#8ff0d6",
       align: "center",
-      stroke: "#000",
-      strokeThickness: 3
+      dropShadow: true, dropShadowColor: "#000000", dropShadowAlpha: 0.65, dropShadowBlur: 6, dropShadowDistance: 2, padding: 12
     };
     this._grpPosition = game.add.group();
     group.addChild(this._grpPosition);

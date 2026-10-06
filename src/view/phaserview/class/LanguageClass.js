@@ -95,7 +95,7 @@ var languageClass = function(game, group) {
     
             // var lang =  game.add.text(langBtn.x, langBtn.y, country, {
             //     fontSize:"20px",
-            //     fontFamily:"Arial",
+            //     fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             //     fontWeight:"bold",
             //     fill: "#fff",
             //     align: "center"

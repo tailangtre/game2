@@ -54,6 +54,7 @@ var backgroundClass = function(game, group) {
     //document.body.style.background = "url('assets/images/Base_BG_Blured.png')";
     this._sprBgNormal = game.add.sprite(game.world.centerX, game.world.centerY, 'bg-base', '', this._grpBackground1);
     this._sprBgNormal.anchor.set(0.5, 0.5);
+    this._sprBgNormal.scale.set(GlobalClass.STAGE_WIDTH / this._sprBgNormal.texture.width);   // backgrounds are 1536 px wide (sharper)
 
     // this._crack = game.add.sprite(game.world.centerX+200, game.world.centerY-80, 'uiPanel', 'crack-1.png', this._grpBackground1);
     // this._crack.anchor.set(0.5, 0.5);
@@ -68,6 +69,7 @@ var backgroundClass = function(game, group) {
     //document.body.style.background = "url('assets/images/Background-Base.jpg')";
     this._sprBgFeature1Gate = game.add.sprite(game.world.centerX, game.world.centerY, 'bg-free', '');
     this._sprBgFeature1Gate.anchor.set(0.5, 0.5);
+    this._sprBgFeature1Gate.scale.set(GlobalClass.STAGE_WIDTH / this._sprBgFeature1Gate.texture.width);
     this._grpBackground1.addChild(this._sprBgFeature1Gate);
     
     this.coinsForeground = game.add.sprite(game.world.centerX, game.world.centerY*2, 'uiPanel', 'Coins-Foreground.png', this._grpBackground1);
@@ -139,6 +141,7 @@ var backgroundClass = function(game, group) {
     this._sprBgFeature1Gate = game.add.sprite(game.world.centerX, game.world.centerY, 'bg-free', '',this._grpBackground1);
     this._sprBgFeature1Gate.alpha = 0.0;
     this._sprBgFeature1Gate.anchor.set(0.5, 0.5);
+    this._sprBgFeature1Gate.scale.set(GlobalClass.STAGE_WIDTH / this._sprBgFeature1Gate.texture.width);
 
     TweenMax.to(this._sprBgFeature1Gate,1, {
       alpha:1,
@@ -166,6 +169,7 @@ var backgroundClass = function(game, group) {
     }
     this._sprBgNormal = game.add.sprite(game.world.centerX, game.world.centerY, 'bg-base', '', this._grpBackground1);
     this._sprBgNormal.anchor.set(0.5, 0.5);
+    this._sprBgNormal.scale.set(GlobalClass.STAGE_WIDTH / this._sprBgNormal.texture.width);   // backgrounds are 1536 px wide (sharper)
     this._sprBgNormal.alpha = 0.0;
 
     TweenMax.to(this._sprBgNormal,1, {

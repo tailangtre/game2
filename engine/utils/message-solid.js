@@ -71,7 +71,7 @@ MessageSolid.prototype.onReady = function(isError) {
             },
             gameTitle: {
                 enabled: false,
-                gameTitleText: "Wild Wild West 2120: Deluxe"
+                gameTitleText: "Phantom Tide"
             },
             server: {
               baseUrl: AppConstants.SERVER_BASE_URL,

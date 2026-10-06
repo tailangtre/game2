@@ -31,7 +31,7 @@ var historyClass = function(game, group,data) {
 
 	  this._style1 = {
 		fontSize:"18px",
-		fontFamily:"Times New Roman",
+		fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
 		fill: "#ffffff",
 		align: "center"
 	};
@@ -39,21 +39,21 @@ var historyClass = function(game, group,data) {
 
 	this._style4 = {
 		fontSize:"20px",
-		fontFamily:"Times New Roman",
+		fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
 		fill: "#ffffff",
 		align: "center"
 	};
 
 	this._style2 = {
 		fontSize:"20px",
-		fontFamily:"Times New Roman",
-		fill: "#da9f33",
+		fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
+		fill: "#8ff0d6",
 		align: "center"
 	};
 
 	this._style3 = {
 		fontSize:"22px",
-		fontFamily:"Times New Roman",
+		fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
 		fill: "#ffffff",
 		align: "center"
 	};

@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
 
-	<title>Wild Wild West 2120 Deluxe</title>
+	<title>Phantom Tide</title>
 
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="engine/libs/jquery-3.3.1.min.js"></script>
@@ -192,7 +192,7 @@
 <body>
 	<div id="logo">
 		<div class="boot-stage">
-			<div class="boot-version"></div>
+			<!-- version label removed (tom 2026-10-05) -->
 			<div class="boot-preloader-logo"></div>
 			<div class="boot-bar"><div class="boot-bar-fill"></div></div>
 		</div>
@@ -253,7 +253,7 @@
 			scaleBootStage();
 			window.addEventListener('resize', scaleBootStage);
 			var bootVersion = document.querySelector('.boot-version');
-			if (bootVersion) bootVersion.textContent = 'ver ' + String(GlobalClass.GAME_VERSION);
+			// no version label on screen (tom 2026-10-05)
 			updateBootProgress(0);
 			//eruda.init();
 			if (!PIXI.utils.isWebGLSupported()) {
@@ -317,7 +317,10 @@
 						"src/AppFacade.js",
 						// "src/AppConstants.js",
 						"src/SlotsEvents.js",
-						"src/GlobalClass.js"
+						"src/GlobalClass.js",
+						// RAGNAROK-style HTML control layer (landscape) - tom 2026-10-03
+						"src/view/ragui/spinGlyph.js",
+						"src/view/ragui/ragui.js"
 
 					];
 				// } else {

@@ -74,7 +74,7 @@ var buttonMobileClass = function(game, group) {
 
         this._style1 = {
             fontSize:"28px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -82,7 +82,7 @@ var buttonMobileClass = function(game, group) {
 
         this._style2 = {
             fontSize:"32px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -90,7 +90,7 @@ var buttonMobileClass = function(game, group) {
 
         this._style3 = {
             fontSize:"20px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -98,7 +98,7 @@ var buttonMobileClass = function(game, group) {
 
         this._style4 = {
             fontSize:"40px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#fff",
             align: "center"
@@ -106,7 +106,7 @@ var buttonMobileClass = function(game, group) {
 
         this._style5 = {
             fontSize:"30px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -114,7 +114,7 @@ var buttonMobileClass = function(game, group) {
 
         this._style6 = {
             fontSize:"34px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -122,7 +122,7 @@ var buttonMobileClass = function(game, group) {
 
         this._styleFeature = {
             fontSize:"16px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -130,7 +130,7 @@ var buttonMobileClass = function(game, group) {
 
         this._styleValue = {
             fontSize:"18px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#fff",
             boundsAlignH: "center",
             boundsAlignV: "middle",
@@ -139,17 +139,17 @@ var buttonMobileClass = function(game, group) {
 
         this._styleText = {
             fontSize:"18px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
-            fill: "#ff4",
+            fill: "#8ff0d6",
             strokeThickness: 4,
         };
 
         this._styleCoins = {
             fontSize:"24px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
-            fill: "#ff4"
+            fill: "#8ff0d6"
         };
         this.checkResolution();
     };
@@ -172,7 +172,7 @@ var buttonMobileClass = function(game, group) {
 
         this._autoSpinStyle = {
             fontSize:"24px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#000",
             align: "center"
@@ -186,14 +186,14 @@ var buttonMobileClass = function(game, group) {
             homeBtn.visible = false;
         }
 
-        this.rgBtn = game.add.button(GlobalClass.STAGE_WIDTH - 320, 70, 'responsible_gambling', this.btnClick, this, 'Button_RG_small.png', 'Button_RG_small_over.png', 'Button_RG_small_over.png',"rg", this._groupButton);        
+        this.rgBtn = game.add.button(GlobalClass.STAGE_WIDTH - 100, 70, 'responsible_gambling', this.btnClick, this, 'Button_RG_small.png', 'Button_RG_small_over.png', 'Button_RG_small_over.png',"rg", this._groupButton);        
         this.rgBtn.anchor.set(0.5);
         this.rgBtn.visible = false;
         this.rgDisabledBtn = game.add.sprite(this.rgBtn.x, this.rgBtn.y, 'responsible_gambling', 'Button_RG_disable.png', this._groupButton);
         this.rgDisabledBtn.anchor.set(0.5);
         this.rgDisabledBtn.visible = false;
 
-        this._btnFreespins = game.add.button(GlobalClass.STAGE_WIDTH - 320, 540, 'freespins', this.btnClick, this, 'Coins icon.png', 'Coins icon.png', 'Coins icon.png', 'freespins', this._groupButton);
+        this._btnFreespins = game.add.button(GlobalClass.STAGE_WIDTH - 40, 350, 'freespins', this.btnClick, this, 'Coins icon.png', 'Coins icon.png', 'Coins icon.png', 'freespins', this._groupButton);
         this._btnFreespins.anchor.set(0.5);
         this._btnFreespins.visible = false;
 
@@ -207,39 +207,41 @@ var buttonMobileClass = function(game, group) {
         // this.historyDisable.visible = false;
 
         
-        this._settingBtn = game.add.button(120, 640, 'ui', this.btnClick, this, "setting-button.png", "setting-button-Clk.png", "setting-button-Hov.png", "setting", this._groupButton);
+        this._settingBtn = game.add.button(128, 656, 'ui', this.btnClick, this, "setting-button.png", "setting-button-Clk.png", "setting-button-Hov.png", "setting", this._groupButton);
         this._settingBtn.anchor.set(0.5, 0.5);
-        this._settingBtn.scale.set(1.5,1.5);
+        this._settingBtn.scale.set(1.0,1.0);
 
         this._settingBtnDisable = game.add.sprite(this._settingBtn.x, this._settingBtn.y, 'ui', 'setting-button-grey.png', this._groupButton);
         this._settingBtnDisable.anchor.set(0.5, 0.5);
-        this._settingBtnDisable.scale.set(1.5,1.5);
+        this._settingBtnDisable.scale.set(1.0,1.0);
         this._settingBtnDisable.visible = false;
 
 
-        this._infoBtn =  game.add.button(200, 640, 'ui', this.btnClick, this, "info-button.png", "info-button-Clk.png", "info-button-Hov.png", "information", this._groupButton);
+        this._infoBtn =  game.add.button(188, 656, 'ui', this.btnClick, this, "info-button.png", "info-button-Clk.png", "info-button-Hov.png", "information", this._groupButton);
         this._infoBtn.anchor.set(0.5, 0.5);
-        this._infoBtn.scale.set(1.5,1.5);
+        this._infoBtn.scale.set(1.0,1.0);
 
         this._infoBtnDisable = game.add.sprite(this._infoBtn.x, this._infoBtn.y, 'ui', 'info-button_grey.png', this._groupButton);
         this._infoBtnDisable.anchor.set(0.5, 0.5);
-        this._infoBtnDisable.scale.set(1.5,1.5);
+        this._infoBtnDisable.scale.set(1.0,1.0);
         this._infoBtnDisable.visible = false;
 
 
 
-        this._coinValueFrame = game.add.sprite(370, 648, 'ui', 'column.png',this._grpNormal);
+        this._coinValueFrame = game.add.sprite(1185, 586, 'ui', 'column.png',this._grpNormal);
         this._coinValueFrame.anchor.set(0.5, 0.5);
+        this._coinValueFrame.scale.set(0.6, 0.72);
 
-        this._betValueTxtFrame = game.add.sprite(this._coinValueFrame.x + 265, this._coinValueFrame.y, 'ui', 'column.png',this._grpNormal);
+        this._betValueTxtFrame = game.add.sprite(1185, 656, 'ui', 'column.png',this._grpNormal);
         this._betValueTxtFrame.anchor.set(0.5, 0.5);
+        this._betValueTxtFrame.scale.set(0.6, 0.72);
 
         // can't read
         // this.bgTransparent = game.add.sprite(this._coinValueFrame.x - 100, this._coinValueFrame.y - 48, 'uiPanel', 'BG_allBanners.png', this._grpNormal);
         // this.bgTransparent.width = 450;
         // this.bgTransparent.height = 30;
 
-        this._coinValueFont = game.add.text(this._coinValueFrame.x, this._coinValueFrame.y - 35, GlobalClass.getXMLByKey(game, "bottombetmultiplier"), this._styleText, this._grpNormal);
+        this._coinValueFont = game.add.text(this._coinValueFrame.x, this._coinValueFrame.y - 28, GlobalClass.getXMLByKey(game, "bottombetmultiplier"), this._styleText, this._grpNormal);
         this._coinValueFont.anchor.set(0.5, 0.5);
 
         this._coinValueTxt = game.add.text(this._coinValueFrame.x,this._coinValueFrame.y, "0", this._styleCoins, this._grpNormal);
@@ -250,63 +252,65 @@ var buttonMobileClass = function(game, group) {
             this._coinValueTxt.text = GlobalClass.GAME_COIN_VALUE[GlobalClass.GAME_COIN_POS];
         }
 
-        this._betFont = game.add.text(this._betValueTxtFrame.x, this._betValueTxtFrame.y - 35, GlobalClass.getXMLByKey(game, "bottombet"), this._styleText, this._grpNormal);
+        this._betFont = game.add.text(this._betValueTxtFrame.x, this._betValueTxtFrame.y - 28, GlobalClass.getXMLByKey(game, "bottombet"), this._styleText, this._grpNormal);
         this._betFont.anchor.set(0.5, 0.5);
 
         this._betValueTxt = game.add.text(this._betValueTxtFrame.x,this._betValueTxtFrame.y, numeral(GlobalClass.GAME_BET[GlobalClass.GAME_BET_POS]).format('0,0', Math.floor), this._styleCoins, this._grpNormal);
         this._betValueTxt.anchor.set(0.5, 0.5);
 
 
-        this.coinMinBtn = game.add.button(270, 650, 'plusmin', this.btnClick, this, '--button.png', '--button-clk.png', '--button-hov.png', "minusCoin");
+        this.coinMinBtn = game.add.button(1101, 586, 'plusmin', this.btnClick, this, '--button.png', '--button-clk.png', '--button-hov.png', "minusCoin");
         this.coinMinBtn.anchor.set(0.5, 0.5);
-        this.coinMinBtn.scale.set(1.3);
+        this.coinMinBtn.scale.set(0.9);
         this._grpNormal.addChild(this.coinMinBtn);
 
-        this.coinMinBtnDisable = game.add.sprite (270, 650, 'plusmin', '--button-disable.png');
+        this.coinMinBtnDisable = game.add.sprite (1101, 586, 'plusmin', '--button-disable.png');
         this.coinMinBtnDisable.anchor.set(0.5, 0.5);
-        this.coinMinBtnDisable.scale.set(1.3);
+        this.coinMinBtnDisable.scale.set(0.9);
         this._grpNormal.addChild(this.coinMinBtnDisable);
 
-        this.coinPlusBtn = game.add.button(470, 650, 'plusmin', this.btnClick, this, '+-button.png', '+-button-clk.png', '+-button-hov.png', "plusCoin");
+        this.coinPlusBtn = game.add.button(1262, 586, 'plusmin', this.btnClick, this, '+-button.png', '+-button-clk.png', '+-button-hov.png', "plusCoin");
         this.coinPlusBtn.anchor.set(0.5, 0.5);
-        this.coinPlusBtn.scale.set(1.3);
+        this.coinPlusBtn.scale.set(0.9);
         this._grpNormal.addChild(this.coinPlusBtn);
 
-        this.coinPlusBtnDisable = game.add.sprite (470, 650, 'plusmin', '+-button-disable.png');
+        this.coinPlusBtnDisable = game.add.sprite (1262, 586, 'plusmin', '+-button-disable.png');
         this.coinPlusBtnDisable.anchor.set(0.5, 0.5);
-        this.coinPlusBtnDisable.scale.set(1.3);
+        this.coinPlusBtnDisable.scale.set(0.9);
         this._grpNormal.addChild(this.coinPlusBtnDisable);
 
-        this.betMinBtn = game.add.button(535, 650, 'plusmin', this.btnClick, this, '--button.png', '--button-clk.png', '--button-hov.png', "minusBet");
+        this.betMinBtn = game.add.button(1101, 656, 'plusmin', this.btnClick, this, '--button.png', '--button-clk.png', '--button-hov.png', "minusBet");
         this.betMinBtn.anchor.set(0.5, 0.5);
-        this.betMinBtn.scale.set(1.3);
+        this.betMinBtn.scale.set(0.9);
         this._grpNormal.addChild(this.betMinBtn);
 
-        this.betMinBtnDisable = game.add.sprite (535, 650, 'plusmin', '--button-disable.png');
+        this.betMinBtnDisable = game.add.sprite (1101, 656, 'plusmin', '--button-disable.png');
         this.betMinBtnDisable.anchor.set(0.5, 0.5);
-        this.betMinBtnDisable.scale.set(1.3);
+        this.betMinBtnDisable.scale.set(0.9);
         this._grpNormal.addChild(this.betMinBtnDisable)
 
-        this.betPlusBtn = game.add.button(735, 650, 'plusmin', this.btnClick, this, '+-button.png', '+-button-clk.png', '+-button-hov.png', "plusBet");
+        this.betPlusBtn = game.add.button(1262, 656, 'plusmin', this.btnClick, this, '+-button.png', '+-button-clk.png', '+-button-hov.png', "plusBet");
         this.betPlusBtn.anchor.set(0.5, 0.5);
-        this.betPlusBtn.scale.set(1.3);
+        this.betPlusBtn.scale.set(0.9);
         this._grpNormal.addChild(this.betPlusBtn);
 
-        this.betPlusBtnDisable = game.add.sprite (735, 650, 'plusmin', '+-button-disable.png');
+        this.betPlusBtnDisable = game.add.sprite (1262, 656, 'plusmin', '+-button-disable.png');
         this.betPlusBtnDisable.anchor.set(0.5, 0.5);
-        this.betPlusBtnDisable.scale.set(1.3);
+        this.betPlusBtnDisable.scale.set(0.9);
         this._grpNormal.addChild(this.betPlusBtnDisable);
 
 
         //free game mode
-        this._totalWinFrame = game.add.sprite(380, 648, this._langName, 'total-win-column.png', this._grpFeature);
+        this._totalWinFrame = game.add.sprite(1185, 586, this._langName, 'total-win-column.png', this._grpFeature);
         this._totalWinFrame.anchor.set(0.5, 0.5);
+        this._totalWinFrame.scale.set(0.66, 0.72);
 
         // this._totalWinFont = game.add.sprite(this._coinValueFrame.x, this._settingBtn.y-32, 'ui', 'total-win.png', this._grpFeature);
         // this._totalWinFont.anchor.set(0.5, 0.5);
 
-        this._freeSpinFrame = game.add.sprite(this._totalWinFrame.x + 255, this._totalWinFrame.y, this._langName, 'Free-spin-column.png', this._grpFeature);
+        this._freeSpinFrame = game.add.sprite(1185, 656, this._langName, 'Free-spin-column.png', this._grpFeature);
         this._freeSpinFrame.anchor.set(0.5, 0.5);
+        this._freeSpinFrame.scale.set(0.8, 0.8);
 
         // this._freeSpinFont = game.add.sprite(this._betValueTxtFrame.x, this._coinValueFont.y, 'ui', 'free-spin-font.png', this._grpFeature);
         // this._freeSpinFont.anchor.set(0.5, 0.5);
@@ -350,22 +354,22 @@ var buttonMobileClass = function(game, group) {
         //this._optionBtnDisable.scale.set(1.8,1.8);
         this._optionBtnDisable.visible = false;*/
 
-        this._maxBetFrame = game.add.sprite(this._betValueTxtFrame.x+240, this._betValueTxtFrame.y, 'ui', 'Maxbet-frame.png', this._grpNormal);
+        this._maxBetFrame = game.add.sprite(1150, 412, 'ui', 'Maxbet-frame.png', this._grpNormal);
         this._maxBetFrame.anchor.set(0.5, 0.5);
-        this._maxBetFrame.scale.set(1.2);
+        this._maxBetFrame.scale.set(0.8);
 
         this._maxBetBtn = game.add.button(this._maxBetFrame.x, this._maxBetFrame.y, this._langName, this.btnClick, this, "Maxbet-button.png", "Maxbet-button_Clk.png", "Maxbet-button_Hov.png", "maxBet", this._grpNormal);
         this._maxBetBtn.anchor.set(0.5, 0.5);
-        this._maxBetBtn.scale.set(1.2);
+        this._maxBetBtn.scale.set(0.95);
 
         this._maxBetBtnDisable = game.add.sprite(this._maxBetBtn.x, this._maxBetBtn.y, this._langName, 'Maxbet-button.png', this._grpNormal);
         this._maxBetBtnDisable.anchor.set(0.5, 0.5);
-        this._maxBetBtnDisable.scale.set(1.2);
+        this._maxBetBtnDisable.scale.set(0.95);
         this._maxBetBtnDisable.tint = 0x777777;
 
         // var maxBetTxt = game.add.text(this._maxBetBtn.x,this._maxBetBtn.y+3,GlobalClass.getXMLByKey(game,"button maxbet"), {
         //     fontSize:"18px",
-        //     fontFamily:"Times New Roman",
+        //     fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         //     fill: "#FFFFFF",
         //     align: "center"
         // });
@@ -387,9 +391,10 @@ var buttonMobileClass = function(game, group) {
         // this._spinButtonFrame.anchor.set(0.5, 0.5);
         // this._spinButtonFrame.scale.set(2);
 
-        this._spinBbuttonFrame = game.add.sprite(this._maxBetFrame.x+245, this._maxBetFrame.y-45, 'ui', 'spin-button-frame.png', this._groupButton);
+        this._spinBbuttonFrame = game.add.sprite(1200, 560, 'ui', 'spin-button-frame.png', this._groupButton);
         this._spinBbuttonFrame.anchor.set(0.5, 0.5);
         this._spinBbuttonFrame.scale.set(0.8);
+        this._spinBbuttonFrame.visible = false;   // RAGNAROK layout: no housing behind the spin tile
 
 
         // this._gear3 = game.add.sprite(this._gear1.x-115.2, this._gear1.y-46.4, 'ui', 'gear3.png', this._groupButton);
@@ -405,14 +410,14 @@ var buttonMobileClass = function(game, group) {
         // this._autospinFrame.anchor.set(0.5, 0.5);
         // this._autospinFrame.scale.set(1.6,1.6);
 
-        this._autoSpinBtn = game.add.button(this._spinBbuttonFrame.x-88, this._spinBbuttonFrame.y+23, 'ui', this.btnClick, this, "Auto-Spin-button.png", "Auto-Spin-button_Hov.png", "Auto-Spin-button_Hov.png", "autoplay", this._groupButton);
+        this._autoSpinBtn = game.add.button(1250, 492, 'ui', this.btnClick, this, "Auto-Spin-button.png", "Auto-Spin-button_Hov.png", "Auto-Spin-button_Hov.png", "autoplay", this._groupButton);
         this._autoSpinBtn.anchor.set(0.5, 0.5);
-        this._autoSpinBtn.scale.set(1.5);
+        this._autoSpinBtn.scale.set(0.95);
 
 
         this._autoSpinBtnDisable = game.add.sprite(this._autoSpinBtn.x, this._autoSpinBtn.y, 'ui', 'Auto-Spin-button_Grey.png', this._groupButton);
         this._autoSpinBtnDisable.anchor.set(0.5, 0.5);
-        this._autoSpinBtnDisable.scale.set(1.5);
+        this._autoSpinBtnDisable.scale.set(0.95);
         this._autoSpinBtnDisable.visible = false;
 
         /*this._autoSpinBtnTxt = game.add.sprite(this._autospinFrame.x, this._autospinFrame.y, 'ui', 'Auto-Spin-font.png', this._groupButton);
@@ -420,7 +425,7 @@ var buttonMobileClass = function(game, group) {
 
         this._autoSpinBtnTxt = game.add.text(this._autoSpinBtn.x, this._autoSpinBtn.y+3, GlobalClass.getXMLByKey(game,"button autospin"), {
             fontSize:"16px",
-            fontFamily:"Times New Roman",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#000000",
             align: "center"
         }, this._groupButton);
@@ -448,23 +453,23 @@ var buttonMobileClass = function(game, group) {
 
 
 
-        this._spinBtn = game.add.button(this._stopBtn.x+128, this._stopBtn.y-30, 'ui', this.btnClick, this, "Spin-button.png", "Spin-button_clk.png", "Spin-button_hov.png", "spin", this._groupButton);
+        this._spinBtn = game.add.button(1160, 492, 'ui', this.btnClick, this, "Spin-button.png", "Spin-button_clk.png", "Spin-button_hov.png", "spin", this._groupButton);
         this._spinBtn.anchor.set(0.5, 0.5);
-        this._spinBtn.scale.set(1.6);
+        this._spinBtn.scale.set(1.25);
 
         this._spinBtnDisable = game.add.sprite(this._spinBtn.x, this._spinBtn.y, 'ui', 'Spin-button_grey.png', this._groupButton);
         this._spinBtnDisable.anchor.set(0.5, 0.5);
-        this._spinBtnDisable.scale.set(1.6);
+        this._spinBtnDisable.scale.set(1.25);
         this._spinBtnDisable.visible = false;
 
         this._skipBtn = game.add.button(this._spinBtn.x, this._spinBtn.y, 'ui', this.btnClick, this, "Skip-button.png", "Skip-button_clk.png", "Skip-button_hov.png", "skip", this._groupButton);
         this._skipBtn.anchor.set(0.5, 0.5);
-        this._skipBtn.scale.set(1.6);
+        this._skipBtn.scale.set(1.25);
         this._skipBtn.visible = false;
 
         this._skipBtnDisable = game.add.sprite(this._skipBtn.x, this._skipBtn.y, 'ui', 'Skip-button_grey.png', this._groupButton);
         this._skipBtnDisable.anchor.set(0.5, 0.5);
-        this._skipBtnDisable.scale.set(1.6);
+        this._skipBtnDisable.scale.set(1.25);
         this._skipBtnDisable.visible = false;
 
 
@@ -480,15 +485,15 @@ var buttonMobileClass = function(game, group) {
 
         this._spinFX = game.add.sprite(this._spinBtn.x, this._spinBtn.y, 'ui', 'spin Fx_007.png', this._groupButton);
         this._spinFX.anchor.set(0.5, 0.5);
-        this._spinFX.scale.set(1.5);
+        this._spinFX.scale.set(1.2);
 
         var textures = this._spinFX.animations.generateFrameNames("spin Fx_", 7, 18, '.png', 3);
         this._spinFX.textures = textures;
         this._spinFX.visible = false;
 
-        var langBtn = game.add.button(40, 640, 'network', this.btnClick, this, 'language-button.png', 'language-button-clk.png', 'language-button-hov.png',"openLangWindow");
+        var langBtn = game.add.button(68, 656, 'network', this.btnClick, this, 'language-button.png', 'language-button-clk.png', 'language-button-hov.png',"openLangWindow");
         langBtn.anchor.set(0.5, 0.5);
-        langBtn.scale.set(1.5);
+        langBtn.scale.set(1.0);
         if(AppConstants.disableLangMenu){
             langBtn.visible = false;
         }
@@ -497,7 +502,7 @@ var buttonMobileClass = function(game, group) {
         // var country = GlobalClass.loadCountry(GlobalClass.GAME_LANG);
         // this.langText = game.add.text(langBtn.x,langBtn.y, country,{
         //     fontSize:"16px",
-        //     fontFamily:"Times New Roman",
+        //     fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         //     fill: "#ffffff",
         //     align: "center"
         // },this._groupButton);
@@ -535,24 +540,24 @@ var buttonMobileClass = function(game, group) {
 
 
         
-        this._sprSessionBalance = game.add.sprite(980, 550, 'ui', 'column.png',this._groupButton);
+        this._sprSessionBalance = game.add.sprite(1200, 130, 'ui', 'column.png',this._groupButton);
         this._sprSessionBalance.anchor.set(0.5);
         this._sprSessionBalance.scale.set(0.75);
 
         this._txtSessionBalance = game.add.text(this._sprSessionBalance.x, this._sprSessionBalance.y - 25, `${GlobalClass.getXMLByKey(game, "session_balance")}`, {
             fontSize:"14px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
-            fill: "#ff4",
+            fill: "#8ff0d6",
             strokeThickness: 4,
         }, this._groupButton);
         this._txtSessionBalance.anchor.set(0.5);
 
         this._txtSessionBalanceValue = game.add.text(this._sprSessionBalance.x, this._sprSessionBalance.y, `${GlobalClass.getFormatCurrency(GlobalClass.GAME_SESSION_BALANCE)}`, {
             fontSize:"18px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
-            fill: "#ff4",
+            fill: "#8ff0d6",
         }, this._groupButton);
         this._txtSessionBalanceValue.anchor.set(0.5);
 
@@ -582,7 +587,7 @@ var buttonMobileClass = function(game, group) {
 
         this._autoSpinStyle = {
             fontSize:"16px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#000",
             align: "center"
@@ -638,7 +643,7 @@ var buttonMobileClass = function(game, group) {
 
         // var maxBetTxt = game.add.text(this._maxBetBtn.x,this._maxBetBtn.y+3,GlobalClass.getXMLByKey(game,"button maxbet"), {
         //     fontSize:"18px",
-        //     fontFamily:"Times New Roman",
+        //     fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         //     fill: "#FFFFFF",
         //     align: "center"
         // });
@@ -777,7 +782,7 @@ var buttonMobileClass = function(game, group) {
 
         this._autoSpinBtnTxt = game.add.text(this._autoSpinBtn.x, this._autoSpinBtn.y+3, GlobalClass.getXMLByKey(game,"button autospin"), {
             fontSize:"12px",
-            fontFamily:"Times New Roman",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#000000",
             align: "center"
         }, this._groupButton);
@@ -800,7 +805,7 @@ var buttonMobileClass = function(game, group) {
         // var country = GlobalClass.loadCountry(GlobalClass.GAME_LANG);
         // this.langText = game.add.text(langBtn.x,langBtn.y, country,{
         //     fontSize:"16px",
-        //     fontFamily:"Times New Roman",
+        //     fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         //     fill: "#ffffff",
         //     align: "center"
         // },this._groupButton);
@@ -891,18 +896,18 @@ var buttonMobileClass = function(game, group) {
 
         this._txtSessionBalance = game.add.text(this._sprSessionBalance.x, this._sprSessionBalance.y - 25, 'SESSION BALANCE', {
             fontSize:"14px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
-            fill: "#ff4",
+            fill: "#8ff0d6",
             strokeThickness: 4,
         }, this._groupButton);
         this._txtSessionBalance.anchor.set(0.5);
 
         this._txtSessionBalanceValue = game.add.text(this._sprSessionBalance.x, this._sprSessionBalance.y, `${GlobalClass.getFormatCurrency(GlobalClass.GAME_SESSION_BALANCE)}`, {
             fontSize:"18px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
-            fill: "#ff4",
+            fill: "#8ff0d6",
         }, this._groupButton);
         this._txtSessionBalanceValue.anchor.set(0.5);
 

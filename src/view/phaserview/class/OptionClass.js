@@ -16,7 +16,7 @@ var optionClass = function (game, group) {
 
     this._betSettingStyle = {
       fontSize: "32px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fontWeight: "bold",
       fill: "#fff",
       boundsAlignH: "middle",
@@ -25,16 +25,16 @@ var optionClass = function (game, group) {
     };
     this._betSettingStyle2 = {
       fontSize: "20px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fontWeight: "bold",
-      fill: "#ef980a",
+      fill: "#8ff0d6",
       boundsAlignH: "middle",
       boundsAlignV: "center",
       align: "center"
     };
     this._betSettingStyle3 = {
       fontSize: "24px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fill: "#ffffff",
       boundsAlignH: "middle",
       boundsAlignV: "center",
@@ -78,7 +78,7 @@ var optionClass = function (game, group) {
 
     var title = game.add.text(game.world.centerX, 40, GlobalClass.getXMLByKey(game, "optionwin setting"), {
       fontSize: "38px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fill: "#ffffff",
       align: "center"
     }, this._grpOption);
@@ -93,7 +93,7 @@ var optionClass = function (game, group) {
 
     var betTitle = game.add.text(settingvalueFrame.x, settingvalueFrame.y - 40, GlobalClass.getXMLByKey(game, "optionwin bet"), {
       fontSize: "24px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fill: "#ffffff",
       align: "center"
     }, this._grpHidden);
@@ -143,7 +143,7 @@ var optionClass = function (game, group) {
 
     var betTitle = game.add.text(settingvalueFrame.x, settingvalueFrame.y - 30, GlobalClass.getXMLByKey(game, "optionwin coinvalue"), {
       fontSize: "24px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fill: "#ffffff",
       align: "center"
     }, this._grpHidden);
@@ -183,7 +183,7 @@ var optionClass = function (game, group) {
 
     this._valueTotalCoinOption = game.add.text(225, settingcFrame.y + 23, GlobalClass.GAME_COIN_VALUE[GlobalClass.GAME_COIN_POS], {
       fontSize: "42px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fontWeight: "bold",
       fill: "#fff",
       boundsAlignH: "middle",
@@ -240,7 +240,7 @@ var optionClass = function (game, group) {
 
       var qsText = game.add.text(this._qsONBtn.x, this._qsONBtn.y - 35, GlobalClass.getXMLByKey(game, "optionwin quickspin"), {
         fontSize: "32px",
-        fontFamily: "Arial",
+        fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         fill: "#ffffff",
         align: "center"
       }, this._grpOption);
@@ -264,7 +264,7 @@ var optionClass = function (game, group) {
 
     // var stsText = game.add.text(this._stsONBtn.x,this._stsONBtn.y-35,GlobalClass.getXMLByKey(game,"optionwin spacebar"),{
     //   fontSize:"22px",
-    //   fontFamily:"Arial",
+    //   fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
     //   fill: "#ffffff",
     //   align: "center"
     // },this._grpOption);
@@ -300,9 +300,9 @@ var optionClass = function (game, group) {
 
     this._title = game.add.text(frame.x, frame.y - 130, GlobalClass.getXMLByKey(game, "optionwin options"), {
       fontSize: "32px",
-      fontFamily: "Times New Roman",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fontWeight: "bold",
-      fill: "#FEFFB3",
+      fill: "#e4f7f2",
       boundsAlignH: "middle",
       boundsAlignV: "center",
       align: "center"
@@ -349,9 +349,9 @@ var optionClass = function (game, group) {
     if (AppConstants.TURBO) {
       this._qspin = game.add.text(frame.x - 30, frame.y + 35, GlobalClass.getXMLByKey(game, "optionwin quickspin"), {
         fontSize: "24px",
-        fontFamily: "Times New Roman",
+        fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         fontWeight: "bold",
-        fill: "#FEFFB3",
+        fill: "#e4f7f2",
         boundsAlignH: "middle",
         boundsAlignV: "center",
         align: "center"
@@ -379,9 +379,9 @@ var optionClass = function (game, group) {
     // if (AppConstants.CONTINUOUS_KEYBOARD) {
       this._stspin = game.add.text(frame.x - 35, frame.y + 130, GlobalClass.getXMLByKey(game, "optionwin spacebar"), {
         fontSize: "24px",
-        fontFamily: "Times New Roman",
+        fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         fontWeight: "bold",
-        fill: "#FEFFB3",
+        fill: "#e4f7f2",
         boundsAlignH: "middle",
         boundsAlignV: "center",
         align: "center"
@@ -601,7 +601,7 @@ var optionClass = function (game, group) {
 
     var title = game.add.text(game.world.centerY, 100, GlobalClass.getXMLByKey(game, "optionwin setting"), {
       fontSize: "38px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fill: "#ffffff",
       align: "center"
     }, this._grpOption);
@@ -613,7 +613,7 @@ var optionClass = function (game, group) {
 
     var betTitle = game.add.text(settingvalueFrame.x, settingvalueFrame.y - 30, GlobalClass.getXMLByKey(game, "optionwin bet"), {
       fontSize: "24px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fill: "#ffffff",
       align: "center"
     }, this._grpHidden);
@@ -662,7 +662,7 @@ var optionClass = function (game, group) {
 
     var betTitle = game.add.text(settingvalueFrame.x, settingvalueFrame.y - 40, GlobalClass.getXMLByKey(game, "optionwin coinvalue"), {
       fontSize: "24px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fill: "#ffffff",
       align: "center"
     }, this._grpHidden);
@@ -702,7 +702,7 @@ var optionClass = function (game, group) {
 
     this._valueTotalCoinOption = game.add.text(this._valueTotalBetOption.x, this._valueTotalBetOption.y + 327, GlobalClass.GAME_COIN_VALUE[GlobalClass.GAME_COIN_POS], {
       fontSize: "42px",
-      fontFamily: "Arial",
+      fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fontWeight: "bold",
       fill: "#fff",
       boundsAlignH: "middle",
@@ -768,7 +768,7 @@ var optionClass = function (game, group) {
 
       var qsText = game.add.text(this._qsONBtn.x, this._qsONBtn.y - 35, GlobalClass.getXMLByKey(game, "optionwin quickspin"), {
         fontSize: "32px",
-        fontFamily: "Arial",
+        fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         fill: "#ffffff",
         align: "center"
       }, this._grpOption);
@@ -795,7 +795,7 @@ var optionClass = function (game, group) {
 
     // var stsText = game.add.text(this._stsONBtn.x,this._stsONBtn.y-35,GlobalClass.getXMLByKey(game,"optionwin spacebar"),{
     //   fontSize:"22px",
-    //   fontFamily:"Arial",
+    //   fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
     //   fill: "#ffffff",
     //   align: "center"
     // },this._grpOption);

@@ -76,7 +76,7 @@ var networkWinClass = function(game, parent, group, data, session) {
         }
         
         // this._txtInfo1 = new PIXI.Text(str, {
-        //     fontFamily: "Arial",
+        //     fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         //     fontSize: "20px",
         //     fill: "#FFFFFF",
         //     stroke: "#000000",
@@ -91,7 +91,7 @@ var networkWinClass = function(game, parent, group, data, session) {
         let fontSize = 20;      // font awal
 
         let style = new PIXI.TextStyle({
-            fontFamily: "Arial",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontSize: fontSize,
             fill: "#FFFFFF",
             stroke: "#000000",
@@ -182,7 +182,7 @@ var networkWinClass = function(game, parent, group, data, session) {
         }
 
         this._txtInfo2 = new PIXI.Text(text, {
-            fontFamily: "Arial",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontSize: "24px",
             fill: "#FFFFFF",
             stroke: "#000000",
@@ -246,7 +246,7 @@ var networkWinClass = function(game, parent, group, data, session) {
         
 
         // this._txtInfo1 = new PIXI.Text(str, {
-        //     fontFamily: "Arial",
+        //     fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         //     fontSize: "20px",
         //     fill: "#FFFFFF",
         //     stroke: "#000000",
@@ -266,7 +266,7 @@ var networkWinClass = function(game, parent, group, data, session) {
         let fontSize = 20;      // font awal
 
         let style = new PIXI.TextStyle({
-            fontFamily: "Arial",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontSize: fontSize,
             fill: "#FFFFFF",
             stroke: "#000000",
@@ -357,7 +357,7 @@ var networkWinClass = function(game, parent, group, data, session) {
         }
 
         this._txtInfo2 = new PIXI.Text(text, {
-            fontFamily: "Arial",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontSize: "24px",
             fill: "#FFFFFF",
             stroke: "#000000",

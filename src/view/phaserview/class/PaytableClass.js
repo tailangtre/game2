@@ -39,7 +39,7 @@ var paytableClass = function (game, group) {
 
         this._style1 = {
             fontSize: "16px",
-            fontFamily: "Times New Roman",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#ffffff",
             align: "center"
         };
@@ -47,28 +47,28 @@ var paytableClass = function (game, group) {
 
         this._style4 = {
             fontSize: "20px",
-            fontFamily: "Times New Roman",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#ffffff",
             align: "center"
         };
 
         this._style2 = {
             fontSize: "20px",
-            fontFamily: "Times New Roman",
-            fill: "#da9f33",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
+            fill: "#8ff0d6",
             align: "center"
         };
 
         this._style3 = {
             fontSize: "22px",
-            fontFamily: "Times New Roman",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#ffffff",
             align: "center"
         };
         this.titleStyle = {
-            "fill": "#ffff13",
+            "fill": "#8ff0d6",
             "fontSize": 32,
-            "stroke": "#5a2800",
+            "stroke": "#0a0f1a",
             "strokeThickness": 3
         };
 
@@ -102,7 +102,7 @@ var paytableClass = function (game, group) {
 
         var verText = game.add.text(game.world.centerX + 360, 100, "ver " + String(GlobalClass.GAME_VERSION), {
             fontSize:"20px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#FFFFFF",
             align: "center"
         }, this._grpPaytable);
@@ -131,7 +131,7 @@ var paytableClass = function (game, group) {
 
         // this.timeText = game.add.text(this._buttonClose.x - 180, this._buttonClose.y + 10, "", {
         //     fontSize: "18px",
-        //     fontFamily: "Times New Roman",
+        //     fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         //     fill: "#ffffff",
         //     align: "center"});
         // this._grpTime.addChild(this.timeText);
@@ -214,7 +214,7 @@ var paytableClass = function (game, group) {
 
         var verText = game.add.text(game.world.centerY + 200, 250, "ver " + String(GlobalClass.GAME_VERSION), {
             fontSize:"20px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#FFFFFF",
             align: "center"
         }, this._grpPaytable);
@@ -241,7 +241,7 @@ var paytableClass = function (game, group) {
 
         // this.timeText = game.add.text(this._buttonClose.x - 180, this._buttonClose.y + 10, "", {
         //     fontSize: "18px",
-        //     fontFamily: "Times New Roman",
+        //     fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         //     fill: "#ffffff",
         //     align: "center"});
         // this._grpTime.addChild(this.timeText);
@@ -560,7 +560,7 @@ var paytableClass = function (game, group) {
                     if (GlobalClass.GAME_LANG == "ja" || GlobalClass.GAME_LANG == "ko") {
                         y = GlobalClass.checkString(wildDescXML, 0, y + 30, false, "small", "15px Arial", page, {
                             fontSize: "18px",
-                            fontFamily: "Times New Roman",
+                            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
                             fill: "#ffffff",
                             align: "center"
                         }, {
@@ -570,7 +570,7 @@ var paytableClass = function (game, group) {
                     } else {
                         y = GlobalClass.checkString(wildDescXML, 0, y + 35, false, "small", "15px Arial", page, {
                             fontSize: "18px",
-                            fontFamily: "Times New Roman",
+                            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
                             fill: "#ffffff",
                             align: "center"
                         }, {
@@ -921,7 +921,7 @@ var paytableClass = function (game, group) {
                     }
                     y = GlobalClass.checkString(wildDescXML, 0, y + lineHeight, false, "small", "15px Arial", page, {
                         fontSize: "20px",
-                        fontFamily: "Times New Roman",
+                        fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
                         fill: "#ffffff",
                         align: "center"
                     }, {

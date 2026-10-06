@@ -74,7 +74,7 @@ var buttonClass = function(game, group) {
   
         this._style1 = {
             fontSize:"28px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -82,7 +82,7 @@ var buttonClass = function(game, group) {
   
         this._style2 = {
             fontSize:"32px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -90,7 +90,7 @@ var buttonClass = function(game, group) {
   
         this._style3 = {
             fontSize:"20px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -98,7 +98,7 @@ var buttonClass = function(game, group) {
   
         this._style4 = {
             fontSize:"40px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#fff",
             align: "center"
@@ -106,7 +106,7 @@ var buttonClass = function(game, group) {
   
         this._style5 = {
             fontSize:"30px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -114,7 +114,7 @@ var buttonClass = function(game, group) {
   
         this._style6 = {
             fontSize:"34px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -122,7 +122,7 @@ var buttonClass = function(game, group) {
   
         this._styleFeature = {
             fontSize:"16px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#ffffff",
             align: "center"
@@ -130,7 +130,7 @@ var buttonClass = function(game, group) {
   
         this._styleValue = {
             fontSize:"18px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#fff",
             boundsAlignH: "center",
             boundsAlignV: "middle",
@@ -139,9 +139,9 @@ var buttonClass = function(game, group) {
   
         this._styleCoins = {
             fontSize:"18px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
-            fill: "#ff4",
+            fill: "#8ff0d6",
             boundsAlignH: "center",
             boundsAlignV: "middle",
             align: "center"
@@ -162,14 +162,14 @@ var buttonClass = function(game, group) {
   
         this._autoSpinStyle = {
             fontSize:"14px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight:"bold",
             fill: "#000",
             align: "center"
         };
 
         this._styleFrameValue = {
-            font: "12px Arial",
+            font: "12px " + "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontWeight: "bold",
             fill: "#000",
             boundsAlignH: "center",
@@ -337,7 +337,7 @@ var buttonClass = function(game, group) {
   
         this._autoSpinBtnTxt = game.add.text(this._autoSpinBtn.x, this._autoSpinBtn.y+5, GlobalClass.getXMLByKey(game,"button autospin"), {
             fontSize:"14px",
-            fontFamily:"Times New Roman",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#000000",
             align: "center"
         }, this._groupButton);
@@ -413,7 +413,7 @@ var buttonClass = function(game, group) {
         // var country = GlobalClass.loadCountry(GlobalClass.GAME_LANG);
         // this.langText = game.add.text(langBtn.x,langBtn.y, country,{
         //     fontSize:"16px",
-        //     fontFamily:"Times New Roman",
+        //     fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         //     fill: "#ffffff",
         //     align: "center"
         // },this._groupButton);

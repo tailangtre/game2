@@ -24,7 +24,7 @@ function Jsilder(x, y, parent) {
 Jsilder.prototype = Object.create(PIXI.Container.prototype);
 Jsilder.prototype.constructor = Jsilder;
 Jsilder.prototype._betSettingStyle3 = {
-	fontFamily: "Arial",
+	fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
 	fontSize: "28px",
 	fill: "#fff",
 	boundsAlignH: "middle",

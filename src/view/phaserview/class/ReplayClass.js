@@ -14,7 +14,7 @@ var replayClass = function(game, group, parent, data, type) {
     this._posPortraitY = 400;
 
     this._styleContent = {
-        fontFamily: "Arial",
+        fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         fontSize: "24px",
         fontWeight: "bold",
         fill: "#fff",
@@ -22,7 +22,7 @@ var replayClass = function(game, group, parent, data, type) {
     };
     
     this._styleInfo2 = {
-        fontFamily: "Arial",
+        fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         fontSize: "24px",
         fill: "#FFFFFF",
         stroke: "#000000",
@@ -31,7 +31,7 @@ var replayClass = function(game, group, parent, data, type) {
     };
     
     this._styleAuto = {
-        fontFamily: "Arial",
+        fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
         fontSize: "24px",
         fill: "#ffffff",
         wordWrap: true,

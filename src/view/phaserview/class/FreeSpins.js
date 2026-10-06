@@ -16,7 +16,7 @@ var FreeSpins = function(game, group, type, data) {
         group.addChild(this._grpPanel);
 
         this._styleTitle = {
-            fontFamily: "Arial",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontSize: "22px",
             fontWeight: "bold",
             fill: "#fff",
@@ -24,7 +24,7 @@ var FreeSpins = function(game, group, type, data) {
         };
 
         this._styleContent = {
-            fontFamily: "Arial",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontSize: "20px",
             fill: "#fff",
             align: "left",
@@ -34,9 +34,9 @@ var FreeSpins = function(game, group, type, data) {
         };
 
         this._styleValue = {
-            fontFamily: "Arial",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fontSize: "20px",
-            fill: "#ea8c0e",
+            fill: "#8ff0d6",
         };
 
         let bgTransparent = game.add.sprite(0, 0, 'uiPanel', 'BG_allBanners.png', this._grpBackground);

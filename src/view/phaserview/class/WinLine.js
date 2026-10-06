@@ -1,6 +1,6 @@
 var winlineClass = function(game, group) {
-  this._posLandscapeX = 0;
-  this._posLandscapeY = 0;
+  this._posLandscapeX = 336.4 - 27 * 0.7138;   // follows the board transform (reel origin 27,57 -> 336.7,177.4 at 0.715)
+  this._posLandscapeY = 172.8 - 57 * 0.7138;
   this._posPortraitX = -20;
   this._posPortraitY = 330;
   this._grpPosition = null;
@@ -61,7 +61,7 @@ var winlineClass = function(game, group) {
     if (this._grpPosition != null) {
       this._grpPosition.x = this._posLandscapeX;
       this._grpPosition.y = this._posLandscapeY;
-      this._grpPosition.scale.set(1, 1);
+      this._grpPosition.scale.set(0.7138, 0.7138);
     }
   };
 
@@ -134,7 +134,7 @@ var winlineClass = function(game, group) {
         this.winValue.remove();
       }
       this.winValue = new winvalueClass(game, gameplayState._winValueGroup);
-      this.winValue.create(lineObj.winAmount,null,1000,linePath[2]);
+      this.winValue.create(lineObj.winAmount || lineObj.jackpotAmount || 0,null,1000,linePath[2]);
     }
   };
   this.showLines =function(type){

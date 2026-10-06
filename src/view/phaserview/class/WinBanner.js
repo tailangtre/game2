@@ -37,6 +37,9 @@ var bannerClass = function(game, group) {
         this._grpBanner = game.add.group();
         this._grpPosition.addChild(this._grpBanner);
 
+        this._grpFX = new PIXI.Container();               // light rays + flash behind the banner (tom 2026-10-04)
+        this._grpPosition.addChild(this._grpFX);
+
         this._grpStar = game.add.group();
         this._grpPosition.addChild(this._grpStar);
 
@@ -57,13 +60,12 @@ var bannerClass = function(game, group) {
 
         this._style = {
 			fontSize:"60px",
-			fontFamily:"Times New Roman",
-            fill: "#D4CE84",
+			fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
+            fill: "#e4f7f2",
             boundsAlignH: "center",
             boundsAlignV: "middle",
             align: "center",
-            stroke:'#000',
-            strokeThickness:3
+      dropShadow: true, dropShadowColor: "#000000", dropShadowAlpha: 0.65, dropShadowBlur: 6, dropShadowDistance: 2, padding: 12
         };
 
 
@@ -101,14 +103,13 @@ var bannerClass = function(game, group) {
             this._grpValue.scale.set(0);
             this._txtInfo = game.add.text(posX,posY, GlobalClass.getXMLByKey(game, "infofreespin"), {
 				fontSize:fontSize,
-                fontFamily:"Times New Roman",
+                fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
                 fontWeight:"bold",
-                fill: "#ffffac",
+                fill: "#e4f7f2",
                 boundsAlignH: "center",
                 boundsAlignV: "middle",
                 align: "center",
-                stroke:'#5a2800',
-                strokeThickness:5,
+                dropShadow: true, dropShadowColor: "#000000", dropShadowAlpha: 0.65, dropShadowBlur: 6, dropShadowDistance: 2, padding: 12,
             },this._grpValue);
             this._txtInfo.anchor.set(0.5,0.5);
 
@@ -204,12 +205,52 @@ var bannerClass = function(game, group) {
                 break;
         }
 
-        var titleBanner =  game.add.sprite(0, -97,winImgName, winTitle, this._grpBannerAnim);
-        titleBanner.anchor.set(0.5, 0.5);
+        // tier win banners (tom 2026-10-04): BIG / HUGE / MASSIVE each have their own full banner art
+        // (title + window); the amount counts up inside the window
+        var TIER_BANNER = { 1: ['banner-big.png', 85, 369], 2: ['banner-huge.png', 100, 380], 3: ['banner-massive.png', 96, 330], 4: ['banner-total.png', 73, 380] };   // window centre y + inner width (stage px), measured on the art
+        var tb = GlobalClass.GAME_LANG != 'zh' ? TIER_BANNER[this._type] : null;
+        var titleBanner, amountY;
+        if (tb) {
+            winBanner.visible = false;
+            // soft warm glow behind the banner, breathing (tom 2026-10-04)
+            var glowSpr = game.add.sprite(0, -20, 'ui', tb[0], this._grpBannerAnim);
+            glowSpr.anchor.set(0.5, 0.5);
+            glowSpr.scale.set(0.53);
+            glowSpr.tint = 0x3dffd0;
+            glowSpr.blendMode = PIXI.BLEND_MODES.ADD;
+            glowSpr.filters = [new PIXI.filters.BlurFilter(18, 3)];
+            glowSpr.alpha = 0.25;
+            TweenMax.to(glowSpr, 0.9, { alpha: 0.75, repeat: -1, yoyo: true, ease: Sine.easeInOut });
+            titleBanner = game.add.sprite(0, -20, 'ui', tb[0], this._grpBannerAnim);
+            titleBanner.anchor.set(0.5, 0.5);
+            titleBanner.scale.set(0.5);                                   // banner art is 2x (sharper)
+            TweenMax.to(titleBanner.scale, 0.9, { x: 0.515, y: 0.515, repeat: -1, yoyo: true, ease: Sine.easeInOut });   // gentle pulse
+            TweenMax.to(glowSpr.scale, 0.9, { x: 0.55, y: 0.55, repeat: -1, yoyo: true, ease: Sine.easeInOut });
+            this._pulseTargets = [glowSpr, glowSpr.scale, titleBanner.scale];
+            amountY = titleBanner.y + tb[1];
+            // amount: engraved-gold serif, matching the jackpot values
+            this._style = {
+                fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: "bold", fontSize: "58px", letterSpacing: 2,
+                fill: ["#fbf5e6", "#e8dcc2", "#a8916a"], fillGradientStops: [0, 0.55, 1], align: "center",
+                dropShadow: true, dropShadowColor: "#140b02", dropShadowAlpha: 0.9, dropShadowBlur: 6, dropShadowDistance: 3, padding: 14
+            };
+        } else {
+            titleBanner = game.add.sprite(0, -97, winImgName, winTitle, this._grpBannerAnim);
+            titleBanner.anchor.set(0.5, 0.5);
+            amountY = titleBanner.y + 105;
+        }
 
-        this._winAmountTxt = game.add.text(titleBanner.x, titleBanner.y + 105, 0, this._style);
+        this._winAmountTxt = game.add.text(titleBanner.x, amountY, 0, this._style);
         this._winAmountTxt.anchor.set(0.5, 0.5);
-        this._grpBannerAnim.addChild(this._winAmountTxt);
+        if (tb) {
+            // the amount lives INSIDE the banner sprite, centred in its window, so it pulses and scales with it
+            titleBanner.addChild(this._winAmountTxt);
+            this._winAmountTxt.position.set(0, tb[1] / titleBanner.scale.x);
+            this._amountFit = { maxW: tb[2] / titleBanner.scale.x, baseScale: 1 / titleBanner.scale.x, h: 70 / titleBanner.scale.x };
+            this.fitAmount();
+        } else {
+            this._grpBannerAnim.addChild(this._winAmountTxt);
+        }
 
         var scale = 0.8;
         if(AppConstants.LANDSCAPE){
@@ -217,10 +258,15 @@ var bannerClass = function(game, group) {
 		}
 		
 
-		TweenMax.to(this._grpBannerAnim.scale, 0.5, {
-			x:scale, 
+		if (tb) {
+		    this._grpBannerAnim.rotation = -0.06;
+		    TweenMax.to(this._grpBannerAnim, 0.6, { rotation: 0, ease: Back.easeOut.config(2.2) });
+		    this.dramaFX(this._type, scale);
+		}
+		TweenMax.to(this._grpBannerAnim.scale, tb ? 0.6 : 0.5, {
+			x:scale,
 			y:scale,
-			ease: Linear.easeNone,
+			ease: tb ? Back.easeOut.config(1.9) : Linear.easeNone,
 			useFrames: false,
 			callbackScope: this,
 			onComplete:function(){
@@ -234,11 +280,16 @@ var bannerClass = function(game, group) {
                         this._grpCoin.x = game.world.centerY;
                         this._grpCoin.y = game.world.centerX; 
                     }
-                    this._timerCoin = game.time.events.loop(100, this.createCoin, this);
+                    // coin shower intensity by tier (tom 2026-10-04): BIG < HUGE < MASSIVE
+                    var CT = { 1: [95, 0.36, 0.95], 2: [42, 0.46, 1.2], 3: [15, 0.56, 1.5], 4: [34, 0.48, 1.25] }[this._type] || [90, 0.4, 1];
+                    this._coinTier = CT;
+                    this._timerCoin = game.time.events.loop(CT[0], this.createCoin, this);
+                    var RAIN = { 2: 110, 3: 40, 4: 80 }[this._type];   // HUGE and up: coins also rain from the top
+                    if (RAIN && tb) this._timerRain = game.time.events.loop(RAIN, this.createRain, this);
                 }
                 
 	
-				if(this._type!=1 && this._grpStar){
+				if(false && this._grpStar){   // no gems any more (tom 2026-10-04)
                     
                     if(AppConstants.LANDSCAPE){
                         this._grpStar.x = game.world.centerX;
@@ -292,6 +343,9 @@ var bannerClass = function(game, group) {
             if (this._timerCoin != null) {
                 game.time.events.remove(this._timerCoin);
             }
+            if (this._timerRain != null) {
+                game.time.events.remove(this._timerRain);
+            }
             if (this._timerStar != null) {
                 game.time.events.remove(this._timerStar);
             }
@@ -307,9 +361,11 @@ var bannerClass = function(game, group) {
         }
         if(this._type!=5){
             this._winAmountTxt.text = GlobalClass.getFormatCurrency(this._currentValue);
+            this.fitAmount();
         }
         else{
             this._winAmountTxt.text = GlobalClass.currency()+myNumeral(this._currentValue*GlobalClass.trueCoinValue()).format('0,0.00');
+            this.fitAmount();
         }
     };
 
@@ -347,16 +403,106 @@ var bannerClass = function(game, group) {
     this.createCoin = function() {
         if(this._grpCoin!=null){
             this._coinClass = new coinClass(game,this._grpCoin);
-            this._coinClass.create();
+            var ct = this._coinTier || [0, 0.4, 1];
+            this._coinClass.create(ct[1], ct[2]);
         }
         else{
             if (this._timerCoin != null) {
                 game.time.events.remove(this._timerCoin);
             }
+            if (this._timerRain != null) {
+                game.time.events.remove(this._timerRain);
+            }
         }
     };
 
+    // Drama per tier (tom 2026-10-04: "win banner effects need to be more dramatic"): rotating gold light rays and
+    // a halo behind the banner, a flash + shockwave rings + screen shake as it lands, and an opening coin burst.
+    var BANNER_FX = {
+        1: { rays: 0.34, halo: 0.30, flash: 0.30, ring: 1, shake: 5,  burst: 16, spin: 16 },
+        2: { rays: 0.48, halo: 0.40, flash: 0.42, ring: 2, shake: 9,  burst: 30, spin: 11 },
+        3: { rays: 0.68, halo: 0.50, flash: 0.55, ring: 3, shake: 15, burst: 55, spin: 7 },
+        4: { rays: 0.52, halo: 0.42, flash: 0.42, ring: 2, shake: 8,  burst: 34, spin: 10 }
+    };
+    this.dramaFX = function(type, scale) {
+        var F = BANNER_FX[type]; if (!F || !this._grpFX) return;
+        var layer = this._grpFX, self = this;
+        var cx = AppConstants.LANDSCAPE ? game.world.centerX : game.world.centerY + 70;
+        var cy = AppConstants.LANDSCAPE ? game.world.centerY : game.world.centerX;
+        var tw = [];                                           // everything to kill on destroy
+        var rays = new PIXI.Graphics(), n = 24, R = 900;
+        for (var i = 0; i < n; i++) {
+            var a0 = (i / n) * Math.PI * 2, a1 = a0 + Math.PI / n * (i % 2 ? 0.35 : 0.6);
+            rays.beginFill(i % 2 ? 0x9ff7e2 : 0x3dffd0, 1); rays.moveTo(0, 0); rays.lineTo(Math.cos(a0) * R, Math.sin(a0) * R); rays.lineTo(Math.cos(a1) * R, Math.sin(a1) * R); rays.endFill();
+        }
+        rays.x = cx; rays.y = cy - 20; rays.alpha = 0; rays.scale.set(0.15);
+        rays.blendMode = PIXI.BLEND_MODES.ADD; rays.filters = [new PIXI.filters.BlurFilter(18, 3)];
+        layer.addChild(rays);
+        var halo = new PIXI.Sprite(softGlowTexture(0x3dffd0, 520, 400, 200, 120)); halo.anchor.set(0.5, 0.5);   // no hard edge
+        halo.x = cx; halo.y = cy - 20; halo.alpha = 0; halo.blendMode = PIXI.BLEND_MODES.ADD;
+        layer.addChild(halo);
+        var spin = { r: 0 };
+        tw.push(TweenMax.to(spin, F.spin, { r: Math.PI * 2, repeat: -1, ease: Linear.easeNone, onUpdate: function () { rays.rotation = spin.r; } }));
+        tw.push(TweenMax.to(rays, 0.5, { alpha: F.rays, ease: Power2.easeOut, delay: 0.25 }));
+        tw.push(TweenMax.to(rays.scale, 0.9, { x: 1, y: 1, ease: Power3.easeOut, delay: 0.2 }));
+        tw.push(TweenMax.to(rays, 1.1, { alpha: F.rays * 0.6, repeat: -1, yoyo: true, ease: Sine.easeInOut, delay: 0.75 }));
+        tw.push(TweenMax.to(halo, 0.6, { alpha: F.halo, delay: 0.25 }));
+        tw.push(TweenMax.to(halo.scale, 0.9, { x: 1.2, y: 1.2, repeat: -1, yoyo: true, ease: Sine.easeInOut }));
+        // landing: flash, shockwave rings, shake, coin burst
+        tw.push(TweenMax.delayedCall(0.32, function () {
+            if (!self._grpFX) return;
+            var flash = new PIXI.Graphics(); flash.beginFill(0xe0fff6, 1); flash.drawRect(-2000, -2000, 5280, 4720); flash.endFill();
+            flash.blendMode = PIXI.BLEND_MODES.ADD; flash.alpha = F.flash; layer.addChild(flash);
+            tw.push(TweenMax.to(flash, 0.5, { alpha: 0, ease: Power2.easeOut }));
+            for (var r = 0; r < F.ring; r++) {
+                var ring = new PIXI.Graphics(); ring.lineStyle(10, 0xbffbe9, 1); ring.drawCircle(0, 0, 120); ring.x = cx; ring.y = cy - 20;
+                ring.blendMode = PIXI.BLEND_MODES.ADD; ring.filters = [new PIXI.filters.BlurFilter(4, 2)]; ring.alpha = 0.9; ring.scale.set(0.6);
+                layer.addChild(ring);
+                tw.push(TweenMax.to(ring.scale, 0.8, { x: 5, y: 5, ease: Power2.easeOut, delay: r * 0.14 }));
+                tw.push(TweenMax.to(ring, 0.8, { alpha: 0, ease: Power1.easeIn, delay: r * 0.14 }));
+            }
+            var panel = gameplayState._panelGroup, pos = self._grpPosition;
+            if (panel && pos) {
+                var px = panel.x, py = panel.y, bx = pos.x, by = pos.y, sh = { v: 1 };
+                tw.push(TweenMax.to(sh, 0.7, { v: 0, ease: Power1.easeOut, onUpdate: function () {
+                    var dx = (Math.random() * 2 - 1) * F.shake * sh.v, dy = (Math.random() * 2 - 1) * F.shake * sh.v;
+                    panel.x = px + dx; panel.y = py + dy;
+                    if (self._grpPosition) { pos.x = bx + dx * 0.5; pos.y = by + dy * 0.5; }
+                }, onComplete: function () { panel.x = px; panel.y = py; if (self._grpPosition) { pos.x = bx; pos.y = by; } } }));
+                self._shakeHome = function () { panel.x = px; panel.y = py; };
+            }
+            if (self._grpCoin) {
+                self._grpCoin.x = cx; self._grpCoin.y = cy;
+                var ct = { 1: [0.36, 1.1], 2: [0.46, 1.35], 3: [0.56, 1.7], 4: [0.48, 1.4] }[type];
+                for (var k = 0; k < F.burst; k++) new coinClass(game, self._grpCoin).create(ct[0], ct[1]);
+            }
+        }));
+        this._fxStop = function () { tw.forEach(function (t) { t.kill(); }); if (self._shakeHome) self._shakeHome(); };
+    };
+
+    this.createRain = function() {
+        if (this._grpCoin == null) { if (this._timerRain != null) game.time.events.remove(this._timerRain); return; }
+        var size = (this._coinTier || [0, 0.4])[1];
+        new coinClass(game, this._grpCoin).rain(size * 0.9, GlobalClass.STAGE_WIDTH || 1280, GlobalClass.STAGE_HEIGHT || 720);
+    };
+
+    /** keep the counting amount inside the banner window (shrinks only when the number gets too wide) */
+    this.fitAmount = function() {
+        var f = this._amountFit, t = this._winAmountTxt;
+        if (!f || !t) return;
+        if (t.updateText) t.updateText(true);
+        var pad = (this._style.padding || 0) * 2;
+        var w = t.texture.width - pad, h = t.texture.height - pad;
+        var s = Math.min(1, f.maxW / (w * f.baseScale), f.h / (h * f.baseScale));
+        t.scale.set(f.baseScale * s);
+    };
+
     this.destroyWinning = function() {
+        if (this._closed) return;                          // close once - closing moves the game flow on
+        this._closed = true;
+        if (this._timerEnd != null) game.time.events.remove(this._timerEnd);
+        if (this._fxStop) { this._fxStop(); this._fxStop = null; }
+        if (this._pulseTargets) { this._pulseTargets.forEach(function (t) { TweenMax.killTweensOf(t); }); this._pulseTargets = null; }
         if (this._grpBanner != null) {
             this._grpBanner.destroy();
             this._grpBanner = null;
@@ -384,6 +530,9 @@ var bannerClass = function(game, group) {
         }
         if (this._timerCoin != null) {
             game.time.events.remove(this._timerCoin);
+        }
+        if (this._timerRain != null) {
+            game.time.events.remove(this._timerRain);
         }
         if (this._timerStar != null) {
             game.time.events.remove(this._timerStar);

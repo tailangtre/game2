@@ -1,6 +1,7 @@
 var reelClass = function (game, group) {
-    this._posLandscapeX = 27;
-    this._posLandscapeY = 57;
+    this._posLandscapeX = 336.4; // reel window on the generated board's cells (board_fit.py -> out/board.json; originally 27)
+    this._posLandscapeY = 172.8; // (originally 57)
+    this._boardScale = 0.7138;   // landscape board scale: 170 px symbol pitch -> the board's 121.6 px cell pitch
     this._posPortraitX = 0;
     this._posPortraitY = 372;
     this._posX = 0;
@@ -92,12 +93,13 @@ var reelClass = function (game, group) {
         this._grpMask.addChild(this._sprMask);
         this._grpReel.mask = this._sprMask;
         this._grpScatter.mask = this._sprMask;
-        this._grpSymbolFX.mask = this._sprMask;
-        this._grpSpecialFrame.mask = this._sprMask;
+        this._grpSpecialFrame.mask = this._sprMask;   // tier frames also sit on the hidden rows, keep them clipped
+        // win animations and win frames are NOT clipped to the reel window, so their light can spill over
+        // the frame edge (tom 2026-10-03: "light effects of the symbols should not be clipped")
         this._grpSymbolFXMask.mask = this._sprMask;
         this._grpReelMask.mask = this._sprMask;
         this._grpGreySymbol.mask = this._sprMask;
-        this._grpSymbolAnim.mask = this._sprMask;
+
 
         this.setTheme(1);
         this.reloadReel();
@@ -155,7 +157,7 @@ var reelClass = function (game, group) {
         this._grpPosition.y = this._posLandscapeY;
         this.sx = this._posLandscapeX;
         this.sy = this._posLandscapeY;
-        this._grpPosition.scale.set(1, 1);
+        this._grpPosition.scale.set(this._boardScale, this._boardScale);
 
     };
 

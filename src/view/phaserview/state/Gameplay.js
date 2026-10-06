@@ -279,7 +279,7 @@ var gameplayState = {
 
         if (GlobalClass.DEMO) {
             this._txtValue = new PIXI.Text('Demo', {
-                fontFamily: "Arial",
+                fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
                 fontSize: "32px",
                 fontWeight: "bolder",
                 fill: "#85cc14",
@@ -1036,6 +1036,7 @@ var gameplayState = {
 
         //TweenMax.killAll(false, true, false, false);
         this._jackpotClass.removeFX();
+        this._jackpotClass._sequenceRunning = false;
 
         if (this._timerFunc != null) {
             this.game.time.events.remove(this._timerFunc);
@@ -1091,6 +1092,7 @@ var gameplayState = {
         }
 
         GlobalClass.GAME_DATA.awardSymbols = this._reelClass._picaSymbols;
+        this.addJackpotLines();
 
         if (!GlobalClass.GAME_DATA.awardSymbols || GlobalClass.GAME_DATA.awardSymbols.length <= 0) {
             this._backgroundClass.changeBackgroundImage(true);
@@ -1131,6 +1133,38 @@ var gameplayState = {
             this.doAnimationAll();
             this.checkAutoPlay();
         }
+    },
+    // Jackpot lines join the end-of-spin line display (tom 2026-10-05: "show the jackpot lines at the end of a spin
+    // with other lines"). A jackpot is a 5 of a kind on a lit line; the server reports it apart from the line wins,
+    // so it was never drawn. Each won jackpot's line is added once (skipped when that line is already listed).
+    addJackpotLines: function () {
+        var d = GlobalClass.GAME_DATA;
+        if (!d || d._jackpotLinesAdded || !d.jackpotState || !d.jackpotState.wonJackpots || !d.jackpotState.wonJackpots.length) return;
+        d._jackpotLinesAdded = true;
+        if (!d.lineWin) d.lineWin = { lineWins: [] };
+        var lines = d.lineWin.lineWins, have = {};
+        lines.forEach(function (l) { have[l.lineNo] = l; });
+        var lineFromPositions = function (pos) {           // [[col,row], ...] -> index into WIN_LINE
+            if (!pos || !pos.length || !Array.isArray(pos[0])) return -1;
+            for (var n = 0; n < GlobalClass.WIN_LINE.length; n++) {
+                var ok = true;
+                for (var k = 0; k < pos.length && ok; k++) ok = GlobalClass.WIN_LINE[n][pos[k][0]] == pos[k][1];
+                if (ok) return n;
+            }
+            return -1;
+        };
+        d.jackpotState.wonJackpots.forEach(function (j) {
+            var no = lineFromPositions(j.positions);
+            if (no < 0) no = j.lineNo;
+            if (no == null || !GlobalClass.WIN_LINE[no]) return;
+            var amt = j.winAmountInDollar != null ? j.winAmountInDollar : j.winAmount;
+            if (have[no]) {                                   // the line also paid normally: show both
+                if (!have[no].jackpot) { have[no].jackpot = j.name; have[no].jackpotAmount = amt; }
+                return;
+            }
+            have[no] = lines[lines.push({ lineNo: no, winAmount: 0, numOfSymbols: j.numberOfSymbbols || 5,
+                winningSymbol: j.winningSymbol, jackpot: j.name, jackpotAmount: amt }) - 1];
+        });
     },
     doAnimationAll: function () {
         this.cleanScreen();
@@ -1196,6 +1230,8 @@ var gameplayState = {
         }
         
         if (GlobalClass.GAME_DATA.jackpotState.wonJackpots.length > 0) {
+            if (this._jackpotClass._sequenceRunning) return;    // already presenting (tom 2026-10-05: jackpot played twice)
+            this._jackpotClass._sequenceRunning = true;
             this._informationClass.setText("win", 5);
             this._jackpotClass.showFX();
         }
@@ -1317,7 +1353,7 @@ var gameplayState = {
         else {
             //this._timerFunc = this.game.time.events.add(1800, this.checkFreeAnimationSymbol, this);
         }
-        this._informationClass.setText("result", winLine, winValue, symbolType, line.numOfSymbols);
+        this._informationClass.setText("result", winLine, winValue, symbolType, line.numOfSymbols, line);
 
     },
     doAnimationScatterSymbol: function () {

@@ -29,7 +29,7 @@ var topAreaClass = function(game, group) {
 
         this.timeText = game.add.text(GlobalClass.STAGE_WIDTH - 60, 20, '', {
             fontSize:"20px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#FFFFFF",
             align: "center"
         }, this._grpWin);
@@ -67,7 +67,7 @@ var topAreaClass = function(game, group) {
 
         this.timeText = game.add.text(GlobalClass.STAGE_WIDTH-50, 20, '', {
             fontSize:"20px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#FFFFFF",
             align: "center"
         }, this._grpWin);

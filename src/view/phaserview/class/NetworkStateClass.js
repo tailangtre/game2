@@ -32,7 +32,7 @@ var networkStateClass = function(game, group) {
         var title = GlobalClass.getXMLByKey(game, "networkstate");
         this.text = game.add.text(game.world.centerX, 20, title, {
             fontSize:"20px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#FFFFFF",
             align: "center"
         }, this.sprBG);
@@ -61,7 +61,7 @@ var networkStateClass = function(game, group) {
         var title = GlobalClass.getXMLByKey(game, "networkstate");
         this.text = game.add.text(game.world.centerY, 35, title, {
             fontSize:"20px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#FFFFFF",
             align: "center"
         }, this.sprBG);

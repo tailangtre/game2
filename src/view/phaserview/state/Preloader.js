@@ -85,12 +85,13 @@ var preloaderState = {
 		console.warn("ver " + GlobalClass.GAME_VERSION);
 		var verText = game.add.text(20, 10, "ver " + String(GlobalClass.GAME_VERSION), {
             fontSize:"24px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#FFFFFF",
 			stroke: "#000000",
 			strokeThickness: 2,
             align: "center"
         }, this._grpVersion);
+        verText.visible = false;   // no version label on screen (tom 2026-10-05)
 
 		this.initNetwork();
 	},
@@ -385,6 +386,9 @@ var preloaderState = {
 		this.load.image('bg-free', 'assets/images/Background-Feature.jpg');
 		this.load.image('bg-potrait', 'assets/images/Bg-potrait.jpg');
 		this.load.image('BGfeat-potrait', 'assets/images/BGfeat-potrait.jpg');
+		// the reel boards (frame + cell slots) are their own layer so they move with the reels (tom 2026-10-03)
+		this.load.image('board-base', 'assets/images/board_base.png');
+		this.load.image('board-free', 'assets/images/board_free.png');
 		// this.load.atlasJSONArray('network', 'assets/images/image/network.png', 'assets/images/image/network.json');
 		this.load.atlasJSONArray('paytable', 'assets/images/image/paytable.png', 'assets/images/image/paytable.json');
 		this.load.atlasJSONArray('ui', 'assets/images/image/ui.png','assets/images/image/ui.json');

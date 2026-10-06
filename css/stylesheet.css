@@ -89,6 +89,8 @@ transform: rotate(-45deg);
 	width: 1280px;
 	height: 720px;
 	transform-origin: left top;
+	/* Phantom Tide key art behind the loader, dimmed so the logo and bar stay readable */
+	background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/images/loadingScreen/keyart.jpg') center / cover no-repeat;
 }
 
 .boot-version {

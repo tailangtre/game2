@@ -40,12 +40,13 @@ var introState = {
 
         var verText = game.add.text(20, 10, "ver " + String(GlobalClass.GAME_VERSION), {
             fontSize:"24px",
-            fontFamily:"Arial",
+            fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
             fill: "#FFFFFF",
 			stroke: "#000000",
 			strokeThickness: 2,
             align: "center"
         }, this._grpVersion);
+        verText.visible = false;   // no version label on screen (tom 2026-10-05)
 
         if (AppConstants.BEST_OPERATOR) { 
             window.addEventListener("message", this.receivePostMessage.bind(this));
@@ -279,9 +280,11 @@ var introState = {
         //btnContinue.scale.set(1.55,1.5);
 
         this.continueTxt = this.game.add.text(this.btnContinue.x, this.btnContinue.y + 2, GlobalClass.getXMLByKey(this.game, "button continue"), {
-            fontSize: "24px",
-            fontFamily: "Times New Roman",
-            fill: "#FFFFFF",
+            fontSize: "22px",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
+            fontWeight: "700",
+            letterSpacing: 2,
+            fill: "#1e1408",
             align: "center"
         });
         this.continueTxt.anchor.set(0.5, 0.5);
@@ -310,9 +313,11 @@ var introState = {
         this.btnContinue.scale.set(0.75);
 
         this.continueTxt = this.game.add.text(this.btnContinue.x, this.btnContinue.y + 4, GlobalClass.getXMLByKey(this.game, "button continue"), {
-            fontSize: "24px",
-            fontFamily: "Times New Roman",
-            fill: "#FFFFFF",
+            fontSize: "22px",
+            fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
+            fontWeight: "700",
+            letterSpacing: 2,
+            fill: "#1e1408",
             align: "center"
         });
         this.continueTxt.anchor.set(0.5, 0.5);
@@ -353,12 +358,22 @@ var introState = {
             this._sprInterface.scale.set(1, 1)
             if (this._logoIndex <= 2) {
                 var text = GlobalClass.getXMLByKey(this.game, "intro" + this._logoIndex);
-                this._textSpr = this.game.add.text(this.game.world.centerX, this.game.world.centerY + 160, text, {
+                this._textSpr = this.game.add.text(this.game.world.centerX, this.game.world.centerY + 330, text, {   // below the Continue button (tom 2026-10-03)
                     "align": "center",
                     "breakWords": true,
-                    "fill": "#76edff",
-                    "fontSize": 32,
-                    "strokeThickness": 3,
+                    "fill": ["#f4fffb", "#8ff0d6"],
+                    "fontFamily": "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
+                    "fontWeight": "600",
+                    "fontSize": 30,
+                    "letterSpacing": 1,
+                    "stroke": "#0a0f1a",
+                    "strokeThickness": 4,
+                    "dropShadow": true,
+                    "dropShadowColor": "#000000",
+                    "dropShadowAlpha": 0.6,
+                    "dropShadowBlur": 6,
+                    "dropShadowDistance": 2,
+                    "padding": 16,
                     "wordWrap": true,
                     "wordWrapWidth": 1200
                 });
@@ -374,10 +389,12 @@ var introState = {
                 this._textSpr = this.game.add.text(this.game.world.centerY, this.game.world.centerX + 80, text, {
                     "align": "center",
                     "breakWords": true,
-                    "fill": "#76edff",
+                    "fill": ["#f4fffb", "#8ff0d6"],
+                    "fontFamily": "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
+                    "fontWeight": "600",
                     "fontSize": 24,
-                    "stroke": "#5a2800",
-                    "strokeThickness": 2,
+                    "stroke": "#0a0f1a",
+                    "strokeThickness": 3,
                     "wordWrap": true,
                     "wordWrapWidth": 700
                 });

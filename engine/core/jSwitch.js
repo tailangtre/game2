@@ -18,7 +18,7 @@ Jswitch.prototype._name;
 Jswitch.prototype._icon;
 Jswitch.prototype._maxBetFont;
 Jswitch.prototype._betSettingStyle = {
-	fontFamily: "Bookman Old Style",
+	fontFamily: "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
 	fontSize: "28px",
 	fontWeight: "bold",
 	fill: "#fff",

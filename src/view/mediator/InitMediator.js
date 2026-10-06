@@ -37,17 +37,23 @@ puremvc.define(
             var ua = navigator.userAgent.toLowerCase();
             var isAndroid = ua.indexOf("android") > -1;
             
+            // render at the display's real pixel density (tom 2026-10-04: "the resolution is too low"): the
+            // 1280x720 stage was drawn into a 1280-px buffer and then stretched by CSS. Texts re-render at this
+            // resolution automatically; capped so big screens don't cost too much GPU.
+            var renderRes = Math.min(2.5, Math.max(1, (window.devicePixelRatio || 1) * Math.max(window.innerWidth / 1280, window.innerHeight / 720)));
             if (isAndroid) {
                 this.facade.app = new PIXI.Application({
                     width: 1280,
                     height: 720,
-                    forceCanvas: false
+                    forceCanvas: false,
+                    resolution: Math.min(renderRes, 2)
                 });
             } else {
                 this.facade.app = new PIXI.Application({
                     width: 1280,
                     height: 720,
                     forceCanvas: false,
+                    resolution: renderRes,
     
                     // resolution: window.devicePixelRatio,
                     // rootRenderTarget: {

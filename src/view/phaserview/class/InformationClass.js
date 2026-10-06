@@ -1,6 +1,6 @@
 var informationClass = function(game, group) {
-  this._posLandscapeX = 452;
-  this._posLandscapeY = 570;
+  this._posLandscapeX = 640;   // RAGNAROK layout: under the centred board (was 452, 570)
+  this._posLandscapeY = 636;
   this._posPortraitX = 360;
   this._posPortraitY = 796;
   this._maskWidth = 700;
@@ -51,21 +51,23 @@ var informationClass = function(game, group) {
 	  group.addChild(this._grpMask);
 
     this._style1 = {
-      //font: "16px Arial",
+      //font: "16px " + "'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
       fontSize:"16px",
-      fontFamily:"Arial",
-      fill: "#FFFFFF",
-      stroke: "#6699FF",
-      strokeThickness: 4,
+      fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      fill: "#fff3dc",
+      fontWeight: "600",
+      letterSpacing: 0.5,
+      dropShadow: true, dropShadowColor: "#000000", dropShadowAlpha: 0.65, dropShadowBlur: 6, dropShadowDistance: 2, padding: 12,
       align: "center"
     };
 
     this._style2 = {
       fontSize:"16px",
-      fontFamily:"Arial",
-      fill: "#FFFFFF",
-      stroke: "#FF3333",
-      strokeThickness: 4,
+      fontFamily:"'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      fill: "#8ff0d6",
+      fontWeight: "700",
+      letterSpacing: 0.5,
+      dropShadow: true, dropShadowColor: "#000000", dropShadowAlpha: 0.65, dropShadowBlur: 6, dropShadowDistance: 2, padding: 12,
       align: "center"
     };
 
@@ -126,7 +128,7 @@ var informationClass = function(game, group) {
     this._grpPosition.y = this._posPortraitY;
   };
 
-  this.setText = function(condition, winLine, winValue, symbolType, symbolTotal) {
+  this.setText = function(condition, winLine, winValue, symbolType, symbolTotal, lineObj) {
     this._txtInfo.x = 0;
     switch (condition) {
       case "console":
@@ -163,6 +165,7 @@ var informationClass = function(game, group) {
       case "result":
         this.removeText();
         this.addTextWin(winLine, winValue, symbolType, symbolTotal);
+        if (lineObj && lineObj.jackpot) this.addJackpotText(lineObj);
         break;
       case "freegames":
         this.removeText();
@@ -276,6 +279,29 @@ var informationClass = function(game, group) {
     }
   };
 
+  // jackpot amount on a flashing jackpot line (tom 2026-10-05: "add the amount of jackpot win in the message")
+  this.addJackpotText = function(lineObj) {
+    if (!this._grpWin || !this._txtWin3 || !this._txtWin4) return;
+    var name = String(lineObj.jackpot).toUpperCase() + " JACKPOT";
+    var amount = GlobalClass.getFormatCurrency(lineObj.jackpotAmount || 0);
+    var grp = this._grpWin, y = GlobalClass.getPosY(17), gap = GlobalClass.getPosX(6);
+    var parts = [];
+    if (lineObj.winAmount) parts.push([this._txtWin3, null], [this._txtWin4, null], [null, ["+", this._style1]]);
+    else { this._txtWin3.visible = false; this._txtWin4.visible = false; }
+    parts.push([null, [name, this._style1]], [null, [amount, this._style2]]);
+    // one compact line, centred: "LINE 1  WINS $1.50 + MINOR JACKPOT $25.00" (no symbol strip)
+    GlobalClass.deleteChildren(this._grpSymbol);
+    var x = this._txtWin2 ? this._txtWin2.x + this._txtWin2.width + gap * 3 : GlobalClass.getPosX(100);
+    parts.forEach(function (pt) {
+      var t = pt[0];
+      if (!t) { t = game.add.text(0, y, pt[1][0], pt[1][1]); grp.addChild(t); }
+      t.anchor.set(0, 0.5); t.x = x; t.y = y;
+      x += t.width + gap;
+    });
+    var left = this._txtWin1 ? this._txtWin1.x - this._txtWin1.width / 2 : 0;
+    grp.x = -(left + (x - gap)) / 2;
+  };
+
   this.addTextFeature = function(left, total) {
     this._grpFeature = game.add.group();
     this._grpPosition.addChild(this._grpFeature);
@@ -371,11 +397,11 @@ var informationClass = function(game, group) {
       symScl = 0.10;
     }
 
-    var textFill = "#ffffff"; // fill
+    var textFill = "#fff3dc"; // fill (clean cream, tom 2026-10-03)
     var textFont = String(fontText); // fill
     var textWeight = "bold"; // fill
-    var textStroke = "#6699FF"; // fill
-    var textStrokeThickness = 4; // fill
+    var textStroke = "#000000"; // no coloured outline any more
+    var textStrokeThickness = 0; // fill
 
     if (middle) {
       var iCurrent = 0;
@@ -474,7 +500,8 @@ var informationClass = function(game, group) {
         font: textFont,
         fontWeight: textWeight,
         stroke: textStroke,
-        strokeThickness: textStrokeThickness
+        strokeThickness: textStrokeThickness,
+        dropShadow: true, dropShadowColor: "#000000", dropShadowAlpha: 0.65, dropShadowBlur: 6, dropShadowDistance: 2, padding: 12
       }, groupString);
 
       totalWidth = txt.width + (symX * this.countString(sentence, "#"));
@@ -608,7 +635,8 @@ var informationClass = function(game, group) {
         font: textFont,
         fontWeight: textWeight,
         stroke: textStroke,
-        strokeThickness: textStrokeThickness
+        strokeThickness: textStrokeThickness,
+        dropShadow: true, dropShadowColor: "#000000", dropShadowAlpha: 0.65, dropShadowBlur: 6, dropShadowDistance: 2, padding: 12
       }, groupString);
 
       widthX += txt.width;
@@ -656,7 +684,8 @@ var informationClass = function(game, group) {
         font: textFont,
         fontWeight: textWeight,
         stroke: textStroke,
-        strokeThickness: textStrokeThickness
+        strokeThickness: textStrokeThickness,
+        dropShadow: true, dropShadowColor: "#000000", dropShadowAlpha: 0.65, dropShadowBlur: 6, dropShadowDistance: 2, padding: 12
       }, groupString);
     }
     return totalWidth;
