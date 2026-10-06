@@ -135,7 +135,10 @@
         '\n#bhp-ui .info ul{margin:6px 0 12px;padding-left:18px}' +
         '\n#bhp-ui .info li{margin:5px 0;line-height:1.55}' +
         '\n#bhp-ui .info li::marker{color:var(--gold)}' +
-        '\n#bhp-ui .paytbl td.sym img{width:38px;height:38px;object-fit:contain;margin:0}' +
+        '\n#bhp-ui .paytbl td.sym{text-align:left;white-space:nowrap}' +
+        '\n#bhp-ui .paytbl td.sym img{width:56px;height:56px;object-fit:contain;margin:0 10px 0 0;vertical-align:middle}' +
+        '\n#bhp-ui .paytbl td.sym .nm{display:inline-block;vertical-align:middle;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--ink);text-transform:uppercase}' +
+        '\n#bhp-ui .info .feat>img{width:84px;height:84px;flex:0 0 84px}' +
         '\n#bhp-ui .paytbl td{color:var(--goldhi)}' +
         '\n#bhp-ui .paytbl .nil{color:var(--faint)}' +
         '\n#bhp-ui .paytbl.mini{margin:6px 0 4px;max-width:360px}' +
@@ -240,7 +243,7 @@
           var sym = GlobalClass.mathSymbol(id);
           if (sym.symbolPngName !== n + '_00.png') continue;
           var pays = pt[id];
-          rows.push('<tr><td class="sym"><img src="' + self.INFO_IMG + n + '.png" alt=""></td>' + cols.map(function (k) {
+          rows.push('<tr><td class="sym"><img src="' + self.INFO_IMG + n + '.png" alt=""><span class="nm">' + (self.SYM_NAMES[n] || '') + '</span></td>' + cols.map(function (k) {
             var v = (pays[k - 1] || 0) * unit;
             return '<td>' + (v ? money(v) : '<span class="nil">—</span>') + '</td>';
           }).join('') + '</tr>');
@@ -249,6 +252,9 @@
       });
       return rows.join('');
     },
+    // Phantom Tide symbol names (tom 2026-10-06)
+    SYM_NAMES: { pic1: 'Powder Keg', Pic02: 'Treasure Chest', Pic3: "Siren's Eye", Pic4: 'Ghost Compass', pic05: 'Kraken',
+                 A: 'Ace', K: 'King', Q: 'Queen', J: 'Jack', '10': 'Ten', '9': 'Nine', Scatter: 'Ghost Anchor' },
     showInfo: function () {
       var self = this;
       if (!this.infoPanel) {
@@ -280,10 +286,10 @@
       this.infoPanel.querySelector('#bhp-info').innerHTML =
         '<h3>Symbol Values</h3>' +
         '<table class="paytbl">' + head + this.payRows(['pic1', 'Pic02', 'Pic3', 'Pic4', 'pic05', 'A', 'K', 'Q', 'J', '10', '9']) + '</table>' +
-        '<div class="feat"><img src="' + I + 'Wild.png" alt=""><div><b>WILD</b>' + this.infoLines(1, 1, 2) + '</div></div>' +
-        '<div class="feat"><img src="' + I + 'Scatter.png" alt=""><div><b>FREE SPIN</b>' +
+        '<div class="feat"><img src="' + I + 'Wild.png" alt=""><div><b>PHANTOM QUEEN · WILD</b>' + this.infoLines(1, 1, 2) + '</div></div>' +
+        '<div class="feat"><img src="' + I + 'Scatter.png" alt=""><div><b>GHOST ANCHOR · FREE SPIN</b>' +
           '<table class="paytbl mini">' + head + this.payRows(['Scatter'], true) + '</table>' + this.infoLines(1, 3, 4) + '</div></div>' +
-        '<div class="feat"><img src="' + I + 'pic1.png" alt=""><div><b>PIGGY BANK</b>' + this.infoLines(2, 1, 3) + '</div></div>' +
+        '<div class="feat"><img src="' + I + 'pic1.png" alt=""><div><b>POWDER KEG</b>' + this.infoLines(2, 1, 3) + '</div></div>' +
         h3('freegamesfeature', 'FREE GAMES FEATURE') + this.infoLines(4, 1, 4) +
         h3('jackportfeatrue', 'JACKPOT FEATURE') + '<div class="jprow">' + jp + '</div>' + this.infoLines(3, 1, 5) +
         h3('winline', 'WIN LINES') + '<div class="plwrap">' + lines + '</div>' +

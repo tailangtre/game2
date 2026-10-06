@@ -62,8 +62,8 @@ var winscatterClass = function(game, group) {
 	// Piggy bank (pic1) presentation (tom 2026-10-03): no sparks flying to the jackpots, no explosion.
 	// Every landed piggy slowly CHARGES (grows, with a gentle wobble); if this spin triggers the free spins
 	// it then plays its burst animation, otherwise it settles back to normal size.
-	var PIGGY_CHARGE_S = 1.6;      // charge / grow time
-	var PIGGY_CHARGE_SCALE = 1.22; // size reached while charging
+	var PIGGY_CHARGE_S = 2.0;      // charge / grow time (tom 2026-10-06: more dramatic powder-keg charge)
+	var PIGGY_CHARGE_SCALE = 1.32; // size reached while charging
 	var PIGGY_SETTLE_S = 0.45;     // shrink back when nothing triggers
 	var PIGGY_BURST_MS = 1300;     // pic1_blow length at 0.6 speed (44 frames)
 
@@ -108,26 +108,58 @@ var winscatterClass = function(game, group) {
 			var spr = game.add.sprite(src.x, src.y, 'symbols2', 'pic1_00.png', reel._grpSymbolAnim);
 			spr.anchor.set(0.5, 0.5);
 			src.visible = false;
-			// simple warm glow that builds up while the piggy charges (tom 2026-10-04)
-			var glw = game.add.sprite(src.x, src.y, 'symbols2', 'pic1_00.png', reel._grpSymbolAnim);
-			glw.anchor.set(0.5, 0.5);
-			glw.tint = 0xffc560;
-			glw.blendMode = PIXI.BLEND_MODES.ADD;
-			glw.filters = [new PIXI.filters.BlurFilter(10, 3)];
-			glw.alpha = 0;
-			reel._grpSymbolAnim.addChildAt(glw, reel._grpSymbolAnim.getChildIndex(spr));   // behind the piggy
-			TweenMax.to(glw, PIGGY_CHARGE_S, { alpha: 0.9, ease: Power1.easeIn });
-			TweenMax.to(glw.scale, PIGGY_CHARGE_S, { x: PIGGY_CHARGE_SCALE * 1.08, y: PIGGY_CHARGE_SCALE * 1.08, ease: Power1.easeIn });
-			charged.push({ symbol: symbol, src: src, spr: spr, glw: glw });
-			TweenMax.to(spr.scale, PIGGY_CHARGE_S, { x: PIGGY_CHARGE_SCALE, y: PIGGY_CHARGE_SCALE, ease: Power1.easeIn });
-			TweenMax.fromTo(spr, 0.12, { rotation: -0.03 }, { rotation: 0.03, repeat: Math.round(PIGGY_CHARGE_S / 0.12), yoyo: true, ease: Sine.easeInOut, delay: PIGGY_CHARGE_S * 0.35 });
+			// the powder keg charges (tom 2026-10-06: "more dramatic"): it swells, shakes harder and harder, glows
+			// coral-red with a quickening heartbeat, the fuse throws sparks, and it flashes white just before it blows
+			var glw = new PIXI.Sprite(softGlowTexture(0xff4b3e, 120, 120, 60, 70));
+			glw.anchor.set(0.5, 0.5); glw.x = src.x; glw.y = src.y; glw.alpha = 0;
+			// normal blend: an additive glow lit up the cell panel under it as a hard-edged square
+			reel._grpSymbolAnim.addChildAt(glw, reel._grpSymbolAnim.getChildIndex(spr));   // behind the keg
+			var sparks = new PIXI.Container(); reel._grpSymbolAnim.addChild(sparks);
+			var c0 = { symbol: symbol, src: src, spr: spr, glw: glw, sparks: sparks, p: { v: 0, t: 0 } };
+			charged.push(c0);
+			(function (c) {
+				var bx = c.src.x, by = c.src.y;
+				var spark = function (k) {
+					var g = new PIXI.Graphics(); var hot = Math.random() < 0.5;
+					g.beginFill(hot ? 0xffd27a : 0xff6a3d, 1); g.drawCircle(0, 0, 2 + Math.random() * 3 * (0.6 + k)); g.endFill();
+					g.blendMode = PIXI.BLEND_MODES.ADD;
+					var s0 = c.spr.scale.x;
+					g.x = bx + 34 * s0; g.y = by - 40 * s0;                         // the fuse tip (top right of the keg)
+					c.sparks.addChild(g);
+					var ang = -Math.PI / 2 + (Math.random() - 0.3) * 1.8, sp = 40 + Math.random() * 90 * (0.5 + k);
+					TweenMax.to(g, 0.45 + Math.random() * 0.35, { x: g.x + Math.cos(ang) * sp, y: g.y + Math.sin(ang) * sp + 20, alpha: 0, ease: Power2.easeOut,
+						onComplete: function () { if (g.parent) g.parent.removeChild(g); g.destroy(); } });
+				};
+				TweenMax.to(c.p, PIGGY_CHARGE_S, { v: 1, t: PIGGY_CHARGE_S, ease: Linear.easeNone, onUpdate: function () {
+					if (c.spr._destroyed) return;
+					var v = c.p.v, e = v * v;                                        // builds up slowly, then fast
+					var k = 1 + (PIGGY_CHARGE_SCALE - 1) * (0.3 * v + 0.7 * e);
+					var amp = 0.5 + 7 * e, rot = 0.07 * e;
+					c.spr.scale.set(k);
+					c.spr.x = bx + (Math.random() * 2 - 1) * amp; c.spr.y = by + (Math.random() * 2 - 1) * amp;
+					c.spr.rotation = (Math.random() * 2 - 1) * rot;
+					var beat = 0.75 + 0.25 * Math.sin(c.p.t * (6 + 26 * v));         // a quickening heartbeat
+					c.glw.scale.set(k * (1.0 + 0.25 * v) * (0.95 + 0.1 * beat));
+					c.glw.alpha = (0.1 + 0.6 * v) * beat;
+					if (Math.random() < 0.25 + 1.6 * v) spark(v);
+					if (v > 0.93 && !c.flashed) {                                     // white flash just before the burst
+						c.flashed = true;
+						var fl = new PIXI.Sprite(softGlowTexture(0xffffff, 140, 140, 70, 60)); fl.anchor.set(0.5, 0.5);
+						fl.x = bx; fl.y = by; fl.blendMode = PIXI.BLEND_MODES.ADD; fl.alpha = 0; fl.scale.set(k);
+						c.sparks.addChild(fl);
+						TweenMax.to(fl, 0.12, { alpha: 1, yoyo: true, repeat: 1, onComplete: function () { if (fl.parent) fl.parent.removeChild(fl); fl.destroy(); } });
+					}
+				} });
+			})(c0);
 		}
 		var self = this;
 		this._timerFunc = game.time.events.add(PIGGY_CHARGE_S * 1000, function(){
 			var triggers = self.piggyTriggers();
 			for (var j = 0; j < charged.length; j++) {
 				var c = charged[j];
-				TweenMax.killTweensOf(c.spr); TweenMax.killTweensOf(c.spr.scale);
+				TweenMax.killTweensOf(c.spr); TweenMax.killTweensOf(c.spr.scale); TweenMax.killTweensOf(c.p);
+				if (!c.spr._destroyed) { c.spr.x = c.src.x; c.spr.y = c.src.y; c.spr.tint = 0xffffff; }
+				(function (sp) { setTimeout(function () { sp.children.slice().forEach(function (ch) { TweenMax.killTweensOf(ch); }); if (sp.parent) sp.parent.removeChild(sp); sp.destroy({ children: true }); }, 900); })(c.sparks);
 				(function (g) {   // the glow fades away (burst or settle)
 					TweenMax.killTweensOf(g); TweenMax.killTweensOf(g.scale);
 					TweenMax.to(g, 0.35, { alpha: 0, onComplete: function () { if (!g._destroyed && g.parent) g.destroy(); } });
