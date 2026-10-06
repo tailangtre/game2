@@ -61,7 +61,7 @@ var frameClass = function(game, group) {
         this._frameBg.width = 850;
         this._frameBg.height = 510;
         this._frameBg.visible = false;   // the generated board has its own cell slots
-        this.addBoard('board-free', 186, 7);
+        this.addBoard('board-free', 197, 2);
         this._frame_t = game.add.sprite(this._posX+10, this._posY-3, this._langName, 'ReelFr-Feat-T.png', this._grpFrame);
         this._frame_l = game.add.sprite(this._frame_t.x-12, this._frame_t.y+66, this._langName, 'ReelFr-Feat-L.png', this._grpFrame);
         this._frame_r = game.add.sprite(this._frame_t.x+849, this._frame_t.y+66, this._langName, 'ReelFr-Feat-R.png', this._grpFrame);
