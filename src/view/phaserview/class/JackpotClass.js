@@ -145,7 +145,7 @@ var jackpotClass = function(game, group) {
     // window centre offset (stage px, relative to the plaque centre at its normal size) and inner width,
     // measured on the plaque art (tom 2026-10-04: numbers centred inside the frame)
     var JP_SMALL = 0.4;   // MAJOR/MINOR/MINI plaque scale (GRAND stays 0.5, the biggest)
-    this.JP_WINDOW = { grand: [0, 9.3, 110], major: [0, 9.2, 116], minor: [0, 9.2, 116], mini: [0, 5.7, 115] };   // measured on the Phantom Tide plaques
+    this.JP_WINDOW = { grand: [0, 9.2, 107], major: [0, 10.2, 109], minor: [0, 10.4, 99], mini: [0, 15.4, 111] };   // measured on the Phantom Tide plaques
     this.writeValueText = function(y, txt, type, group) {
         GlobalClass.deleteChildren(group);
         var t = new PIXI.Text(String(txt).trim(), this.JP_VALUE_STYLE);
