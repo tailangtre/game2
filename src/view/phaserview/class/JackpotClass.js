@@ -799,6 +799,8 @@ var jackpotClass = function(game, group) {
         flash.alpha = 0; flash.blendMode = PIXI.BLEND_MODES.ADD; layer.addChild(flash);
 
         TweenMax.to(dim, 0.6, { alpha: D.dim, ease: Sine.easeInOut });
+        var reels = gameplayState._reelGroup;                                 // reels faded under the glow (no hard-edged box)
+        if (reels) TweenMax.to(reels, 0.5, { alpha: 0.3 });
         TweenMax.to(rays, 0.5, { alpha: D.rays * 0.4, ease: Power2.easeOut });
         TweenMax.to(rays.scale, 1.0, { x: 1, y: 1, ease: Power3.easeOut });
         var spin = { r: 0 };
@@ -826,6 +828,7 @@ var jackpotClass = function(game, group) {
         return function stop() {
             if (layer._arrive) layer._arrive.kill(); if (layer._coinTimer) layer._coinTimer.kill();
             TweenMax.killTweensOf(spin); TweenMax.killTweensOf(halo.scale);
+            if (reels) TweenMax.to(reels, 0.6, { alpha: 1 });
             TweenMax.to([dim, rays, halo], 0.7, { alpha: 0, ease: Sine.easeInOut, onComplete: function () {
                 TweenMax.killTweensOf(rays); TweenMax.killTweensOf(rays.scale);
                 if (layer.parent) layer.parent.removeChild(layer);

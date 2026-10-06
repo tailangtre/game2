@@ -212,20 +212,20 @@ var bannerClass = function(game, group) {
         var titleBanner, amountY;
         if (tb) {
             winBanner.visible = false;
-            // soft warm glow behind the banner, breathing (tom 2026-10-04)
-            var glowSpr = game.add.sprite(0, -20, 'ui', tb[0], this._grpBannerAnim);
-            glowSpr.anchor.set(0.5, 0.5);
-            glowSpr.scale.set(0.53);
-            glowSpr.tint = 0x3dffd0;
-            glowSpr.blendMode = PIXI.BLEND_MODES.ADD;
-            glowSpr.filters = [new PIXI.filters.BlurFilter(18, 3)];
-            glowSpr.alpha = 0.25;
-            TweenMax.to(glowSpr, 0.9, { alpha: 0.75, repeat: -1, yoyo: true, ease: Sine.easeInOut });
             titleBanner = game.add.sprite(0, -20, 'ui', tb[0], this._grpBannerAnim);
             titleBanner.anchor.set(0.5, 0.5);
             titleBanner.scale.set(0.5);                                   // banner art is 2x (sharper)
+            // soft glow behind the banner, breathing. A pre-faded glow texture (softGlowTexture, JackpotClass.js) instead of a
+            // blurred copy: the BlurFilter was cut off at its bounds (tom 2026-10-06: "the aura ... still clipped at the edge")
+            var bw = titleBanner.texture.width * 0.5, bh = titleBanner.texture.height * 0.5;
+            var glowSpr = new PIXI.Sprite(softGlowTexture(0x3dffd0, Math.round(bw * 0.86), Math.round(bh * 0.72), 70, 90));
+            glowSpr.anchor.set(0.5, 0.5); glowSpr.x = 0; glowSpr.y = -20;
+            glowSpr.blendMode = PIXI.BLEND_MODES.ADD;
+            glowSpr.alpha = 0.25;
+            this._grpBannerAnim.addChildAt(glowSpr, this._grpBannerAnim.getChildIndex(titleBanner));   // behind the banner
+            TweenMax.to(glowSpr, 0.9, { alpha: 0.75, repeat: -1, yoyo: true, ease: Sine.easeInOut });
             TweenMax.to(titleBanner.scale, 0.9, { x: 0.515, y: 0.515, repeat: -1, yoyo: true, ease: Sine.easeInOut });   // gentle pulse
-            TweenMax.to(glowSpr.scale, 0.9, { x: 0.55, y: 0.55, repeat: -1, yoyo: true, ease: Sine.easeInOut });
+            TweenMax.to(glowSpr.scale, 0.9, { x: 1.06, y: 1.06, repeat: -1, yoyo: true, ease: Sine.easeInOut });
             this._pulseTargets = [glowSpr, glowSpr.scale, titleBanner.scale];
             amountY = titleBanner.y + tb[1];
             // amount: engraved-gold serif, matching the jackpot values
@@ -259,6 +259,9 @@ var bannerClass = function(game, group) {
 		
 
 		if (tb) {
+		    // fade the reels right down under the banner: drawn at full strength (masked reel layer) they showed through the
+		    // glow as a hard-edged box (tom 2026-10-06: "the aura of the win banners still clipped a bit at the edge")
+		    if (gameplayState._reelGroup) TweenMax.to(gameplayState._reelGroup, 0.3, { alpha: 0.25 });
 		    this._grpBannerAnim.rotation = -0.06;
 		    TweenMax.to(this._grpBannerAnim, 0.6, { rotation: 0, ease: Back.easeOut.config(2.2) });
 		    this.dramaFX(this._type, scale);
@@ -270,7 +273,7 @@ var bannerClass = function(game, group) {
 			useFrames: false,
 			callbackScope: this,
 			onComplete:function(){
-                winBanner.animations.play('anim');
+                if (!tb) winBanner.animations.play('anim');   // tier banners have their own art (the old frame loop drew a hard-edged glow box behind it)
                 if(this._grpCoin){
                     if(AppConstants.LANDSCAPE){
                         this._grpCoin.x = game.world.centerX;
@@ -430,6 +433,10 @@ var bannerClass = function(game, group) {
         var cx = AppConstants.LANDSCAPE ? game.world.centerX : game.world.centerY + 70;
         var cy = AppConstants.LANDSCAPE ? game.world.centerY : game.world.centerX;
         var tw = [];                                           // everything to kill on destroy
+        // a deeper veil under the light, so the board and reels behind don't show through the glow as a box
+        var veil = new PIXI.Graphics(); veil.beginFill(0x02070c, 1); veil.drawRect(-2000, -2000, 5280, 4720); veil.endFill();
+        veil.alpha = 0; layer.addChild(veil);
+        tw.push(TweenMax.to(veil, 0.4, { alpha: 0.45 }));
         var rays = new PIXI.Graphics(), n = 24, R = 900;
         for (var i = 0; i < n; i++) {
             var a0 = (i / n) * Math.PI * 2, a1 = a0 + Math.PI / n * (i % 2 ? 0.35 : 0.6);
@@ -500,6 +507,7 @@ var bannerClass = function(game, group) {
     this.destroyWinning = function() {
         if (this._closed) return;                          // close once - closing moves the game flow on
         this._closed = true;
+        if (gameplayState._reelGroup) { TweenMax.killTweensOf(gameplayState._reelGroup); gameplayState._reelGroup.alpha = 1; }
         if (this._timerEnd != null) game.time.events.remove(this._timerEnd);
         if (this._fxStop) { this._fxStop(); this._fxStop = null; }
         if (this._pulseTargets) { this._pulseTargets.forEach(function (t) { TweenMax.killTweensOf(t); }); this._pulseTargets = null; }
