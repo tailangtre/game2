@@ -221,6 +221,7 @@ var reelsymbolClass = function(game, group) {
     };
 
     this.setAnimation = function(animationSpeed,times) {
+        if (this._charging) return;                               // the keg / piggy is charging (WinScatter) - tom 2026-10-10
         animationSpeed = animationSpeed || 0.2;
         times = times || 1;
         var txs = this._sprSymbol.textures;

@@ -108,6 +108,10 @@ var winscatterClass = function(game, group) {
 			var spr = game.add.sprite(src.x, src.y, 'symbols2', 'pic1_00.png', reel._grpSymbolAnim);
 			spr.anchor.set(0.5, 0.5);
 			src.visible = false;
+			symbol._charging = true;                                   // no win-line animation on it while it charges
+			if (src.animations && src.animations.animations) {         // ...and hide one left on screen (tom 2026-10-10: two kegs)
+				for (var an in src.animations.animations) { var A = src.animations.animations[an]; if (A) { A.stop && A.stop(); A.visible = false; } }
+			}
 			// the powder keg charges (tom 2026-10-06: "more dramatic"): it swells, shakes harder and harder, glows
 			// coral-red with a quickening heartbeat, the fuse throws sparks, and it flashes white just before it blows
 			var glw = new PIXI.Sprite(softGlowTexture(0xff4b3e, 120, 120, 60, 70));
@@ -158,6 +162,7 @@ var winscatterClass = function(game, group) {
 			for (var j = 0; j < charged.length; j++) {
 				var c = charged[j];
 				TweenMax.killTweensOf(c.spr); TweenMax.killTweensOf(c.spr.scale); TweenMax.killTweensOf(c.p);
+				c.symbol._charging = false;
 				if (!c.spr._destroyed) { c.spr.x = c.src.x; c.spr.y = c.src.y; c.spr.tint = 0xffffff; }
 				(function (sp) { setTimeout(function () { sp.children.slice().forEach(function (ch) { TweenMax.killTweensOf(ch); }); if (sp.parent) sp.parent.removeChild(sp); sp.destroy({ children: true }); }, 900); })(c.sparks);
 				(function (g) {   // the glow fades away (burst or settle)
